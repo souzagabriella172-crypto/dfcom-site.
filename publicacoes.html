@@ -1,0 +1,1376 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Publicações - DFCom UFF</title>
+
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        background-color: #ffffff;
+        color: #333;
+      }
+
+      /* MENU */
+      header {
+  background-color: #003366;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+      .menu {
+        list-style: none;
+        display: flex;
+        gap: 40px;
+        margin: 0;
+        padding: 0;
+      }
+
+      .menu a {
+        text-decoration: none;
+        color: #ffffff;
+        font-weight: 500;
+        font-size: 1.1rem;
+      }
+
+      .menu a:hover {
+        color: #ffcc00;
+      }
+
+      /* CONTEÚDO PRINCIPAL */
+      main.publicacoes {
+        max-width: 1100px;
+        margin: 50px auto;
+        padding: 20px;
+        text-align: center;
+      }
+
+      
+      .logo-container {
+        text-align: center;
+        margin-top: 20px;
+      }
+
+      .logo-container img {
+        width: 400px; 
+        max-width: 90%;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+      }
+
+      .descricao {
+        margin-top: 10px;
+        color: #333;
+      }
+
+    
+
+      /* CARDS */
+      .grade-publicacoes {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 35px;
+        margin-top: 10px;
+      }
+
+      .card-publicacao {
+        width: 260px;
+        aspect-ratio: 1 / 1;
+        background: #ffffff;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        transition: 0.3s ease;
+        text-align: center;
+        cursor: pointer;
+      }
+
+      .card-publicacao:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+      }
+
+      .card-publicacao img {
+        width: 100%;
+        height: 60%;
+        object-fit: cover;
+      }
+
+      .card-publicacao h3 {
+        margin: 10px 0 5px;
+        color: #003366;
+        font-size: 1.1rem;
+      }
+
+      .card-publicacao p {
+        color: #555;
+        font-size: 0.9rem;
+        padding: 0 10px;
+      }
+
+      
+      .conteudo {
+        margin: 220px auto; 
+        padding: 30px;
+        width: 90%;
+        max-width: 900px;
+        background: #fafafa;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        text-align: left;
+        scroll-margin-top: 120px;
+      }
+
+      .conteudo h2 {
+        color: #003366;
+        margin-bottom: 15px;
+      }
+
+      .conteudo ul li {
+        margin-bottom: 10px;
+        line-height: 1.5;
+      }
+
+      /* RODAPÉ */
+      footer {
+        background-color: #003366;
+        color: white;
+        text-align: center;
+        padding: 15px 0;
+        margin-top: 40px;
+      }
+      
+      #logo-dfcom {
+        height: 600px !important;
+        width: auto !important;
+        max-width: none !important;
+        display: block !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+      }
+      #logo-dfcom {
+        margin-top: -70px !important;
+      }
+      .grade-publicacoes {
+        margin-top: -30px !important;
+      }
+      .descricao {
+        position: relative !important;
+        top: -50px !important; 
+        margin-top: 0 !important;
+      }
+      .btn-topo {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background: #1f3c88;
+        color: white;
+        padding: 12px 16px;
+        border-radius: 50%;
+        z-index: 1000;
+        cursor: pointer;
+        text-decoration: none;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        transition: all 0.3s ease;
+      }
+
+      .btn-topo:hover {
+        background: #3a59b3;
+        transform: scale(1.2);
+        box-shadow: 0 6px 8px rgba(0, 0, 0, 0.5);
+      }
+      html {
+  scroll-behavior: smooth;
+}
+
+.conteudo {
+  scroll-margin-top: 140px; 
+}
+     /* ==========================
+   MENU NO CELULAR
+========================== */
+@media (max-width: 768px) {
+  header {
+    height: 70px;
+    padding: 10px 0;
+  }
+
+  header nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+  }
+
+  .menu {
+    gap: 12px;
+    padding: 0;
+    margin: 0;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .menu li {
+    margin: 0;
+  }
+
+  .menu a {
+    font-size: 15px;
+    padding: 4px 0;
+    text-align: center;
+  }
+
+  body {
+    padding-top: 70px;
+  }
+
+  main.publicacoes {
+    margin-top: 30px;
+    padding: 15px;
+  }
+
+  /* Logo no celular: proporcional, sem o espaço branco da imagem */
+  #logo-dfcom {
+    width: 100% !important;
+    max-width: 420px !important;
+    height: auto !important;
+    aspect-ratio: 1920 / 450;
+    object-fit: cover;
+    object-position: 50% 57%;
+    padding: 0 !important;
+    margin: 20px auto 10px !important;
+  }
+
+  .descricao {
+    top: 0 !important;
+  }
+
+  .grade-publicacoes {
+    margin-top: 20px !important;
+  }
+}
+     
+</style>
+   <body>
+    <div id="topo"></div>  
+<header>
+  <nav>
+    <ul class="menu">
+      <li><a href="index.html">Início</a></li>
+      <li><a href="sobre.html">O DFCom</a></li>
+      <li><a href="cursos.html">Cursos</a></li>
+      <li><a href="noticias.html">Notícias</a></li>
+      <li><a href="contato.html">Contato</a></li>
+    </ul>
+  </nav>
+</header>
+<main>
+  <img
+      id="logo-dfcom"
+      src="Publicações (2).png"
+      alt="Logo de Publicações"
+      style="
+        height: 600px;
+          width: auto;
+          display: block;
+          margin: -200px auto 0 auto;
+          padding-top: 120px
+        "
+        />
+
+  <p class="descricao" style="text-align: center; margin-top: 20px;"> 
+    Explore nossas Publicações oferecidas pelo DFCom.
+  </p>
+
+</main>
+
+      <!-- CARDS QUE LEVAM PARA AS SEÇÕES -->
+      <section class="grade-publicacoes">
+        <a href="#periodicos" style="text-decoration: none; color: inherit">
+          <div class="card-publicacao">
+            <img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcWzbsLLWPMbH42SDW1ZCli_YwkSuKE3UiWg&s"
+              alt="Periódicos"
+            />
+            <h3>Periódicos</h3>
+            <p>Acesse as pesquisas do departamento.</p>
+          </div>
+        </a>
+
+        <a href="#livros" style="text-decoration: none; color: inherit">
+          <div class="card-publicacao">
+            <img
+              src="https://sophia.com.br/wp-content/uploads/2022/03/Conservar-os-livros-da-biblioteca_18235_image.freepik.com_1-926858.jpeg"
+              alt="Livros"
+            />
+            <h3>Livros</h3>
+            <p>Livros completos e organizados por título.</p>
+          </div>
+        </a>
+
+        <a href="#capitulos" style="text-decoration: none; color: inherit">
+          <div class="card-publicacao">
+            <img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTbEJByiRVhLahGummpajlgZzwPmp7tegv84w&s"
+              alt="Capítulos"
+            />
+            <h3>Capítulos</h3>
+            <p>Capítulos escritos por pesquisadores.</p>
+          </div>
+        </a>
+      </section>
+    </main>
+
+    <!-- SEÇÕES DE CONTEÚDO COMPLETO -->
+    <section id="periodicos" class="conteudo">
+      <h2>Periódicos</h2>
+
+  <ul>
+
+    <li>
+      <a href="https://doi.org/10.1063/5.0083045"
+         target="_blank"
+         rel="noopener noreferrer">
+        <strong>
+          R. B. Freitas, P. V. Brandão, L. S. de B. Alves,
+          M. Celli e A. Barletta.
+        </strong>
+        The effect of local thermal non-equilibrium on the onset of
+        thermal instability for a metallic foam.
+      </a>
+      <p>Celli e A. A Barletta. O efeito do não-equilíbrio térmico local no início da instabilidade térmica para uma espuma metálica.</p>
+      <p>
+        <em>Physics of Fluids</em>, v. 34, p. 034105, 2022.
+      </p>
+    </li>
+
+    <li>
+      <a href="https://www.cambridge.org/core/journals/journal-of-fluid-mechanics/article/abs/linear-disturbance-growth-induced-by-viscous-dissipation-in-darcybenard-convection-with-throughflow/56E6C2057354E36F0E84F8374C154E05"
+         target="_blank"
+         rel="noopener noreferrer">
+        <strong>
+          P. V. Brandão, L. S. de B. Alves, D. Rodríguez e A. Barletta.
+        </strong>
+        Linear disturbance growth induced by viscous dissipation in
+        Darcy–Bénard convection with throughflow.
+      </a>
+      <p>A Barletta. Crescimento de perturbação linear induzido pela dissipação viscosa na convecção de Darcy-Bénard com fluxo de passagem</p>
+      <p>
+        <em>Journal of Fluid Mechanics</em>, v. 974, p. A15, 2023.
+      </p>
+    </li>
+
+    <li>
+      <a href="https://www.cambridge.org/core/journals/journal-of-fluid-mechanics/article/abs/stability-and-receptivity-analyses-of-mixed-convection-in-unstably-stratified-horizontal-boundary-layers/25061EDAA0383E40202B3EE7CD552579"
+         target="_blank"
+         rel="noopener noreferrer">
+        <strong>
+          G. Y. R. Hamada, W. R. Wolf, D. B. Pitz e L. S. de B. Alves.
+        </strong>
+        Stability and receptivity analyses of mixed convection in
+        unstably stratified horizontal boundary layers.
+      </a>
+      <p>S. de B. Alves. Análises de estabilidade e receptividade de convecção mista em camadas de contorno horizontal estratificadas instavelmente. </p>
+      <p>
+        <em>Journal of Fluid Mechanics</em>, v. 961, p. A10, 2023.
+      </p>
+    </li>
+
+    <li>
+      <a href="https://www.sciencedirect.com/science/article/pii/S073519332200241X?via%3Dihub"
+         target="_blank"
+         rel="noopener noreferrer">
+        <strong>
+          H. H. Barros e L. S. de B. Alves.
+        </strong>
+        A thermodynamic model for thermo-acoustic heat transfer within
+        closed cavities that includes soft wall acoustic resistance.
+      </a>
+      <p>Um modelo termodinâmico para transferência de calor termo-acústica dentro de cavidades fechadas que inclui resistência acústica de parede macia. </p>
+      <p>
+        <em>International Communications in Heat and Mass Transfer</em>,
+        v. 135, p. 106119, 2022.
+      </p>
+    </li>
+
+    <li>
+      <a href="https://www.sciencedirect.com/science/article/pii/S016892742030283X?via%3Dihub"
+         target="_blank"
+         rel="noopener noreferrer">
+        <strong>
+          R. D. Santos e L. S. de B. Alves.
+        </strong>
+        A comparative analysis of explicit, IMEX and implicit strong
+        stability preserving Runge-Kutta schemes.
+      </a>
+      <p>Uma análise comparativa de esquemas explícitos, IMEX e implícito de estabilidade forte preservando Runge-Kutta. </p>
+      <p>
+        <em>Applied Numerical Mathematics</em>, v. 159, p. 204–220, 2021.
+      </p>
+    </li>
+
+    <li>
+      <a href="https://asmedigitalcollection.asme.org/heattransfer/article-abstract/143/5/052601/1100599/Convective-and-Absolute-Instabilities-Induced-by?redirectedFrom=fulltext"
+         target="_blank"
+         rel="noopener noreferrer">
+        <strong>
+          E. V. M. Reis e L. S. de B. Alves.
+        </strong>
+        Convective and Absolute Instabilities Induced by Viscous
+        Dissipation in the Thermocapillary Convection With Through-Flow.
+      </a>
+      <p>Convective and Absolute Instabilities Induced by Viscous Dissipation in the Thermocapillary Convection With Through-Flow. </p>
+      <p>
+        <em>Journal of Heat Transfer</em>, v. 143, p. 052601, 2021.
+      </p>
+    </li>
+
+    <li>
+      <a href="https://journals.aps.org/prfluids/abstract/10.1103/PhysRevFluids.6.L041901"
+         target="_blank"
+         rel="noopener noreferrer">
+        <strong>
+          D. B. Souza, R. B. Freitas e L. S. de B. Alves.
+        </strong>
+        Criterion for the linear convective to absolute instability
+        transition of a jet in crossflow: The countercurrent viscous
+        and round mixing-layer analogy.
+      </a>
+      <p>Criterion for the linear convective to absolute instability transition of a jet in crossflow: The countercurrent viscous and round mixing-layer analogy. </p>
+      <p>
+        <em>Physical Review Fluids</em>, v. 6, p. L041901, 2021.
+      </p>
+    </li>  
+
+    <li>
+      <a href="https://link.springer.com/article/10.1007/s40430-021-03055-9"
+         target="_blank"
+         rel="noopener noreferrer">
+        <strong>
+          L. S. de B. Alves, R. D. Santos e C. E. G. Falcão.
+        </strong>
+        Low Mach preconditioned density-based methods with implicit
+        Runge-Kutta schemes in physical-time.
+      </a>
+      <p>Falcão. Low Mach preconditioned density-based methods with implicit Runge-Kutta schemes in physical-time.</p>
+      <p>
+        <em>Journal of the Brazilian Society of Mechanical Sciences
+        and Engineering</em>, v. 43, p. 341, 2021.
+      </p>
+    </li> 
+
+    <li>
+      <a href="https://www.sciencedirect.com/science/article/pii/S0017931021006414?via%3Dihub"
+         target="_blank"
+         rel="noopener noreferrer">
+        <strong>
+          P. V. Brandão, A. Barletta, M. Celli, L. S. de B. Alves
+          e D. A. S. Rees.
+        </strong>
+        On the stability of the isoflux Darcy-Bénard problem with a
+        generalised basic state.
+      </a>
+      <p>Alves and D. A. S. Rees. On the stability of the isoflux Darcy-Bénard problem with a generalised basic state. </p>
+      <p>
+        <em>International Journal of Heat and Mass Transfer</em>,
+        v. 177, p. 121538, 2021.
+      </p>   
+    </li>
+
+    <li>
+      <a href="https://link.springer.com/article/10.1007/s11242-020-01383-3"
+         target="_blank"
+         rel="noopener noreferrer">
+        <strong>
+          M. S. Schuabb, L. S. de B. Alves e S. C. Hirata.
+        </strong>
+        Two- and Three-Dimensional Absolute Instabilities in a Porous
+        Medium with Inclined Temperature Gradient and Vertical Throughflow.
+      </a>
+      <p>Two- and Three-Dimensional Absolute Instabilities in a Porous Medium with Inclined Temperature Gradient and Vertical Throughflow.</p>
+      <p>
+        <em>Transport in Porous Media</em>, v. 132, p. 135–155, 2020.
+      </p>
+    </li>
+
+    <li>
+      <a href="https://link.springer.com/article/10.1007/s40430-020-02346-x"
+         target="_blank"
+         rel="noopener noreferrer">
+        <strong>
+          I. F. Pinheiro, R. D. Ricardo, L. A. Sphaier e L. S. de B. Alves.
+        </strong>
+        Improving the precision of discrete numerical solutions using
+        the generalized integral transform technique.
+      </a>
+      <p>S. de B. Alves. Improving the precision of discrete numerical solutions using the generalized integral transform technique. </p>
+      <p>
+        <em>Journal of the Brazilian Society of Mechanical Sciences
+        and Engineering</em>, v. 42, p. 329, 2020.
+      </p>
+    </li>
+
+    <li>
+      <a href="https://www.sciencedirect.com/science/article/pii/S1290072918306136?via%3Dihub"
+         target="_blank"
+         rel="noopener noreferrer">
+        <strong>
+          H. H. Barros e L. S. de B. Alves.
+        </strong>
+        Soft wall resistance as a necessary condition to validate
+        numerical simulations in thermoacoustic heat transfer within
+        closed cavities.
+      </a>
+      <p>Soft wall resistance as a necessary condition to validate numerical simulations in thermoacoustic heat transfer within closed cavities.</p>
+      <p>
+        <em>International Journal of Thermal Sciences</em>,
+        v. 135, p. 580–588, 2019.
+      </p>
+    </li>
+
+    <li>
+      <a href="https://www.cambridge.org/core/journals/journal-of-fluid-mechanics/article/abs/identifying-linear-absolute-instabilities-from-differential-eigenvalue-problems-using-sensitivity-analysis/1AF50937F33C83D3B60C1CDE9080764D"
+         target="_blank"
+         rel="noopener noreferrer">
+        <strong>
+          L. S. de B. Alves, S. C. Hirata, M. S. Schuabb e A. Barletta.
+        </strong>
+        Identifying linear absolute instabilities from differential
+        eigenvalue problems using sensitivity analysis.
+      </a>
+      <p>Identifying linear absolute instabilities from differential eigenvalue problems using sensitivity analysis.</p>
+      <p>
+        <em>Journal of Fluid Mechanics</em>, v. 870, p. 941–969, 2019.
+      </p>
+    </li>
+
+    <li>
+      <a href="https://pubs.aip.org/aip/pof/article/31/1/014103/103680/A-geometrical-criterion-for-absolute-instability"
+         target="_blank"
+         rel="noopener noreferrer">
+        <strong>
+          M. P. Avanci, D. Rodríguez e L. S. de B. Alves.
+        </strong>
+        A geometrical criterion for absolute instability in separated
+        boundary layers.
+      </a>
+      <p>A geometrical criterion for absolute instability in separated boundary layers.</p>
+      <p>
+        <em>Physics of Fluids</em>, v. 31, p. 014103, 2019.
+      </p>
+    </li>
+
+    <li>
+      <a href="https://www.sciencedirect.com/science/article/pii/S0017931019344461?via%3Dihub"
+         target="_blank"
+         rel="noopener noreferrer">
+        <strong>
+          A. Barletta, M. Celli, P. V. Brandão e L. S. de B. Alves.
+        </strong>
+        Wavepacket instability in a rectangular porous channel
+        uniformly heated from below.
+      </a>
+       <p> Wavepacket instability in a rectangular porous channel uniformly heated from below.</p>
+      <p>
+        <em>International Journal of Heat and Mass Transfer</em>,
+        v. 147, p. 118993, 2019.
+      </p>
+    </li>
+
+    <li>
+      <a href="https://link.springer.com/article/10.1007/s11242-019-01328-5"
+         target="_blank"
+         rel="noopener noreferrer">
+        <strong>
+          P. V. Brandão, M. Celli, A. Barletta e L. S. de B. Alves.
+        </strong>
+        Convection in a Horizontal Porous Layer with Vertical Pressure
+        Gradient Saturated by a Power-Law Fluid.
+      </a>
+      <p> Wavepacket instability in a rectangular porous channel uniformly heated from below. </p>
+      <p>
+        <em>Transport in Porous Media</em>, v. 130, p. 613–625, 2019.
+      </p>
+    </li>
+
+    <li>
+      <a href="https://link.springer.com/article/10.1007/s40430-018-1019-6"
+         target="_blank"
+         rel="noopener noreferrer">
+        <strong>
+          M. C. Reis, L. A. Sphaier, L. S. de B. Alves e R. M. Cotta.
+        </strong>
+        Approximate analytical methodology for calculating friction
+        factors in flow through polygonal cross section ducts.
+      </a>
+      <p>Approximate analytical methodology for calculating friction factors in flow through polygonal cross section ducts.</p>
+      <p>
+        <em>Journal of the Brazilian Society of Mechanical Sciences
+        and Engineering</em>, v. 40, p. 1–11, 2018.
+      </p>
+    </li>
+
+    <li>
+      <a href="https://www.tandfonline.com/doi/full/10.1080/10407782.2017.1421359"
+         target="_blank"
+         rel="noopener noreferrer">
+        <strong>
+          I. F. Pinheiro, L. A. Sphaier e L. S. de B. Alves.
+        </strong>
+        Integral transform solution of integro-differential equations
+        in conduction-radiation problems.
+      </a>
+      <p>Integral transform solution of integro-differential equations in conduction-radiation problems. </p>
+      <p>
+        <em>Numerical Heat Transfer Part A – Applications</em>,
+        v. 73, p. 94–114, 2018.
+      </p>
+    </li>
+
+    <li>
+      <a href="https://www.sciencedirect.com/science/article/pii/S0896844617308367?via%3Dihub"
+         target="_blank"
+         rel="noopener noreferrer">
+        <strong>
+          J. Nichele, C. R. A. Abreu, L. S. de B. Alves e I. Borges Jr.
+        </strong>
+        Accurate non-asymptotic thermodynamic properties of near-critical
+        N₂ and O₂ computed from molecular dynamics simulations.
+      </a>
+      <p>Accurate non-asymptotic thermodynamic properties of near-critical N2 and O2 computed from molecular dynamics simulations. </p>
+      <p>
+        <em>Journal of Supercritical Fluids</em>, v. 135, p. 225–233, 2018.
+      </p>
+    </li>
+
+    <li>
+      <a href="https://www.sciencedirect.com/science/article/pii/S0029801818310035?via%3Dihub"
+         target="_blank"
+         rel="noopener noreferrer">
+        <strong>
+          E. V. M. Reis, L. A. Sphaier, L. C. S. Nunes e L. S. de B. Alves.
+        </strong>
+        Dynamic response of free span pipelines via linear and nonlinear
+        stability analyses.
+      </a>
+      <p>Dynamic response of free span pipelines via linear and nonlinear stability analyses. </p>
+      <p>
+        <em>Ocean Engineering</em>, v. 163, p. 533–543, 2018.
+      </p>
+    </li>
+
+    <li>
+      <a href="https://www.sciencedirect.com/science/article/pii/S0017931016316234?via%3Dihub"
+         target="_blank"
+         rel="noopener noreferrer">
+        <strong>
+          A. Barletta e L. S. de B. Alves.
+        </strong>
+        Absolute instability: A toy model and an application to the
+        Rayleigh-Bénard problem with horizontal flow in porous media.
+      </a>
+      <p>A toy model and an application to the Rayleigh-Bénard problem with horizontal flow in porous media. </p>
+      <p>
+        <em>International Journal of Heat and Mass Transfer</em>,
+        v. 104, p. 438–455, 2017.
+      </p>
+    </li>
+
+    <li>
+      <a href="https://www.tandfonline.com/doi/full/10.1080/10407790.2016.1265302"
+         target="_blank"
+         rel="noopener noreferrer">
+        <strong>
+          K. F. S. Santiago e L. S. de B. Alves.
+        </strong>
+        Conservative and nondispersive schemes for diffusion terms
+        with strong property variations.
+      </a>
+      <p>Conservative and nondispersive schemes for diffusion terms with strong property variations. </p>
+      <p>
+        <em>Numerical Heat Transfer Part B – Fundamentals</em>,
+        v. 70, p. 1–13, 2017.
+      </p>
+    </li>
+
+    <li>
+      <a href="https://www.sciencedirect.com/science/article/pii/S0017931017300698?via%3Dihub"
+         target="_blank"
+         rel="noopener noreferrer">
+        <strong>
+          N. R. Braga, P. V. Brandão, L. S. de B. Alves e A. Barletta.
+        </strong>
+        Convective instability induced by internal and external heating
+        in a fluid saturated porous medium.
+      </a>
+      <p>A. Barletta. Convective instability induced by internal and external heating in a fluid saturated porous medium. </p>
+      <p>
+        <em>International Journal of Heat and Mass Transfer</em>,
+        v. 108, p. 2393–2402, 2017.
+      </p>
+    </li>
+
+    <li>
+      <a href="https://link.springer.com/article/10.1007/s00162-017-0426-0"
+         target="_blank"
+         rel="noopener noreferrer">
+        <strong>
+          R. de S. Teixeira e L. S. de B. Alves.
+        </strong>
+        Minimal gain marching schemes: searching for unstable
+        steady-states with unsteady solvers.
+      </a>
+      <p> Accurate calculation of near-critical heat capacities CP and CV of argon using molecular dynamics. </p>
+      <p>
+        <em>Theoretical and Computational Fluid Dynamics</em>,
+        v. 31, p. 1–15, 2017.
+      </p>
+    </li>
+
+    <li>
+      <a href="#"
+         target="_blank"
+         rel="noopener noreferrer">
+        <strong>
+          R. de S. Teixeira e L. S. de B. Alves.
+        </strong>
+        Accurate calculation of near-critical heat capacities CP and CV
+        of argon using molecular dynamics.
+      </a>
+      <p>
+        <em>Journal of Molecular Liquids</em>, v. 237, p. 65–70, 2017.
+      </p>
+    </li>
+
+    <li>
+      <a href="https://www.dl.begellhouse.com/journals/49dcde6d4c0809db,30a4f12f75672f7f,048c03747aebc873.html"
+         target="_blank"
+         rel="noopener noreferrer">
+        <strong>
+          G. Moraes, R. de S. Teixeira e L. S. de B. Alves.
+        </strong>
+        Validity of parametric restrictions to the modified
+        Buckley-Leverett equations.
+      </a>
+      <p> Validity of parametric restrictions to the modified buckley-leverett equations.</p>
+      <p>
+        <em>Journal of Porous Media</em>, v. 19, p. 811–819, 2016.
+      </p>
+    </li>
+
+    <li>
+      <a href="https://www.dl.begellhouse.com/journals/648192910890cd0e,2588198a050b6dad,4c6bd5ab0d9cba4e.html"
+         target="_blank"
+         rel="noopener noreferrer">
+        <strong>
+          D. J. N. M. Chalhub, L. A. Sphaier e L. S. de B. Alves.
+        </strong>
+        Integral transform solution for thermally-developing slip-flow
+        within isothermal parallel plates.
+      </a>
+      <p>Integral transform solution for thermally-developing slip-flow within isothermal parallel plates. </p>
+      <p>
+        <em>Computational Thermal Sciences</em>, v. 8, p. 147–161, 2016.
+      </p>
+    </li>
+
+    <li>
+      <a href="https://www.sciencedirect.com/science/article/pii/S0377025716300180?via%3Dihub"
+         target="_blank"
+         rel="noopener noreferrer">
+        <strong>
+          L. S. de B. Alves, S. C. Hirata e M. N. Ouarzazi.
+        </strong>
+        Linear Onset of Convective Instability for Rayleigh-Bénard-Couette
+        flows of Viscoelastic Fluids.
+      </a>
+      <p>Linear Onset of Convective Instability for Rayleigh-Bénard-Couette flows of Viscoelastic Fluids.</p>
+      <p>
+        <em>Journal of Non-Newtonian Fluid Mechanics</em>,
+        v. 231, p. 79–90, 2016.
+      </p>
+    </li>
+
+    <li>
+      <a href="https://link.springer.com/article/10.1007/s11242-016-0658-2"
+         target="_blank"
+         rel="noopener noreferrer">
+        <strong>
+          M. Celli, P. V. Brandão, L. S. de B. Alves e A. Barletta.
+        </strong>
+        Convective Instability in a Darcy Flow Heated from Below with
+        Internal Heat Generation.
+      </a>
+      <p>Convective Instability in a Darcy Flow Heated from Below with Internal Heat Generation. </p>
+      <p>
+        <em>Transport in Porous Media</em>, v. 112, p. 563–575, 2016.
+      </p>
+    </li>
+
+    <li>
+      <a href="https://asmedigitalcollection.asme.org/heattransfer/article-abstract/138/10/102004/375170/On-the-Relaxation-Time-Scales-of-the-Classical?redirectedFrom=fulltext"
+         target="_blank"
+         rel="noopener noreferrer">
+        <strong>
+          L. S. de B. Alves.
+        </strong>
+        On the Relaxation Time Scales of the Classical Thermodynamic
+        Model for Heat Transfer in Quiescent Compressible Fluids.
+      </a>
+      <p>Classical Thermodynamic Model for Heat Transfer in Quiescent Compressible Fluids.</p>
+      <p>
+        <em>Journal of Heat Transfer</em>, v. 138, p. 102004, 2016.
+      </p>
+    </li>
+
+    <li>
+      <a href="https://www.sciencedirect.com/science/article/pii/S089684461630078X?via%3Dihub"
+         target="_blank"
+         rel="noopener noreferrer">
+        <strong>
+          J. Nichele, I. Borges Jr, A. B. Oliveira e L. S. de B. Alves.
+        </strong>
+        Molecular dynamics simulations of momentum and thermal diffusion
+        properties of near-critical argon along isobars.
+      </a>
+      <p> Molecular dynamics simulations of momentum and thermal diffusion properties of near-critical argon along isobars.</p>
+      <p>
+        <em>The Journal of Supercritical Fluids</em>,
+        v. 114, p. 46–54, 2016.
+      </p>
+    </li>
+
+    <li>
+      <a href="https://royalsocietypublishing.org/rspa/article/472/2189/20160036/57090/Nonlinear-stability-analysis-of-Darcy-s-flow-with"
+         target="_blank"
+         rel="noopener noreferrer">
+        <strong>
+          M. Celli, L. S. de B. Alves e A. Barletta.
+        </strong>
+        Nonlinear stability analysis of Darcy's flow with viscous heating.
+      </a>
+      <p>
+        <em>Proceedings of the Royal Society A</em>,
+        v. 472, p. 20160036, 2016.
+      </p>
+    </li>
+
+    <li>
+      <a href="https://www.cambridge.org/core/journals/journal-of-fluid-mechanics/article/convective-and-absolute-instabilities-in-rayleighbenardpoiseuille-mixed-convection-for-viscoelastic-fluids/48DA7EEF1069DD51936C26FE49A71903"
+         target="_blank"
+         rel="noopener noreferrer">
+        <strong>
+          S. da C. Hirata, L. S. de B. Alves, N. Delenda e M. N. Ouarzazi.
+        </strong>
+        Convective and absolute instabilities in Rayleigh-Bénard-Poiseuille
+        mixed convection for viscoelastic fluids.
+      </a>
+      <p>
+        <em>Journal of Fluid Mechanics</em>, v. 765, p. 167–210, 2015.
+      </p>
+    </li>
+
+    <li>
+      <a href="https://journals.aps.org/pre/abstract/10.1103/PhysRevE.91.023006"
+         target="_blank"
+         rel="noopener noreferrer">
+        <strong>
+          M. Celli, A. Barletta e L. S. de B. Alves.
+        </strong>
+        Marangoni instability of a liquid film flow with viscous dissipation.
+      </a>
+      <p>
+        <em>Physical Review E</em>, v. 91, p. 023006, 2015.
+      </p>
+    </li>
+
+    <li>
+      <a href="https://www.sciencedirect.com/science/article/pii/S129007291500099X?via%3Dihub"
+         target="_blank"
+         rel="noopener noreferrer">
+        <strong>
+          L. S. de B. Alves e A. Barletta.
+        </strong>
+        Convective to absolute instability transition in the Prats flow
+        of a power-law fluid.
+      </a>
+      <p>
+        <em>International Journal of Thermal Sciences</em>,
+        v. 94, p. 270–282, 2015.
+      </p>
+    </li>
+
+    <li>
+      <a href="https://www.sciencedirect.com/science/article/pii/S0017931013009952?via%3Dihub"
+         target="_blank"
+         rel="noopener noreferrer">
+        <strong>
+          L. S. de B. Alves, A. Barletta, S. da C. Hirata e M. N. Ouarzazi.
+        </strong>
+        Effects of viscous dissipation on the convective instability of
+        viscoelastic mixed convection flows in porous media.
+      </a>
+      <p>
+        <em>International Journal of Heat and Mass Transfer</em>,
+        v. 70, p. 586–598, 2014.
+      </p>
+    </li>
+
+    <li>
+      <a href="https://www.researchgate.net/publication/271492099_Equation_of_State_for_Near_Critical_Argon_Obtained_via_Molecular_Dynamics?channel=doi&linkId=54cf6de70cf24601c09374db&showFulltext=true"
+         target="_blank"
+         rel="noopener noreferrer">
+        <strong>
+          J. Nichele, I. Borges Jr e L. S. de B. Alves.
+        </strong>
+        Equation of State for Near Critical Argon Obtained via
+        Molecular Dynamics.
+      </a>
+      <p>
+        <em>High Temperatures, High Pressures</em>,
+        v. 43, p. 385–400, 2014.
+      </p>
+    </li>
+
+    <li>
+      <a href="https://www.sciencedirect.com/science/article/pii/S0017931014007492?via%3Dihub"
+         target="_blank"
+         rel="noopener noreferrer">
+        <strong>
+          A. Barletta e L. S. de B. Alves.
+        </strong>
+        On Gill's stability problem for non-Newtonian Darcy's flow.
+      </a>
+      <p>
+        <em>International Journal of Heat and Mass Transfer</em>,
+        v. 79, p. 759–768, 2014.
+      </p>
+    </li>
+
+    <li>
+      <a href="https://iopscience.iop.org/article/10.1088/1742-6596/547/1/012039"
+         target="_blank"
+         rel="noopener noreferrer">
+        <strong>
+          P. V. Brandão, L. S. de B. Alves e A. Barletta.
+        </strong>
+        Onset of Absolute Instability Induced by Viscous Dissipation
+        in the Poiseuille-Darcy-Benard Convection of a Newtonian Fluid.
+      </a>
+      <p>
+        <em>Journal of Physics: Conference Series</em>,
+        v. 547, p. 012039, 2014.
+      </p>
+    </li>
+
+    <li>
+      <a href="https://iopscience.iop.org/article/10.1088/1742-6596/547/1/012040"
+         target="_blank"
+         rel="noopener noreferrer">
+        <strong>
+          D. J. N. M. Chalhub, L. A. Sphaier e L. S. de B. Alves.
+        </strong>
+        Integral Transform Analysis of Poisson Problems that Occur
+        in Discrete Solutions of the Incompressible Navier-Stokes Equations.
+      </a>
+      <p>
+        <em>Journal of Physics: Conference Series</em>,
+        v. 547, p. 012040, 2014.
+      </p>
+    </li>
+
+    <li>
+      <a href="https://www.sciencedirect.com/science/article/pii/S1290072914002361?via%3Dihub"
+         target="_blank"
+         rel="noopener noreferrer">
+        <strong>
+          P. C. Teixeira e L. S. de B. Alves.
+        </strong>
+        Modeling supercritical heat transfer in compressible fluids.
+      </a>
+      <p>
+        <em>International Journal of Thermal Sciences</em>,
+        v. 88, p. 267–278, 2014.
+      </p>
+    </li>
+
+    <li>
+      <a href="https://www.tandfonline.com/doi/abs/10.1080/10407790.2013.740398"
+         target="_blank"
+         rel="noopener noreferrer">
+        <strong>
+          D. J. N. M. Chalhub, L. A. Sphaier e L. S. de B. Alves.
+        </strong>
+        Integral Transform Solution of Convective Heat Transfer Problems
+        Using Upwind Approximations.
+      </a>
+      <p>
+        <em>Numerical Heat Transfer Part B – Fundamentals</em>,
+        v. 63, p. 167–187, 2013.
+      </p>
+    </li>
+
+    <li>
+      <a href="https://www.sciencedirect.com/science/article/pii/S0017931013001828?via%3Dihub"
+         target="_blank"
+         rel="noopener noreferrer">
+        <strong>
+          L. S. de B. Alves e A. Barletta.
+        </strong>
+        Convective instability of the Darcy-Bénard problem with through
+        flow in a porous layer saturated by a power-law fluid.
+      </a>
+      <p>
+        <em>International Journal of Heat and Mass Transfer</em>,
+        v. 62, p. 495–506, 2013.
+      </p>
+    </li>
+
+    <li>
+      <a href="https://doiserbia.nb.rs/Article.aspx?ID=0354-98361300068d"
+         target="_blank"
+         rel="noopener noreferrer">
+        <strong>
+          L. S. de B. Alves.
+        </strong>
+        An integral transform solution for unsteady compressible heat
+        transfer in fluids near their thermodynamic critical point.
+      </a>
+      <p>
+        <em>Thermal Science</em>, v. 17, p. 673–686, 2013.
+      </p>
+    </li>
+
+    <li>
+      <a href="https://www.tandfonline.com/doi/abs/10.1080/10618562.2011.633903"
+         target="_blank"
+         rel="noopener noreferrer">
+        <strong>
+          R. de S. Teixeira e L. S. de B. Alves.
+        </strong>
+        Modelling far-field entrainment in compressible flows.
+      </a>
+      <p>
+        <em>International Journal of Computational Fluid Dynamics</em>,
+        v. 26, p. 67–78, 2012.
+      </p>
+    </li>
+
+    <li>
+      <a href="https://www.cambridge.org/core/journals/journal-of-fluid-mechanics/article/transversejet-shearlayer-instabilities-part-2-linear-analysis-for-large-jettocrossflow-velocity-ratio/5479CE9B54DC7CE5CC3687DB26BD108E"
+         target="_blank"
+         rel="noopener noreferrer">
+        <strong>
+          L. S. de B. Alves, R. E. Kelly e A. R. Karagozian.
+        </strong>
+        Transverse Jet Shear Layer Instabilities. Part 2. Linear Analysis
+        for Large Jet to Crossflow Velocity Ratio.
+      </a>
+      <p>
+        <em>Journal of Fluid Mechanics</em>, v. 602, p. 383–401, 2008.
+      </p>
+    </li>
+
+    <li>
+      <a href="https://royalsocietypublishing.org/rsta/article/366/1876/2729/30077/A-uniformly-valid-asymptotic-solution-for-a"
+         target="_blank"
+         rel="noopener noreferrer">
+        <strong>
+          R. E. Kelly e L. S. de B. Alves.
+        </strong>
+        A Uniformly Valid Asymptotic Solution for a Transverse Jet and
+        Its Linear Stability Analysis.
+      </a>
+      <p>
+        <em>Philosophical Transactions of the Royal Society</em>,
+        v. 366, p. 2729–2744, 2008.
+      </p>
+    </li>
+
+    <li>
+      <a href="https://www.cambridge.org/core/journals/journal-of-fluid-mechanics/article/local-stability-analysis-of-an-inviscid-transverse-jet/540F5100B488BA1FA1203440EFAA691A"
+         target="_blank"
+         rel="noopener noreferrer">
+        <strong>
+          L. S. de B. Alves, R. E. Kelly e A. R. Karagozian.
+        </strong>
+        Local Stability Analysis of an Inviscid Transverse Jet.
+      </a>
+      <p>
+        <em>Journal of Fluid Mechanics</em>, v. 581, p. 401–418, 2007.
+      </p>
+    </li>
+
+    <li>
+      <a href="https://www.cambridge.org/core/journals/journal-of-fluid-mechanics/article/transversejet-shearlayer-instabilities-part-1-experimental-studies/E1B78073918630A6BF25E6DCC8FD0DED"
+         target="_blank"
+         rel="noopener noreferrer">
+        <strong>
+          S. Megerian, J. Davitian, L. S. de B. Alves e A. R. Karagozian.
+        </strong>
+        Transverse Jet Shear Layer Instabilities. Part 1.
+        Experimental Studies.
+      </a>
+      <p>
+        <em>Journal of Fluid Mechanics</em>, v. 593, p. 93–129, 2007.
+      </p>
+    </li>
+
+    <li>
+      <a href="https://www.cambridge.org/core/journals/journal-of-fluid-mechanics/article/local-stability-analysis-of-an-inviscid-transverse-jet/540F5100B488BA1FA1203440EFAA691A"
+         target="_blank"
+         rel="noopener noreferrer">
+        <strong>
+          L. S. de B. Alves, J. da R. M. Pontes e R. M. Cotta.
+        </strong>
+        Stability Analysis of Natural Convection in Porous Cavities
+        Through Integral Transforms.
+      </a>
+      <p>
+        <em>International Journal of Heat and Mass Transfer</em>,
+        v. 45, p. 1185–1195, 2001.
+      </p>
+    </li>
+
+    <li>
+      <a href="https://www.dl.begellhouse.com/journals/1a37c0433d303e8b,5222bc7304b12bca,4c9f29062d158b47.html"
+         target="_blank"
+         rel="noopener noreferrer">
+        <strong>
+          R. M. Cotta, H. Luz Neto, L. S. de B. Alves e J. N. N. Quaresma.
+        </strong>
+        Integral Transforms for Heat and Fluid Flow in Two- and
+        Three-Dimensional Porous Media.
+      </a>
+      <p>
+        <em>Hybrid Methods in Engineering</em>,
+        v. 3, p. 395–407, 2001.
+      </p>
+    </li>
+
+    <li>
+      <a href="https://www.scielo.br/j/jbsms/a/KzMZxndVZRcVbwq87mZhWRN/?lang=en"
+         target="_blank"
+         rel="noopener noreferrer">
+        <strong>
+          L. S. de B. Alves, R. M. Cotta e M. D. Mikhailov.
+        </strong>
+        Covalidation of Hybrid Integral Transforms and Method of Lines
+        in Nonlinear Convection-Diffusion with Mathematica.
+      </a>
+      <p>
+        <em>Journal of the Brazilian Society of Mechanical Sciences
+        and Engineering</em>, v. 23, p. 303–320, 2001.
+      </p>
+    </li>
+
+    <li>
+      <a href="https://www.tandfonline.com/doi/abs/10.1080/10407780050134983"
+         target="_blank"
+         rel="noopener noreferrer">
+        <strong>
+          L. S. de B. Alves e R. M. Cotta.
+        </strong>
+        Transient Natural Convection Inside Porous Cavities:
+        Hybrid Numerical-Analytical Solution and Mixed
+        Symbolic-Numerical Computation.
+      </a>
+      <p>
+        <em>Numerical Heat Transfer Part A – Applications</em>,
+        v. 38, p. 89–110, 2000.
+      </p>
+    </li>
+
+    <li>
+      <a href="https://www.dl.begellhouse.com/journals/1a37c0433d303e8b,7a0dd8b40eaafd93,47fbd90f5400a031.html"
+         target="_blank"
+         rel="noopener noreferrer">
+        <strong>
+          L. S. de B. Alves, L. A. Sphaier e R. M. Cotta.
+        </strong>
+        Error Analysis of Mixed Lumped-Differential Formulations
+        in Diffusion Problems.
+      </a>
+      <p>
+        <em>Hybrid Methods in Engineering</em>,
+        v. 2, p. 409–435, 2000.
+      </p>
+    </li>
+
+  </ul>
+
+    </section>
+
+    <section id="livros" class="conteudo">
+      <h2>Livros</h2>
+      <ul>
+        <li>
+          <strong>Livro 1:</strong> Resumo do livro...
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. In eget
+            sapien rhoncus, scelerisque ante in, auctor tortor. In malesuada
+            neque orci, a facilisis magna efficitur et. Donec eu dolor quam. In
+            a tellus ullamcorper orci fringilla lobortis ac vel turpis. Nunc
+            aliquam vel eros a ornare. Maecenas urna urna, condimentum sit amet
+            sagittis vel, posuere vel nisl. Sed mollis magna fermentum, viverra
+            dui non, ullamcorper felis. Aliquam pellentesque, lacus nec varius
+            faucibus, ex augue consequat turpis, mattis tristique ex nibh nec
+            nibh. Quisque eget purus non mi commodo interdum nec eget purus.
+            Duis ac velit sodales, vehicula eros sit amet, feugiat velit.
+            Phasellus vulputate sagittis ex quis posuere. Nullam nunc metus,
+            sollicitudin in est in, gravida accumsan libero. Pellentesque dui
+            nisi, facilisis ac ullamcorper et, blandit in diam. Sed porta
+            consectetur mauris, ac laoreet diam viverra quis. Duis vulputate
+            euismod ex, quis eleifend eros semper quis. Maecenas malesuada
+            tellus sit amet lorem scelerisque maximus. Quisque rutrum magna in
+            ipsum pulvinar faucibus. Fusce nisl leo, consectetur nec erat sit
+            amet, imperdiet dapibus nulla. Vivamus et ex sed mauris auctor
+            placerat et quis metus. Mauris vitae risus eu lectus mattis tempus
+            vitae at erat. Quisque et massa erat. Cras tempor felis et massa
+            dictum, et convallis mauris pulvinar. Pellentesque vehicula sagittis
+            nulla, non fermentum justo tincidunt nec. Quisque vulputate l<p class="descricao">
+              Explore nossas Publicações oferecidas pelo
+              DFCom.
+            </p>ectus
+            dui, a auctor nisi tempor quis.
+          </p>
+        </li>
+        <li>
+          <strong>Livro 2:</strong> Descrição...
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. In eget
+            sapien rhoncus, scelerisque ante in, auctor tortor. In malesuada
+            neque orci, a facilisis magna efficitur et. Donec eu dolor quam. In
+            a tellus ullamcorper orci fringilla lobortis ac vel turpis. Nunc
+            aliquam vel eros a ornare. Maecenas urna urna, condimentum sit amet
+            sagittis vel, posuere vel nisl. Sed mollis magna fermentum, viverra
+            dui non, ullamcorper felis. Aliquam pellentesque, lacus nec varius
+            faucibus, ex augue consequat turpis, mattis tristique ex nibh nec
+            nibh. Quisque eget purus non mi commodo interdum nec eget purus.
+            Duis ac velit sodales, vehicula eros sit amet, feugiat velit.
+            Phasellus vulputate sagittis ex quis posuere. Nullam nunc metus,
+            sollicitudin in est in, gravida accumsan libero. Pellentesque dui
+            nisi, facilisis ac ullamcorper et, blandit in diam. Sed porta
+            consectetur mauris, ac laoreet diam viverra quis. Duis vulputate
+            euismod ex, quis eleifend eros semper quis. Maecenas malesuada
+            tellus sit amet lorem scelerisque maximus. Quisque rutrum magna in
+            ipsum pulvinar faucibus. Fusce nisl leo, consectetur nec erat sit
+            amet, imperdiet dapibus nulla. Vivamus et ex sed mauris auctor
+            placerat et quis metus. Mauris vitae risus eu lectus mattis tempus
+            vitae at erat. Quisque et massa erat. Cras tempor felis et massa
+            dictum, et convallis mauris pulvinar. Pellentesque vehicula sagittis
+            nulla, non fermentum justo tincidunt nec. Quisque vulputate lectus
+            dui, a auctor nisi tempor quis.
+          </p>
+        </li>
+        <li>
+          <strong>Livro 3:</strong> Resuminho aqui...
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. In eget
+            sapien rhoncus, scelerisque ante in, auctor tortor. In malesuada
+            neque orci, a facilisis magna efficitur et. Donec eu dolor quam. In
+            a tellus ullamcorper orci fringilla lobortis ac vel turpis. Nunc
+            aliquam vel eros a ornare. Maecenas urna urna, condimentum sit amet
+            sagittis vel, posuere vel nisl. Sed mollis magna fermentum, viverra
+            dui non, ullamcorper felis. Aliquam pellentesque, lacus nec varius
+            faucibus, ex augue consequat turpis, mattis tristique ex nibh nec
+            nibh. Quisque eget purus non mi commodo interdum nec eget purus.
+            Duis ac velit sodales, vehicula eros sit amet, feugiat velit.
+            Phasellus vulputate sagittis ex quis posuere. Nullam nunc metus,
+            sollicitudin in est in, gravida accumsan libero. Pellentesque dui
+            nisi, facilisis ac ullamcorper et, blandit in diam. Sed porta
+            consectetur mauris, ac laoreet diam viverra quis. Duis vulputate
+            euismod ex, quis eleifend eros semper quis. Maecenas malesuada
+            tellus sit amet lorem scelerisque maximus. Quisque rutrum magna in
+            ipsum pulvinar faucibus. Fusce nisl leo, consectetur nec erat sit
+            amet, imperdiet dapibus nulla. Vivamus et ex sed mauris auctor
+            placerat et quis metus. Mauris vitae risus eu lectus mattis tempus
+            vitae at erat. Quisque et massa erat. Cras tempor felis et massa
+            dictum, et convallis mauris pulvinar. Pellentesque vehicula sagittis
+            nulla, non fermentum justo tincidunt nec. Quisque vulputate lectus
+            dui, a auctor nisi tempor quis.
+          </p>
+        </li>
+      </ul>
+    </section>
+
+    <section id="capitulos" class="conteudo">
+      <h2>Capítulos</h2>
+      <ul>
+        <li>
+          <strong>Capítulo 1:</strong> Descrição...
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. In eget
+            sapien rhoncus, scelerisque ante in, auctor tortor. In malesuada
+            neque orci, a facilisis magna efficitur et. Donec eu dolor quam. In
+            a tellus ullamcorper orci fringilla lobortis ac vel turpis. Nunc
+            aliquam vel eros a ornare. Maecenas urna urna, condimentum sit amet
+            sagittis vel, posuere vel nisl. Sed mollis magna fermentum, viverra
+            dui non, ullamcorper felis. Aliquam pellentesque, lacus nec varius
+            faucibus, ex augue consequat turpis, mattis tristique ex nibh nec
+            nibh. Quisque eget purus non mi commodo interdum nec eget purus.
+            Duis ac velit sodales, vehicula eros sit amet, feugiat velit.
+            Phasellus vulputate sagittis ex quis posuere. Nullam nunc metus,
+            sollicitudin in est in, gravida accumsan libero. Pellentesque dui
+            nisi, facilisis ac ullamcorper et, blandit in diam. Sed porta
+            consectetur mauris, ac laoreet diam viverra quis. Duis vulputate
+            euismod ex, quis eleifend eros semper quis. Maecenas malesuada
+            tellus sit amet lorem scelerisque maximus. Quisque rutrum magna in
+            ipsum pulvinar faucibus. Fusce nisl leo, consectetur nec erat sit
+            amet, imperdiet dapibus nulla. Vivamus et ex sed mauris auctor
+            placerat et quis metus. Mauris vitae risus eu lectus mattis tempus
+            vitae at erat. Quisque et massa erat. Cras tempor felis et massa
+            dictum, et convallis mauris pulvinar. Pellentesque vehicula sagittis
+            nulla, non fermentum justo tincidunt nec. Quisque vulputate lectus
+            dui, a auctor nisi tempor quis.
+          </p>
+        </li>
+        <li>
+          <strong>Capítulo 2:</strong> Texto...
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. In eget
+            sapien rhoncus, scelerisque ante in, auctor tortor. In malesuada
+            neque orci, a facilisis magna efficitur et. Donec eu dolor quam. In
+            a tellus ullamcorper orci fringilla lobortis ac vel turpis. Nunc
+            aliquam vel eros a ornare. Maecenas urna urna, condimentum sit amet
+            sagittis vel, posuere vel nisl. Sed mollis magna fermentum, viverra
+            dui non, ullamcorper felis. Aliquam pellentesque, lacus nec varius
+            faucibus, ex augue consequat turpis, mattis tristique ex nibh nec
+            nibh. Quisque eget purus non mi commodo interdum nec eget purus.
+            Duis ac velit sodales, vehicula eros sit amet, feugiat velit.
+            Phasellus vulputate sagittis ex quis posuere. Nullam nunc metus,
+            sollicitudin in est in, gravida accumsan libero. Pellentesque dui
+            nisi, facilisis ac ullamcorper et, blandit in diam. Sed porta
+            consectetur mauris, ac laoreet diam viverra quis. Duis vulputate
+            euismod ex, quis eleifend eros semper quis. Maecenas malesuada
+            tellus sit amet lorem scelerisque maximus. Quisque rutrum magna in
+            ipsum pulvinar faucibus. Fusce nisl leo, consectetur nec erat sit
+            amet, imperdiet dapibus nulla. Vivamus et ex sed mauris auctor
+            placerat et quis metus. Mauris vitae risus eu lectus mattis tempus
+            vitae at erat. Quisque et massa erat. Cras tempor felis et massa
+            dictum, et convallis mauris pulvinar. Pellentesque vehicula sagittis
+            nulla, non fermentum justo tincidunt nec. Quisque
+          </p>
+        </li>
+      </ul>
+    </section>
+    <a href="#topo" class="btn-topo">Voltar para o topo</a>
+
+    <!-- RODAPÉ -->
+    <footer>© 2025 Universidade Federal Fluminense - DFCom.</footer>
+  </body>
+
+</html>

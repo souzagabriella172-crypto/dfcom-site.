@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Notícias - DFCom UFF</title>
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      /* Mesmo visual da antiga classe .sobre (styles.css) */
+      .noticias {
+        max-width: 900px;
+        margin: 100px auto;
+        padding: 20px;
+        line-height: 1.8;
+      }
+
+      .noticias h1,
+      .noticias h2 {
+        color: #003366;
+        text-align: center;
+        margin-bottom: 15px;
+      }
+
+      @media (max-width: 768px) {
+        .noticias {
+          margin: 80px auto;
+          padding: 20px 16px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul class="menu">
+          <li><a href="index.html">Início</a></li>
+          <li><a href="sobre.html">O DFCom</a></li>
+          <li><a href="cursos.html">Cursos</a></li>
+          <li><a href="noticias.html">Notícias</a></li>
+          <li><a href="contato.html">Contato</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section class="noticias">
+        <h1>Notícias e Atualizações</h1>
+        <p>
+          Fique por dentro das novidades do DFCom: eventos, pesquisas em
+          andamento, publicações e conquistas acadêmicas da equipe.
+        </p>
+
+        <!-- Área de notícias: adicionar cada notícia aqui dentro -->
+        <div class="lista-noticias">
+          <p class="sem-noticias">Nenhuma notícia publicada no momento.</p>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>© 2025 Universidade Federal Fluminense - DFCom</p>
+    </footer>
+  </body>
+</html>

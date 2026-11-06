@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Aerodinâmica de Alta Velocidade - DFCom</title>
+
+
+<style>
+
+/* ==========================
+   ESTILO GERAL
+=========================== */
+
+
+body {
+
+font-family: Arial, Helvetica, sans-serif;
+
+margin:0;
+
+padding:0;
+
+background:#fff;
+
+color:#333;
+
+}
+
+
+
+html{
+
+scroll-behavior:smooth;
+
+}
+
+
+/* ==========================
+   MENU FIXO
+=========================== */
+
+
+header{
+
+background-color:#003366;
+
+height:80px;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+position:fixed;
+
+top:0;
+
+left:0;
+
+width:100%;
+
+z-index:1000;
+
+box-shadow:0 2px 5px rgba(0,0,0,0.1);
+
+}
+
+
+
+.menu{
+
+list-style:none;
+
+display:flex;
+
+gap:40px;
+
+margin:0;
+
+padding:0;
+
+}
+
+
+
+.menu a{
+
+text-decoration:none;
+
+color:white;
+
+font-size:1.1rem;
+
+font-weight:500;
+
+transition:.3s;
+
+}
+
+
+
+.menu a:hover{
+
+color:#ffcc00;
+
+}
+
+
+
+/* ==========================
+   CONTEÚDO
+=========================== */
+
+
+main{
+
+max-width:900px;
+
+margin:120px auto 60px;
+
+padding:20px;
+
+}
+
+
+
+h1{
+
+text-align:center;
+
+color:#003366;
+
+margin-bottom:30px;
+
+font-size:2.3rem;
+
+}
+
+
+
+.introducao{
+
+font-size:1.1rem;
+
+line-height:1.8;
+
+text-align:justify;
+
+margin-bottom:50px;
+
+}
+
+
+
+/* ==========================
+   NÍVEIS
+=========================== */
+
+
+.nivel{
+
+background:#f7f9fc;
+
+border-left:7px solid #003366;
+
+padding:30px;
+
+border-radius:12px;
+
+margin-bottom:50px;
+
+box-shadow:0 3px 10px rgba(0,0,0,.08);
+
+}
+
+
+
+.nivel h2{
+
+color:#003366;
+
+margin-bottom:25px;
+
+font-size:1.8rem;
+
+}
+
+
+
+.nivel p{
+
+line-height:1.8;
+
+text-align:justify;
+
+margin-bottom:15px;
+
+}
+
+
+
+/* ==========================
+   VIDEOAULA
+=========================== */
+
+
+.video-box{
+
+background:#003366;
+
+color:white;
+
+padding:35px;
+
+border-radius:12px;
+
+text-align:center;
+
+margin-top:60px;
+
+}
+
+
+
+.video-box h2{
+
+color:white;
+
+}
+
+
+
+.video-box a{
+
+display:inline-block;
+
+margin-top:20px;
+
+background:#ffcc00;
+
+color:#003366;
+
+padding:12px 25px;
+
+border-radius:8px;
+
+text-decoration:none;
+
+font-weight:bold;
+
+}
+
+
+
+/* ==========================
+   BOTÃO VOLTAR
+=========================== */
+
+
+.voltar{
+
+display:inline-block;
+
+margin-top:40px;
+
+padding:12px 25px;
+
+background:#003366;
+
+color:white;
+
+text-decoration:none;
+
+border-radius:8px;
+
+font-weight:bold;
+
+}
+
+
+
+.voltar:hover{
+
+background:#001f4d;
+
+}
+
+
+
+/* ==========================
+   RODAPÉ
+=========================== */
+
+
+footer{
+
+background:#003366;
+
+color:white;
+
+text-align:center;
+
+padding:20px;
+
+margin-top:50px;
+
+}
+
+
+/* Menu no celular - mesmo padrão do index.html (styles.css) */
+@media(max-width:768px){
+
+header{
+height:70px;
+padding:10px 0;
+box-sizing:border-box;
+}
+
+header nav{
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+height:100%;
+}
+
+.menu{
+gap:10px;
+padding:0;
+margin:0;
+flex-wrap:wrap;
+justify-content:center;
+}
+
+.menu a{
+font-size:13px;
+padding:4px 0;
+text-align:center;
+}
+
+}
+
+</style>
+
+
+</head>
+
+
+<body>
+
+
+
+<header>
+
+<nav>
+
+<ul class="menu">
+
+<li><a href="index.html">Início</a></li>
+
+<li><a href="sobre.html">O DFCom</a></li>
+
+<li><a href="cursos.html">Cursos</a></li>
+
+<li><a href="noticias.html">Notícias</a></li>
+
+<li><a href="contato.html">Contato</a></li>
+
+</ul>
+
+</nav>
+
+</header>
+
+
+
+
+<main>
+
+
+
+<h1>
+Aerodinâmica de Alta Velocidade
+</h1>
+
+
+
+<p class="introducao">
+
+
+A <strong>Aerodinâmica de Alta Velocidade</strong> estuda o comportamento dos
+fluidos quando corpos se movimentam em velocidades próximas ou superiores à
+velocidade do som.
+
+Essa área possui aplicações em aeronaves supersônicas, foguetes, veículos
+hipersônicos e tecnologias aeroespaciais avançadas.
+
+
+</p>
+
+
+
+
+<section class="nivel">
+
+
+<h2>
+Nível 1: Iniciante
+</h2>
+
+
+<p>
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+A aerodinâmica de alta velocidade estuda como o ar se comporta quando um corpo
+se desloca em velocidades elevadas.
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+Nesse regime surgem novos fenômenos físicos que não aparecem em velocidades
+convencionais.
+
+</p>
+
+
+<p>
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+O conhecimento desses conceitos permite compreender como aeronaves e veículos
+espaciais conseguem operar em condições extremas.
+
+</p>
+
+
+</section>
+
+
+
+
+
+
+
+<section class="nivel">
+
+
+<h2>
+Nível 2: Intermediário
+</h2>
+
+
+
+<p>
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+O estudo intermediário envolve análises mais detalhadas dos fenômenos
+aerodinâmicos presentes em regimes supersônicos e hipersônicos.
+
+</p>
+
+
+
+<p>
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+São considerados fatores como variações de pressão, temperatura, forças
+aerodinâmicas e comportamento dos escoamentos compressíveis.
+
+</p>
+
+
+
+<p>
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+Esses estudos são fundamentais para otimizar projetos de engenharia e melhorar
+o desempenho de sistemas aeroespaciais.
+
+</p>
+
+
+</section>
+
+
+
+
+
+
+
+<section class="nivel">
+
+
+<h2>
+Nível 3: Avançado
+</h2>
+
+
+
+<p>
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+No nível avançado são estudados fenômenos complexos relacionados a altas
+temperaturas, ondas de choque e simulações computacionais avançadas.
+
+</p>
+
+
+
+<p>
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+Modelos matemáticos e ferramentas de Dinâmica dos Fluidos Computacional (CFD)
+são utilizados para prever o comportamento dos fluidos em condições extremas.
+
+</p>
+
+
+
+<p>
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+As pesquisas avançadas contribuem para o desenvolvimento de tecnologias
+aeroespaciais de próxima geração.
+
+</p>
+
+
+</section>
+
+
+
+
+
+
+
+<section class="video-box">
+
+
+<h2>
+Videoaula - Aerodinâmica de Alta Velocidade
+</h2>
+
+
+<p>
+
+Acesse uma videoaula preparada pelo DFCom para aprofundar seus conhecimentos
+sobre esta linha de pesquisa.
+
+</p>
+
+
+
+<a href="#">
+
+Assistir Videoaula
+
+</a>
+
+
+</section>
+
+
+
+
+
+<a href="pesquisa.html" class="voltar">
+
+← Voltar para Linhas de Pesquisa
+
+</a>
+
+
+
+</main>
+
+
+
+
+<footer>
+
+© 2025 Universidade Federal Fluminense - DFCom.
+
+</footer>
+
+
+
+</body>
+
+</html>

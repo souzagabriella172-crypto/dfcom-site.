@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Códigos – DFCom UFF</title>
+    <style>
+      /* ===================== RESET ===================== */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+      
+
+      body {
+        backgrounblob: #f5f7fa;
+        color: #333;
+      }
+
+      /* ===================== HEADER ===================== */
+      header {
+        background-color: #003366;
+        height: 80px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      }
+
+      nav ul {
+        list-style: none;
+        display: flex;
+        gap: 40px;
+      }
+
+      nav a {
+        text-decoration: none;
+        color: white;
+        font-weight: 500;
+        font-size: 1.1rem;
+        transition: 0.3s;
+      }
+
+      nav a:hover {
+        opacity: 0.7;
+      }
+
+      /* ===================== CONTEÚDO ===================== */
+      .codigo-container {
+        width: 80%;
+        margin: 130px auto 50px auto;
+        display: flex;
+        flex-direction: column;
+        gap: 35px;
+      }
+
+      .codigo-container h1 {
+        font-size: 2rem;
+        margin-bottom: 30px;
+        color: #003366;
+        text-align: center;
+      }
+
+      .codigo-card {
+        background: #f4f4f4;
+        padding: 25px;
+        border-radius: 14px;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      .codigo-card h3 {
+        margin-bottom: 15px;
+        font-size: 1.3rem;
+        color: #00264d;
+      }
+
+      pre {
+        background: #1e1e1e;
+        color: #ffffff;
+        padding: 18px;
+        border-radius: 10px;
+        overflow-x: auto;
+        font-size: 0.95rem;
+        line-height: 1.4;
+        margin-bottom: 15px;
+      }
+
+      .copiar-btn {
+        padding: 10px 16px;
+        background: #003366;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 0.9rem;
+        transition: 0.3s;
+      }
+
+      .copiar-btn:hover {
+        background: #00509e;
+      }
+
+      /* ===================== FOOTER ===================== */
+      footer {
+        background-color: #003366;
+        color: white;
+        text-align: center;
+        padding: 20px 0;
+        margin-top: 40px;
+      }
+      .btn-topo {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background: #1f3c88;
+        color: white;
+        padding: 12px 16px;
+        border-radius: 50%;
+        z-index: 1000;
+        cursor: pointer;
+        text-decoration: none;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        transition: all 0.3s ease;
+      }
+
+      .btn-topo:hover {
+        background: #3a59b3;
+        transform: scale(1.2);
+        box-shadow: 0 6px 8px rgba(0, 0, 0, 0.5);
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+      /* ==========================
+   MENU NO CELULAR
+=========================== */
+@media (max-width: 768px) {
+  header {
+    height: 70px;
+    padding: 10px 0;
+  }
+
+  header nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+  }
+
+  nav ul {
+    gap: 12px;
+    padding: 0;
+    margin: 0;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  nav ul li {
+    margin: 0;
+  }
+
+  nav a {
+    font-size: 15px;
+    padding: 4px 0;
+    text-align: center;
+  }
+
+  body {
+    padding-top: 70px;
+  }
+
+  .codigo-container {
+    width: 100%;
+    margin-top: 30px;
+    padding: 0 15px;
+  }
+
+  .codigo-container h1 {
+    font-size: 1.7rem;
+  }
+
+  .codigo-card {
+    padding: 18px;
+  }
+
+  pre {
+    font-size: 0.85rem;
+  }
+}
+    </style>
+  </head>
+
+  <body>
+    <!-- ===================== HEADER ===================== -->
+    <header>
+      <nav>
+        <ul>
+          <li><a href="index.html">Início</a></li>
+          <li><a href="sobre.html">O DFCom</a></li>
+          <li><a href="cursos.html">Cursos</a></li>
+          <li><a href="noticias.html">Notícias</a></li>
+          <li><a href="contato.html">Contato</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- ===================== CONTEÚDO ===================== -->
+    <section class="codigo-container">
+      <h1>Códigos do Grupo</h1>
+
+      <!-- CARD 1 -->
+      <div class="codigo-card">
+        <h3>Exemplo de Código 1</h3>
+        <p>Este código realiza uma soma simples.</p>
+        <pre><code id="codigo1">
+
+def somar(a, b):
+return a + b
+
+print(somar(5, 7)) </code></pre>
+        <button class="copiar-btn" onclick="copiarCodigo('codigo1', this)">
+          Copiar código
+        </button>
+      </div>
+
+      <!-- CARD 2 -->
+      <div class="codigo-card">
+        <h3>Exemplo de Código 2</h3>
+        <p>Este código imprime números de 0 a 9.</p>
+        <pre><code id="codigo2">
+
+
+for i in range(10):
+print("UFF", i) </code></pre>
+        <button class="copiar-btn" onclick="copiarCodigo('codigo2', this)">
+          Copiar código
+        </button>
+      </div>
+
+      <!-- CARD 3 -->
+      <div class="codigo-card">
+        <h3>Exemplo de Código 3</h3>
+        <p>Este código verifica se um número é par ou ímpar.</p>
+        <pre><code id="codigo3">
+
+
+num = 7
+if num % 2 == 0:
+print("Par")
+else:
+print("Ímpar") </code></pre>
+        <button class="copiar-btn" onclick="copiarCodigo('codigo3', this)">
+          Copiar código
+        </button>
+      </div>
+
+      <!-- CARD 4 -->
+      <div class="codigo-card">
+        <h3>Exemplo de Código 4</h3>
+        <p>Este código gera uma lista de números ao quadrado.</p>
+        <pre><code id="codigo4">
+
+
+quadrados = [x**2 for x in range(10)]
+print(quadrados) </code></pre>
+        <button class="copiar-btn" onclick="copiarCodigo('codigo4', this)">
+          Copiar código
+        </button>
+      </div>
+    </section>
+
+    <!-- ===================== FOOTER ===================== -->
+    <footer>© 2025 DFCom UFF — Todos os direitos reservados.</footer>
+
+    <!-- ===================== SCRIPT ===================== -->
+    <script>
+      function copiarCodigo(id, botao) {
+        const codigo = document.getElementById(id).innerText;
+        navigator.clipboard.writeText(codigo).then(() => {
+          botao.innerText = "Copiado!";
+          botao.style.background = "#2e7d32";
+
+          setTimeout(() => {
+            botao.innerText = "Copiar código";
+            botao.style.background = "#003366";
+          }, 2000);
+        });
+      }
+    </script>
+    ```
+    <a href="#" class="btn-topo">Voltar ao Topo</a>
+  </body>
+</html>

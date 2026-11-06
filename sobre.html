@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sobre - DFCom UFF</title>
+
+
+    <style>
+      /* ======================================= */
+      /*                 HEADER                  */
+      /* ======================================= */
+      header {
+        background-color: #003366;
+        height: 80px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+
+      nav ul {
+        list-style: none;
+        display: flex;
+        gap: 40px;
+        margin: 0;
+        padding: 0;
+      }
+
+      nav a {
+        text-decoration: none;
+        color: #ffffff;
+        font-weight: 500;
+        font-size: 1.1rem;
+        transition: 0.3s ease;
+        font-family: Arial, sans-serif;
+      }
+
+      nav a:hover {
+        color: #ffcc00;
+      }
+
+      /* ======================================= */
+      /*               CONTEÚDO                  */
+      /* ======================================= */
+      main {
+        max-width: 1000px;
+        margin: 120px auto 40px auto;
+        padding: 0 20px;
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+      }
+
+      h1 {
+        font-size: 2.2rem;
+        color: #003366;
+        margin-bottom: 20px;
+      }
+
+      p {
+        font-size: 1.1rem;
+        color: #333;
+        margin-bottom: 20px;
+      }
+
+      /* ======================================= */
+      /*                CARDS B                  */
+      /* ======================================= */
+      .cards-brancos {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 25px;
+        margin-top: 30px;
+      }
+
+      .card-branco {
+        background-color: white;
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        transition: transform 0.2s ease;
+        border-left: 5px solid #003366;
+      }
+
+      .card-branco:hover {
+        transform: translateY(-3px);
+      }
+
+      .card-branco h3 {
+        margin: 0 0 10px 0;
+        font-size: 1.4rem;
+        color: #003366;
+      }
+
+      .card-branco p {
+        margin: 0;
+        color: #444;
+      }
+
+      /* ======================================= */
+      /*                  RODAPÉ                 */
+      /* ======================================= */
+      footer {
+        background-color: #003366;
+        color: white;
+        text-align: center;
+        padding: 20px;
+        margin-top: 50px;
+      }
+      /* =================================================
+   MENU NO CELULAR — IGUAL À HOME
+================================================= */
+
+@media (max-width: 768px) {
+
+  header {
+    height: 70px;
+    padding: 10px 0;
+  }
+
+  header nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+  }
+
+  nav ul {
+    gap: 12px;
+    padding: 0;
+    margin: 0;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  header ul li {
+    margin: 0;
+  }
+
+  header a {
+    font-size: 15px;
+    padding: 4px 0;
+    text-align: center;
+  }
+
+  body {
+    padding-top: 70px;
+  }
+}
+    </style>
+  </head>
+
+  <body>
+    <!-- ========== HEADER ========== -->
+    <header>
+      <nav>
+        <ul>
+          <li><a href="index.html">Início</a></li>
+          <li><a href="sobre.html">O DFCom</a></li>
+          <li><a href="cursos.html">Cursos</a></li>
+          <li><a href="noticias.html">Notícias</a></li>
+          <li><a href="contato.html">Contato</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- ========== CONTEÚDO ========== -->
+    <main>
+      <h1>O que fazemos?</h1>
+      <p>
+        Estudamos sistemas dinâmicos. Eles são os nossos modelos da realidade. 
+        Nós os usamos para descrever o mundo a nossa volta e como ele evolui com o tempo.
+         Esse conceito tem aproximadamente 300 anos de idade, devido a sua origem na mecânica Newtoniana.
+          Desde então, ele vem sendo utilizado para descrever o comportamento de fenômenos dos mais simples,
+          como o balanço de um pêndulo, aos mais complexos, como o clima do planeta.
+          Nosso foco está voltado para sistemas dinâmicos em fenômenos de transporte, i.e. na área de mecânica dos fluidos e transferência de calor e massa.  
+      </p>
+
+      <p>
+         Estudamos a estabilidade de sistemas dinâmicos. Ou melhor, simulamos computacionalmente como sistemas dinâmicos se comportam quando são perturbados para longe de seus respectivos estados de equilíbrio.
+          Para fazê-lo, um ferramental teórico e numérico sofisticado é utilizado. Seguimos três caminhos distintos:
+      </p>
+
+      <h1>Como fazemos?</h1>
+
+      <div class="cards-brancos">
+        <div class="card-branco">
+          <h3>1) Análise de estabilidade linear</h3>
+          <p>
+            Onde estudamos uma versão linearizada do sistema dinâmico deduzida assumindo que essas perturbações possuem uma pequena amplitude, 
+            o que permite mapear a sensibilidade paramétrica do modelo e prever respostas transitórias frente a distúrbios operacionais.
+          </p>
+        </div>
+
+        <div class="card-branco">
+          <h3>2) Análise não-linear de baixa dimensão</h3>
+          <p>
+            Onde estudamos versões simplificadas desse sistema dinâmico conhecidas como modelos de ordem reduzida que são obtidos através de diversas técnicas, como Galerkin truncado e aprendizado de máquina,
+             permitindo a identificação de padrões e a análise qualitativa de bifurcações e atratores de forma eficiente.
+          </p>
+        </div>
+
+        <div class="card-branco">
+          <h3>3) Simulação numérica direta</h3>
+          <p>
+            Onde estudamos o sistema dinâmico em sua forma e complexidade original para determinar tanto seus estados de equilíbrio instáveis quanto seu comportamento transiente em torno deles, 
+            o que viabiliza a caracterização exata de bifurcações complexas e regimes de transição não-lineares."
+          </p>
+        </div>
+      </div>
+
+      <h1>Por que fazemos?</h1>
+      <p>
+        “Tudo vale a pena se a alma não é pequena.” — Fernando Pessoa. Entender
+        sistemas dinâmicos é entender o funcionamento profundo da natureza. É
+        produzir conhecimento que explica o mundo.
+      </p>
+    </main>
+
+    <!-- RODAPÉ -->
+    <footer>© 2025 Universidade Federal Fluminense - DFCom.</footer>
+  </body>
+</html>

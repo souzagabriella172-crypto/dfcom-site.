@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TCC - DFCom UFF</title>
+    <style>
+      /* RESET */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Open Sans", Arial, sans-serif;
+      }
+
+      body {
+        background: #f5f7fa;
+        color: #333;
+      }
+
+      /* HEADER */
+      header {
+        background-color: #003366;
+        height: 80px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 1000;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+
+      nav ul {
+        list-style: none;
+        display: flex;
+        gap: 40px;
+      }
+
+      nav a {
+        text-decoration: none;
+        color: #fff;
+        font-weight: 500;
+        font-size: 1.1rem;
+        transition: 0.3s;
+      }
+
+      nav a:hover {
+        color: #ffcc00;
+      }
+
+      main {
+        margin-top: 100px;
+        padding: 20px;
+        text-align: center;
+      }
+
+      h1 {
+        color: #003366;
+        margin-bottom: 20px;
+      }
+
+      p.descricao {
+        color: #444;
+        margin-bottom: 40px;
+        font-size: 1.1rem;
+      }
+
+      /* CARDS GRANDES */
+      .grade-tcc {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 25px;
+      }
+
+      .card-tcc {
+        width: 90%;
+        max-width: 900px;
+        background: #ffffff;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        text-align: left;
+        display: flex;
+        flex-direction: row;
+        text-decoration: none;
+        color: inherit;
+      }
+
+      .card-tcc:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+      }
+
+      .card-tcc img {
+        width: 40%;
+        object-fit: cover;
+      }
+
+      .card-tcc .conteudo {
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 60%;
+      }
+
+      .card-tcc h3 {
+        color: #003366;
+        margin-bottom: 10px;
+        font-size: 1.4rem;
+      }
+
+      .card-tcc p {
+        color: #555;
+        margin-bottom: 5px;
+        font-size: 1rem;
+      }
+
+      .btn-visualizar {
+        display: inline-block;
+        margin-top: 10px;
+        background-color: #003366;
+        color: white;
+        padding: 8px 18px;
+        border-radius: 5px;
+        text-decoration: none;
+        font-size: 0.95rem;
+        transition: 0.3s;
+        align-self: flex-start;
+      }
+
+      .btn-visualizar:hover {
+        background-color: #0055aa;
+      }
+
+      footer {
+        background-color: #003366;
+        color: white;
+        text-align: center;
+        padding: 25px 0;
+        font-size: 0.9rem;
+        margin-top: 60px;
+      }
+
+      /* RESPONSIVO */
+      @media (max-width: 900px) {
+        .card-tcc {
+          flex-direction: column;
+          width: 95%;
+        }
+        .card-tcc img {
+          width: 100%;
+          height: 250px;
+        }
+        .card-tcc .conteudo {
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- MENU -->
+    <header>
+      <nav>
+        <ul>
+          <li><a href="index.html">Início</a></li>
+          <li><a href="sobre.html">O DFCom</a></li>
+          <li><a href="cursos.html">Cursos</a></li>
+          <li><a href="noticias.html">Notícias</a></li>
+          <li><a href="contato.html">Contato</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main>
+      <h1>Trabalhos de Conclusão de Curso (TCC)</h1>
+      <p class="descricao">
+        Confira os trabalhos de nossos alunos de graduação.
+      </p>
+
+      <section class="grade-tcc">
+        <!-- Card 1 -->
+        <a href="#" class="card-tcc">
+          <img
+            src="https://via.placeholder.com/360x240?text=TCC+1"
+            alt="TCC 1"
+          />
+          <div class="conteudo">
+            <h3>Arquitetura colonial de Tiradentes : guia prático</h3>
+            <p><strong>Autor:</strong> ALMEIDA, Karina</p>
+            <p>
+              <strong>Palavras-chave:</strong> Arquitetura colonial. Tiradentes
+              - MG.
+            </p>
+            <p><strong>Orientador:</strong> Almeida, Karina</p>
+            <p><strong>Área:</strong> ARQ</p>
+            <p><strong>Ano:</strong> 2025</p>
+            <p><strong>Nível:</strong> Graduação</p>
+            <span class="btn-visualizar">Visualizar</span>
+          </div>
+        </a>
+
+        <!-- Card 2 -->
+        <a href="#" class="card-tcc">
+          <img
+            src="https://via.placeholder.com/360x240?text=TCC+2"
+            alt="TCC 2"
+          />
+          <div class="conteudo">
+            <h3>
+              Análise crítica dos processos orçamentários na administração
+              pública
+            </h3>
+            <p><strong>Autor:</strong> Dias, Gustavo Chaves</p>
+            <p>
+              <strong>Palavras-chave:</strong> Orçamento público. Gestão
+              orçamentária. Receita pública.
+            </p>
+            <p><strong>Orientador:</strong> Quiroga, Maria del Pilar Salinas</p>
+            <p><strong>Área:</strong> CCO</p>
+            <p><strong>Ano:</strong> 2025</p>
+            <p><strong>Nível:</strong> Graduação</p>
+            <span class="btn-visualizar">Visualizar</span>
+          </div>
+        </a>
+
+        <!-- Card 3 -->
+        <a href="#" class="card-tcc">
+          <img
+            src="https://via.placeholder.com/360x240?text=TCC+3"
+            alt="TCC 3"
+          />
+          <div class="conteudo">
+            <h3>
+              Ingestão de líquido amniótico meconial no parto: relato de caso
+            </h3>
+            <p><strong>Autor:</strong> COELHO, Izabela Das</p>
+            <p>
+              <strong>Palavras-chave:</strong> Líquido amniótico. Mecônio.
+              Síndrome de aspiração meconial.
+            </p>
+            <p>
+              <strong>Orientador:</strong> PINTO, Eliângela Saraiva Oliveira
+            </p>
+            <p><strong>Área:</strong> ENF</p>
+            <p><strong>Ano:</strong> 2025</p>
+            <p><strong>Nível:</strong> Graduação</p>
+            <span class="btn-visualizar">Visualizar</span>
+          </div>
+        </a>
+
+        <!-- Card 4 -->
+        <a href="#" class="card-tcc">
+          <img
+            src="https://via.placeholder.com/360x240?text=TCC+4"
+            alt="TCC 4"
+          />
+          <div class="conteudo">
+            <h3>
+              Desafios no processo de comunicação na equipe de enfermagem em
+              centro cirúrgico
+            </h3>
+            <p><strong>Autor:</strong> MARTINS, Jéssica</p>
+            <p>
+              <strong>Palavras-chave:</strong> Centro Cirúrgico. Comunicação.
+              Enfermagem. Relações interpessoais
+            </p>
+            <p><strong>Orientador:</strong> ROCHA, Leonardo Santana</p>
+            <p><strong>Área:</strong> ENF</p>
+            <p><strong>Ano:</strong> 2025</p>
+            <p><strong>Nível:</strong> Graduação</p>
+            <span class="btn-visualizar">Visualizar</span>
+          </div>
+        </a>
+
+        <!-- Card 5 -->
+        <a href="#" class="card-tcc">
+          <img
+            src="https://via.placeholder.com/360x240?text=TCC+5"
+            alt="TCC 5"
+          />
+          <div class="conteudo">
+            <h3>
+              Viabilidade para aplicação da auditoria e certificação ambiental
+              em uma papelaria de pequeno porte
+            </h3>
+            <p><strong>Autor:</strong> LEONARDO, Thiago Abraão Silva</p>
+            <p>
+              <strong>Palavras-chave:</strong> Auditoria Ambiental. Certificação
+              Ambiental. Sustentabilidade. Papelaria. Microempresa.
+            </p>
+            <p><strong>Orientador:</strong> GALVARRO, Svetlana Fialho Nunes</p>
+            <p><strong>Área:</strong> EAM</p>
+            <p><strong>Ano:</strong> 2025</p>
+            <p><strong>Nível:</strong> Graduação</p>
+            <span class="btn-visualizar">Visualizar</span>
+          </div>
+        </a>
+      </section>
+    </main>
+
+    <footer>© 2025 Universidade Federal Fluminense - DFCom.</footer>
+  </body>
+</html>

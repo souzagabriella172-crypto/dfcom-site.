@@ -1,0 +1,154 @@
+/* =======================================
+   Provas rápidas – DFCom/UFF
+   Estilo das páginas prova/index.html e prova/painel.html.
+   Segue a paleta do site: azul UFF #003366, destaque #ffcc00,
+   fundo #f5f7fa, fonte Open Sans.
+   ======================================= */
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: "Open Sans", Arial, sans-serif; }
+
+:root {
+  --azul: #003366;
+  --azul-claro: #0055aa;
+  --amarelo: #ffcc00;
+  --fundo: #f5f7fa;
+  --texto: #333;
+  --cinza: #666;
+  --borda: #d9dee6;
+  --verde: #1e8e3e;
+  --verde-fundo: #e6f4ea;
+  --vermelho: #c5221f;
+  --vermelho-fundo: #fce8e6;
+  --laranja: #b06000;
+  --laranja-fundo: #fff4e5;
+}
+
+body { background: var(--fundo); color: var(--texto); min-height: 100vh; }
+
+/* ---------- cabeçalho (mesma barra do site) ---------- */
+header {
+  background: var(--azul); height: 64px; display: flex; align-items: center; justify-content: space-between;
+  padding: 0 24px; position: sticky; top: 0; z-index: 10; box-shadow: 0 2px 5px rgba(0,0,0,.15);
+}
+header .marca { color: #fff; font-weight: 600; font-size: 1.05rem; text-decoration: none; }
+header .marca span { color: var(--amarelo); }
+header nav a { color: #fff; text-decoration: none; margin-left: 20px; font-size: .95rem; }
+header nav a:hover { color: var(--amarelo); }
+
+main { max-width: 960px; margin: 28px auto 60px; padding: 0 16px; }
+main.larga { max-width: 1200px; }
+
+h1 { color: var(--azul); font-size: 1.5rem; margin-bottom: 6px; }
+h2 { color: var(--azul); font-size: 1.15rem; margin-bottom: 10px; }
+.sub { color: var(--cinza); margin-bottom: 20px; }
+
+/* ---------- cartões e formulários ---------- */
+.cartao { background: #fff; border-radius: 12px; padding: 22px; box-shadow: 0 4px 10px rgba(0,0,0,.06); margin-bottom: 18px; }
+label { display: block; font-weight: 600; margin: 12px 0 6px; font-size: .95rem; }
+input[type=text], input[type=password], select {
+  width: 100%; padding: 11px 12px; border: 1px solid var(--borda); border-radius: 8px; font-size: 1rem; background: #fff;
+}
+input:focus, select:focus { outline: 2px solid var(--azul-claro); border-color: var(--azul-claro); }
+.linha { display: flex; gap: 14px; flex-wrap: wrap; }
+.linha > * { flex: 1 1 200px; }
+
+.botao {
+  display: inline-block; background: var(--azul); color: #fff; border: 0; padding: 11px 22px; border-radius: 8px;
+  font-size: 1rem; cursor: pointer; text-decoration: none; transition: .2s;
+}
+.botao:hover { background: var(--azul-claro); }
+.botao:disabled { background: #9aa7b8; cursor: not-allowed; }
+.botao.secundario { background: #fff; color: var(--azul); border: 1px solid var(--azul); }
+.botao.secundario:hover { background: #eef3fa; }
+.botao.perigo { background: var(--vermelho); }
+.botao.perigo:hover { background: #a50e0e; }
+.botao.ok { background: var(--verde); }
+.botao.ok:hover { background: #166f30; }
+.botao.pequeno { padding: 6px 12px; font-size: .85rem; }
+.acoes { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 16px; align-items: center; }
+
+/* ---------- avisos ---------- */
+.aviso { border-radius: 8px; padding: 12px 14px; margin: 12px 0; font-size: .95rem; display: none; }
+.aviso.mostrar { display: block; }
+.aviso.erro { background: var(--vermelho-fundo); color: var(--vermelho); border: 1px solid #f5c2c0; }
+.aviso.info { background: #e8f0fe; color: #174ea6; border: 1px solid #c6d9fb; }
+.aviso.sucesso { background: var(--verde-fundo); color: var(--verde); border: 1px solid #b7e1c1; }
+.aviso.alerta { background: var(--laranja-fundo); color: var(--laranja); border: 1px solid #f4d9a6; }
+
+/* ---------- barra da prova (aluno) ---------- */
+.barra-prova {
+  position: sticky; top: 64px; z-index: 5; background: #fff; border-radius: 12px; padding: 12px 18px;
+  display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap;
+  box-shadow: 0 4px 10px rgba(0,0,0,.08); margin-bottom: 18px;
+}
+.barra-prova .quem { font-size: .95rem; }
+.barra-prova .quem strong { color: var(--azul); }
+.relogio { font-variant-numeric: tabular-nums; font-size: 1.6rem; font-weight: 700; color: var(--azul); }
+.relogio.pouco { color: var(--vermelho); }
+.progresso { font-size: .9rem; color: var(--cinza); }
+
+/* ---------- questões ---------- */
+.questoes { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 12px; }
+.questao { background: #fff; border-radius: 12px; padding: 14px; box-shadow: 0 2px 6px rgba(0,0,0,.05); }
+.questao .num { font-weight: 700; color: var(--azul); margin-bottom: 10px; display: flex; justify-content: space-between; align-items: center; }
+.questao .num button { background: none; border: 0; color: var(--cinza); cursor: pointer; font-size: .8rem; }
+.alternativas { display: flex; gap: 8px; flex-wrap: wrap; }
+.alternativas label {
+  margin: 0; font-weight: 600; width: 42px; height: 42px; border: 2px solid var(--borda); border-radius: 50%;
+  display: flex; align-items: center; justify-content: center; cursor: pointer; transition: .15s; user-select: none;
+}
+.alternativas input { position: absolute; opacity: 0; width: 0; height: 0; }
+.alternativas input:checked + label { background: var(--azul); color: #fff; border-color: var(--azul); }
+.alternativas input:focus-visible + label { outline: 2px solid var(--amarelo); }
+.alternativas label:hover { border-color: var(--azul-claro); }
+
+/* ---------- questões com enunciado (aba Questoes da planilha) ---------- */
+.questoes.com-enunciado { grid-template-columns: 1fr; }
+.questao .enunciado { margin: -2px 0 12px; line-height: 1.55; white-space: pre-line; }
+.alternativas.texto { flex-direction: column; gap: 6px; }
+.alternativas.texto label {
+  width: auto; height: auto; border-radius: 10px; justify-content: flex-start; gap: 10px;
+  padding: 8px 10px; font-weight: 400; text-align: left; line-height: 1.4;
+}
+.alternativas.texto label .letra {
+  flex: 0 0 auto; width: 28px; height: 28px; border-radius: 50%; border: 2px solid var(--borda);
+  display: flex; align-items: center; justify-content: center; font-weight: 700;
+}
+.alternativas.texto input:checked + label { background: #e8f0fe; color: var(--texto); border-color: var(--azul); }
+.alternativas.texto input:checked + label .letra { background: var(--azul); color: #fff; border-color: var(--azul); }
+
+/* ---------- painel do professor ---------- */
+.lista-provas { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 12px; }
+.prova-item { background: #fff; border: 2px solid transparent; border-radius: 12px; padding: 14px; cursor: pointer; box-shadow: 0 2px 6px rgba(0,0,0,.05); }
+.prova-item:hover { border-color: var(--azul-claro); }
+.prova-item.ativa { border-color: var(--azul); }
+.prova-item .id { font-weight: 700; color: var(--azul); }
+.prova-item .meta { font-size: .85rem; color: var(--cinza); margin-top: 4px; }
+.etiqueta { display: inline-block; font-size: .75rem; font-weight: 700; padding: 2px 9px; border-radius: 999px; margin-top: 8px; text-transform: uppercase; letter-spacing: .03em; }
+.etiqueta.aberta { background: var(--verde-fundo); color: var(--verde); }
+.etiqueta.fechada { background: #eceff3; color: var(--cinza); }
+.etiqueta.encerrada { background: var(--laranja-fundo); color: var(--laranja); }
+
+.resumo { display: flex; gap: 16px; flex-wrap: wrap; margin: 14px 0; }
+.resumo .caixa { background: #fff; border-radius: 10px; padding: 10px 16px; min-width: 130px; box-shadow: 0 2px 6px rgba(0,0,0,.05); }
+.resumo .caixa .valor { font-size: 1.4rem; font-weight: 700; color: var(--azul); }
+.resumo .caixa .rotulo { font-size: .8rem; color: var(--cinza); }
+
+.tabela-envolto { overflow-x: auto; background: #fff; border-radius: 12px; box-shadow: 0 2px 6px rgba(0,0,0,.05); }
+table { width: 100%; border-collapse: collapse; font-size: .92rem; }
+th, td { padding: 9px 12px; border-bottom: 1px solid #eef1f5; text-align: left; white-space: nowrap; }
+th { background: #f0f3f8; color: var(--azul); font-weight: 600; position: sticky; top: 0; }
+tr.enviou td:first-child { border-left: 4px solid var(--verde); }
+tr.pendente td:first-child { border-left: 4px solid var(--borda); }
+.mono, td.mono { font-family: "Courier New", monospace; letter-spacing: .08em; }
+td .saiu { color: var(--vermelho); font-weight: 700; }
+.discreto { color: var(--cinza); font-size: .85rem; }
+
+footer { text-align: center; color: var(--cinza); font-size: .85rem; padding: 20px; }
+.escondido { display: none !important; }
+
+@media (max-width: 600px) {
+  header { padding: 0 14px; height: 56px; }
+  header nav a { margin-left: 12px; font-size: .85rem; }
+  .barra-prova { top: 56px; }
+  .relogio { font-size: 1.3rem; }
+}

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contato - DFCom UFF</title>
+
+    <style>
+      /* ======================================= */
+      /*                 HEADER                  */
+      /* ======================================= */
+      header {
+        background-color: #003366;
+        height: 80px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+
+      nav ul {
+        list-style: none;
+        display: flex;
+        gap: 40px;
+        margin: 0;
+        padding: 0;
+      }
+
+      nav a {
+        text-decoration: none;
+        color: #ffffff;
+        font-weight: 500;
+        font-size: 1.1rem;
+        transition: 0.3s ease;
+        font-family: Arial, sans-serif;
+      }
+
+      nav a:hover {
+        color: #ffcc00;
+      }
+
+      /* ======================================= */
+      /*              CONTEÚDO                   */
+      /* ======================================= */
+      main {
+        max-width: 900px;
+        margin: 120px auto;
+        padding: 0 20px;
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        text-align: center;
+      }
+
+      h1 {
+        font-size: 2.3rem;
+        color: #003366;
+        margin-bottom: 20px;
+      }
+
+      p {
+        font-size: 1.1rem;
+        color: #333;
+      }
+
+      /* ======== CAIXA DE CONTATO ======== */
+      .contato-box {
+        background: #ffffff;
+        padding: 30px;
+        margin-top: 30px;
+        border-radius: 12px;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.12);
+        text-align: left;
+      }
+
+      .contato-box h2 {
+        margin-top: 0;
+        color: #003366;
+        font-size: 1.5rem;
+        margin-bottom: 15px;
+      }
+
+      .info-item {
+        margin-bottom: 15px;
+      }
+
+      .info-item strong {
+        color: #003366;
+      }
+
+      /* ======================================= */
+      /*                  RODAPÉ                 */
+      /* ======================================= */
+      footer {
+        background-color: #003366;
+        color: white;
+        text-align: center;
+        padding: 20px;
+        margin-top: 50px;
+      }
+      /* ===== MENU NO CELULAR ===== */
+@media (max-width: 768px) {
+  header {
+    height: 70px;
+    padding: 10px 0;
+  }
+
+  header nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+  }
+
+  nav ul {
+    gap: 12px;
+    padding: 0;
+    margin: 0;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  header ul li {
+    margin: 0;
+  }
+
+  header a {
+    font-size: 15px;
+    padding: 4px 0;
+    text-align: center;
+  }
+
+  body {
+    padding-top: 70px;
+  }
+
+  main {
+    margin-top: 30px;
+  }
+}
+    </style>
+  </head>
+
+  <body>
+    <!-- HEADER -->
+    <header>
+      <nav>
+        <ul>
+          <li><a href="index.html">Início</a></li>
+          <li><a href="sobre.html">O DFCom</a></li>
+          <li><a href="cursos.html">Cursos</a></li>
+          <li><a href="noticias.html">Notícias</a></li>
+          <li><a href="contato.html">Contato</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- CONTEÚDO -->
+    <main>
+      <h1>Entre em Contato</h1>
+      <p>
+        Tem dúvidas ou deseja saber mais sobre o DFCom? Estamos aqui para
+        ajudar.
+      </p>
+
+      <div class="contato-box">
+        <h2>Informações de Contato</h2>
+
+        <div class="info-item">
+          <strong>Email:</strong><br />
+          [email protected]
+        </div>
+
+        <div class="info-item">
+          <strong>Endereço:</strong><br />
+          Rua Passo da Pátria 156, Bloco E, Sala 211 São Domingos, Niterói – RJ
+          CEP 24210-240, Brasil
+        </div>
+      </div>
+    </main>
+
+    <!-- RODAPÉ -->
+    <footer>© 2025 Universidade Federal Fluminense - DFCom.</footer>
+  </body>
+</html>

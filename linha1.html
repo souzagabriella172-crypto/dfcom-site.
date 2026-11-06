@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fluidos Supercríticos - DFCom</title>
+
+<style>
+
+/* ==========================
+RESET
+========================== */
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:"Arial", Helvetica, sans-serif;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+background:white;
+color:#333;
+}
+
+
+/* ==========================
+MENU FIXO
+========================== */
+
+header{
+background:#003366;
+height:80px;
+display:flex;
+justify-content:center;
+align-items:center;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+z-index:1000;
+box-shadow:0 2px 5px rgba(0,0,0,.15);
+}
+
+.menu{
+display:flex;
+gap:40px;
+list-style:none;
+}
+
+.menu a{
+text-decoration:none;
+color:white;
+font-size:1.1rem;
+font-weight:500;
+transition:.3s;
+}
+
+.menu a:hover{
+color:#ffcc00;
+}
+
+
+/* ==========================
+CONTEÚDO
+========================== */
+
+main{
+max-width:1000px;
+margin:120px auto 60px;
+padding:20px;
+}
+
+h1{
+text-align:center;
+color:#003366;
+font-size:2.5rem;
+margin-bottom:25px;
+}
+
+.introducao{
+font-size:1.15rem;
+line-height:1.8;
+text-align:justify;
+margin-bottom:50px;
+}
+
+
+/* ==========================
+NÍVEIS
+========================== */
+
+.nivel{
+background:#f5f8fc;
+border-left:7px solid #003366;
+padding:35px;
+border-radius:12px;
+margin:50px 0;
+}
+
+.nivel h2{
+color:#003366;
+font-size:2rem;
+margin-bottom:25px;
+}
+
+.nivel h3{
+color:#00529b;
+margin-top:30px;
+margin-bottom:15px;
+}
+
+.nivel p{
+line-height:1.8;
+text-align:justify;
+margin-bottom:15px;
+}
+
+.nivel ul{
+margin-left:25px;
+line-height:1.8;
+}
+
+.destaque{
+background:#eaf3ff;
+padding:20px;
+border-radius:10px;
+margin:20px 0;
+}
+
+
+/* ==========================
+VIDEO
+========================== */
+
+.video-box{
+background:#003366;
+color:white;
+padding:40px;
+border-radius:15px;
+text-align:center;
+margin:70px 0;
+}
+
+.video-box h2{
+margin-bottom:20px;
+}
+
+.video-box a{
+display:inline-block;
+margin-top:25px;
+background:#ffcc00;
+color:#003366;
+padding:15px 30px;
+border-radius:8px;
+text-decoration:none;
+font-weight:bold;
+}
+
+
+/* ==========================
+BOTÃO VOLTAR
+========================== */
+
+.voltar{
+display:inline-block;
+padding:12px 25px;
+background:#003366;
+color:white;
+text-decoration:none;
+border-radius:8px;
+}
+
+.voltar:hover{
+background:#001f4d;
+}
+
+
+/* ==========================
+FOOTER
+========================== */
+
+footer{
+background:#003366;
+color:white;
+text-align:center;
+padding:25px;
+margin-top:50px;
+}
+
+
+/* AJUSTES PARA CELULAR */
+@media (max-width: 768px) {
+
+    header {
+        height: 70px;
+        padding: 10px 0;
+        box-sizing: border-box;
+    }
+
+    header nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+    }
+
+    .menu {
+        display: flex;
+        gap: 10px;
+        padding: 0;
+        margin: 0;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .menu a {
+        font-size: 13px;
+        padding: 4px 0;
+        text-align: center;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    .nivel {
+        padding: 20px;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<header>
+
+<nav>
+
+<ul class="menu">
+
+<li><a href="index.html">Início</a></li>
+<li><a href="sobre.html">O DFCom</a></li>
+<li><a href="cursos.html">Cursos</a></li>
+<li><a href="noticias.html">Notícias</a></li>
+<li><a href="contato.html">Contato</a></li>
+
+</ul>
+
+</nav>
+
+</header>
+
+
+<main>
+
+
+<h1>
+Fluidos Supercríticos
+</h1>
+
+
+<p class="introducao">
+
+Seja bem-vindo ao portal de termofluidos. Nesta página apresentamos uma introdução ao
+<strong>comportamento termohidráulico de fluidos e refrigerantes supercríticos</strong>,
+abordando desde os conceitos fundamentais até fenômenos estudados em pesquisas
+avançadas de transferência de calor e dinâmica dos fluidos. O conteúdo foi organizado
+em três níveis de conhecimento, permitindo acompanhar de forma gradual a evolução
+dos conceitos físicos envolvidos nos escoamentos supercríticos.
+
+</p>
+
+
+<!-- ==========================
+NÍVEL 1
+========================== -->
+
+<section class="nivel">
+
+<h2>
+Nível 1: Iniciante
+</h2>
+
+
+<h3>
+Explorando o estado supercrítico da matéria
+</h3>
+
+
+<h3>
+Definição
+</h3>
+
+
+<p>
+
+Para compreender o comportamento de um fluido supercrítico, é importante começar
+observando como normalmente ocorre a mudança entre os estados líquido e gasoso.
+Quando aquecemos água em condições atmosféricas, por exemplo, podemos identificar
+claramente o líquido e o vapor. Durante a ebulição existe uma superfície que separa
+essas duas fases, chamada interface ou menisco. Essa separação está relacionada às
+diferenças existentes entre as moléculas do líquido e do vapor e às forças que atuam
+entre elas.
+
+</p>
+
+
+<p>
+
+Quando a temperatura e a pressão de uma substância são elevadas simultaneamente,
+essas diferenças começam a diminuir. Existe uma condição específica em que as
+propriedades do líquido e do gás se aproximam cada vez mais, até que a distinção
+entre as duas fases deixa de existir. Essa condição é conhecida como
+<strong>Ponto Crítico</strong>. Acima da temperatura e da pressão críticas, a
+substância passa a existir em uma única fase, denominada estado supercrítico.
+
+</p>
+
+
+<p>
+
+Nesse estado, não existe mais uma interface separando líquido e gás. A tensão
+superficial, que pode ser entendida de maneira simplificada como uma espécie de
+"pele" existente na superfície de um líquido, desaparece. Isso significa que não
+há uma fronteira definida indicando onde termina uma fase e começa outra. O fluido
+passa a ocupar o espaço disponível de maneira contínua.
+
+</p>
+
+
+<p>
+
+Apesar de ser uma única fase, o fluido supercrítico pode apresentar características
+que normalmente associamos tanto aos líquidos quanto aos gases. Sua densidade pode
+ser relativamente elevada, aproximando-se de valores encontrados em líquidos,
+enquanto sua viscosidade permanece baixa e sua capacidade de se espalhar pelo espaço
+se aproxima do comportamento de um gás. Essa combinação de propriedades é uma das
+principais características que tornam os fluidos supercríticos interessantes para
+aplicações de engenharia.
+
+</p>
+
+
+<p>
+
+Um exemplo bastante conhecido é o dióxido de carbono, ou CO₂. Quando submetido a
+condições superiores ao seu ponto crítico, o CO₂ passa para o estado supercrítico e
+adquire propriedades que permitem sua utilização em diferentes processos
+industriais e científicos. Nesse estado, ele consegue penetrar em determinados
+materiais com facilidade e também interagir com outras substâncias, comportamento
+que pode ser aproveitado em processos de extração e separação.
+
+</p>
+
+
+<h3>
+Fundamentos
+</h3>
+
+
+<p>
+
+Na engenharia térmica, o interesse pelos fluidos supercríticos está diretamente
+relacionado à forma como suas propriedades respondem às variações de temperatura
+e pressão. Em um fluido convencional, muitas propriedades apresentam mudanças
+relativamente graduais. Próximo ao ponto crítico, entretanto, pequenas alterações
+nas condições do escoamento podem produzir mudanças significativas na densidade,
+no calor específico e em outras propriedades termofísicas.
+
+</p>
+
+
+<p>
+
+Essa característica pode ser aproveitada em sistemas de transferência de calor.
+Como não existe uma mudança de fase tradicional entre líquido e vapor, não ocorre
+a formação de bolhas característica de processos de ebulição. O escoamento
+permanece em uma única fase, embora suas propriedades possam variar intensamente
+ao longo do sistema. Essa diferença modifica completamente a maneira como o calor
+é transportado e como o escoamento deve ser projetado.
+
+</p>
+
+
+<p>
+
+Em condições próximas ao ponto crítico, o aquecimento localizado de uma região do
+fluido também pode provocar alterações rápidas de densidade. Essas variações podem
+gerar movimentos no próprio fluido e contribuir para a propagação de energia por
+meio de ondas de pressão e temperatura. Esse comportamento está relacionado ao
+chamado <strong>Efeito Pistão</strong>, que será estudado com maior profundidade
+nos níveis seguintes.
+
+</p>
+
+
+<h3>
+Propriedades
+</h3>
+
+
+<p>
+
+As propriedades dos fluidos supercríticos são particularmente interessantes porque
+podem ser modificadas por meio do controle da temperatura e da pressão. A densidade,
+por exemplo, pode apresentar grandes variações mesmo quando a temperatura sofre
+alterações relativamente pequenas. A viscosidade reduzida favorece o escoamento e
+a penetração do fluido em regiões pequenas, enquanto a densidade elevada pode
+proporcionar uma capacidade significativa de transportar massa e energia.
+
+</p>
+
+
+<p>
+
+Próximo ao ponto crítico também podem ocorrer fenômenos que não são observados com
+a mesma intensidade em condições afastadas dessa região. Um exemplo é a
+<strong>opalescência crítica</strong>, associada às fortes flutuações de densidade
+que podem fazer o fluido adquirir uma aparência visual diferente. Esses fenômenos
+mostram que, apesar de o fluido estar em uma única fase, seu comportamento pode ser
+bastante complexo.
+
+</p>
+
+
+<p>
+
+A partir dessas características, os fluidos supercríticos podem ser empregados em
+diferentes áreas, incluindo sistemas de geração de energia, refrigeração, processos
+de extração e tecnologias voltadas à melhoria da eficiência energética. O estudo
+desse comportamento é, portanto, uma importante área dentro da dinâmica dos fluidos
+e da engenharia térmica.
+
+</p>
+
+</section>
+
+
+<!-- ==========================
+NÍVEL 2
+========================== -->
+
+<section class="nivel">
+
+<h2>
+Nível 2: Intermediário
+</h2>
+
+
+<h3>
+Mecânica de transporte e comportamento na região pseudocrítica
+</h3>
+
+
+<h3>
+Definição
+</h3>
+
+
+<p>
+
+No regime supercrítico, o estudo da transferência de calor exige uma análise mais
+detalhada das propriedades termofísicas do fluido. Embora não exista uma mudança
+de fase convencional, a passagem do fluido por determinadas regiões de temperatura
+pode produzir alterações muito intensas em suas propriedades. Uma das regiões mais
+importantes nesse contexto é a chamada <strong>região pseudocrítica</strong>.
+
+</p>
+
+
+<p>
+
+Para uma determinada pressão acima da pressão crítica, existe uma temperatura na
+qual o calor específico do fluido atinge um valor máximo. Essa temperatura é
+denominada <strong>Temperatura Pseudocrítica, ou Tpc</strong>. A passagem do
+escoamento por essa região pode provocar mudanças significativas na densidade,
+viscosidade, condutividade térmica e capacidade de armazenar energia.
+
+</p>
+
+
+<p>
+
+Dessa forma, mesmo sem existir uma mudança de fase propriamente dita, o fluido
+pode apresentar um comportamento semelhante ao observado durante uma transição de
+fase. É por esse motivo que, em determinados estudos, utiliza-se o conceito de
+<strong>pseudo-ebulição</strong> para descrever essa região de forte variação das
+propriedades.
+
+</p>
+
+
+<h3>
+Transferência de calor
+</h3>
+
+
+<p>
+
+O comportamento da transferência de calor em escoamentos supercríticos depende
+fortemente da relação entre as condições do escoamento e a região termodinâmica
+em que o fluido se encontra. Em determinadas situações, a transferência de calor
+ocorre de maneira relativamente previsível e pode ser descrita por modelos
+convencionais de escoamento monofásico. Essa condição é frequentemente associada
+à <strong>Transferência de Calor Normal, ou NHT</strong>.
+
+</p>
+
+
+<p>
+
+Quando o fluido se aproxima da temperatura pseudocrítica, entretanto, o aumento
+do calor específico pode produzir uma condição de <strong>Transferência de Calor
+Melhorada, ou EHT</strong>. Nessa região, o fluido consegue absorver uma quantidade
+significativa de energia enquanto sua temperatura sofre uma variação relativamente
+menor. O resultado pode ser uma melhoria considerável na capacidade de remoção de
+calor do sistema.
+
+</p>
+
+
+<p>
+
+Esse comportamento não ocorre de maneira uniforme em todos os escoamentos. Em
+determinadas condições, principalmente quando os efeitos de propriedades variáveis
+e da dinâmica do escoamento se tornam importantes, pode ocorrer uma redução da
+capacidade de transferência de calor. Esse fenômeno é conhecido como
+<strong>Transferência de Calor Deteriorada, ou DHT</strong>.
+
+</p>
+
+
+<p>
+
+A deterioração da transferência de calor pode estar associada às fortes variações
+de densidade provocadas pelo aquecimento. Como a densidade do fluido pode diminuir
+rapidamente, o perfil de velocidade e a estrutura da turbulência também podem ser
+modificados. Em escoamentos influenciados pela gravidade, essas diferenças de
+densidade podem gerar efeitos de empuxo que alteram a estrutura do escoamento
+próximo à parede.
+
+</p>
+
+
+<p>
+
+Além disso, a expansão térmica do fluido pode provocar aceleração do escoamento.
+Esse efeito altera o perfil de velocidades e modifica a forma como o fluido interage
+com a parede aquecida. Como consequência, a temperatura da parede pode aumentar
+mais do que o esperado, tornando o fenômeno especialmente importante para o projeto
+e a segurança de equipamentos que trabalham em condições supercríticas.
+
+</p>
+
+
+<h3>
+Efeito Pistão e transporte de energia
+</h3>
+
+
+<p>
+
+Outro fenômeno relevante próximo à região crítica é o <strong>Efeito Pistão</strong>.
+Quando uma pequena região do fluido é aquecida, sua densidade pode sofrer uma
+redução significativa. Essa expansão produz alterações de pressão que se propagam
+pelo meio na forma de ondas termoacústicas. Dessa maneira, parte da energia
+introduzida localmente pode ser transportada de forma muito mais rápida do que
+seria esperado considerando apenas a difusão térmica convencional.
+
+</p>
+
+
+<p>
+
+Esse mecanismo mostra que a transferência de energia em fluidos supercríticos não
+depende exclusivamente da condução e da convecção. Em determinadas condições, a
+interação entre os efeitos térmicos, acústicos e hidrodinâmicos passa a desempenhar
+um papel fundamental na evolução do escoamento.
+
+</p>
+
+
+<h3>
+Desafios de modelagem
+</h3>
+
+
+<p>
+
+A forte sensibilidade das propriedades termofísicas torna a modelagem de
+escoamentos supercríticos particularmente desafiadora. Modelos que assumem
+propriedades constantes podem apresentar limitações significativas quando
+aplicados próximos à região pseudocrítica. Por isso, estudos experimentais e
+simulações numéricas precisam considerar cuidadosamente a variação das propriedades
+ao longo do escoamento.
+
+</p>
+
+
+<p>
+
+Esse problema ganha ainda mais importância quando o escoamento é turbulento.
+A interação entre turbulência, transferência de calor e variações de densidade
+pode produzir comportamentos difíceis de prever, exigindo modelos mais sofisticados
+para representar adequadamente a física do problema.
+
+</p>
+
+</section>
+
+
+<!-- ==========================
+NÍVEL 3
+========================== -->
+
+<section class="nivel">
+
+<h2>
+Nível 3: Avançado
+</h2>
+
+
+<h3>
+Termodinâmica crítica, transporte acoplado e dinâmica de escoamentos supercríticos
+</h3>
+
+
+<h3>
+Comportamento termodinâmico
+</h3>
+
+
+<p>
+
+Em uma abordagem avançada, o comportamento de fluidos supercríticos deve ser
+analisado considerando a forte interação entre termodinâmica, transferência de
+calor e mecânica dos fluidos. A região próxima ao ponto crítico apresenta uma
+resposta altamente não linear, na qual pequenas alterações nas variáveis de estado
+podem produzir grandes variações nas propriedades termofísicas.
+
+</p>
+
+
+<p>
+
+Entre as propriedades mais importantes estão a densidade, o calor específico, a
+compressibilidade e o coeficiente de expansão térmica. A elevada compressibilidade
+observada próxima ao ponto crítico significa que pequenas variações de pressão
+podem produzir alterações consideráveis na densidade. Ao mesmo tempo, o aumento
+do calor específico na região pseudocrítica modifica a relação entre a energia
+fornecida ao fluido e a consequente variação de temperatura.
+
+</p>
+
+
+<p>
+
+Essas características fazem com que a transferência de calor em fluidos
+supercríticos seja um problema fortemente acoplado. A temperatura influencia a
+densidade; a densidade altera o campo de velocidades; o campo de velocidades
+modifica a transferência de calor; e essa transferência de calor, por sua vez,
+altera novamente a temperatura e as propriedades do fluido. O resultado é um
+sistema no qual os fenômenos térmicos e hidrodinâmicos não podem ser analisados
+isoladamente.
+
+</p>
+
+
+<h3>
+Região pseudocrítica e pseudo-ebulição
+</h3>
+
+
+<p>
+
+A região pseudocrítica possui particular importância porque concentra algumas das
+maiores variações das propriedades termofísicas. Embora o fluido permaneça em uma
+única fase, a passagem pela temperatura pseudocrítica pode produzir uma mudança
+acentuada em sua estrutura microscópica e em sua resposta ao fornecimento de
+energia. Esse comportamento é frequentemente associado ao conceito de
+<strong>pseudo-ebulição</strong>, utilizado para descrever a rápida reorganização das
+propriedades do fluido sem que exista uma transição líquido-vapor convencional.
+
+</p>
+
+
+<p>
+
+A análise desse fenômeno exige considerar não apenas as propriedades médias do
+escoamento, mas também as escalas espaciais e temporais envolvidas no transporte
+de energia. Em determinadas condições, as alterações locais de densidade podem
+gerar movimentos que modificam a distribuição de calor e a própria estrutura
+turbulenta do escoamento.
+
+</p>
+
+
+<h3>
+Efeito Pistão e dinâmica termoacústica
+</h3>
+
+
+<p>
+
+O Efeito Pistão assume especial importância nessa região porque a resposta do
+fluido ao aquecimento pode ser extremamente rápida. Quando uma camada de fluido
+próxima à parede recebe energia, sua expansão provoca uma perturbação de pressão
+que se propaga pelo meio. Essa perturbação pode transportar energia através de
+ondas termoacústicas, estabelecendo um mecanismo de relaxação diferente daquele
+associado exclusivamente à difusão térmica molecular.
+
+</p>
+
+
+<p>
+
+A importância desse mecanismo está relacionada ao fato de que, próximo ao ponto
+crítico, as escalas características de transporte podem sofrer alterações
+significativas. O tempo necessário para a propagação de perturbações acústicas
+pode se tornar comparável ou inferior às escalas associadas ao transporte térmico,
+fazendo com que os efeitos compressíveis tenham influência direta sobre a
+distribuição de temperatura.
+
+</p>
+
+
+<h3>
+Transferência de calor deteriorada e turbulência
+</h3>
+
+
+<p>
+
+Em escoamentos turbulentos, a variação das propriedades pode alterar profundamente
+a estrutura da camada próxima à parede. A redução da densidade causada pelo
+aquecimento pode modificar a distribuição de velocidade e afetar a produção e o
+transporte de turbulência. Dependendo das condições de pressão, fluxo de massa,
+geometria e temperatura da parede, essas alterações podem resultar em uma redução
+da capacidade do fluido de remover calor da superfície.
+
+</p>
+
+
+<p>
+
+Esse fenômeno é particularmente relevante em sistemas de alta potência térmica,
+nos quais uma elevação inesperada da temperatura da parede pode comprometer a
+segurança e a eficiência do equipamento. A previsão correta da DHT, portanto,
+exige modelos capazes de representar simultaneamente as propriedades variáveis,
+os efeitos de compressibilidade, a turbulência e os mecanismos de transferência
+de calor.
+
+</p>
+
+
+<h3>
+Linha de Widom e estrutura do fluido
+</h3>
+
+
+<p>
+
+Além da região imediatamente próxima ao ponto crítico, o estudo dos fluidos
+supercríticos envolve outras estruturas termodinâmicas importantes. A
+<strong>Linha de Widom</strong>, por exemplo, está associada à extensão das
+anomalias termodinâmicas para a região supercrítica. Ao atravessar essa região,
+determinadas propriedades podem apresentar máximos ou mudanças significativas,
+mesmo sem a ocorrência de uma transição de fase.
+
+</p>
+
+
+<p>
+
+A análise dessas regiões permite compreender melhor por que o comportamento de um
+fluido supercrítico pode mudar de maneira tão intensa mesmo quando ele permanece
+em uma única fase. Em escala microscópica, as interações entre as moléculas e suas
+estruturas locais são fundamentais para explicar essas alterações macroscópicas.
+
+</p>
+
+
+<h3>
+Modelagem computacional e pesquisas atuais
+</h3>
+
+
+<p>
+
+A complexidade dos escoamentos supercríticos faz com que a modelagem computacional
+tenha um papel central na pesquisa atual. Métodos como a <strong>DNS
+(Direct Numerical Simulation)</strong> permitem resolver diretamente as escalas
+relevantes da turbulência, fornecendo informações detalhadas sobre os mecanismos
+de transporte. Embora apresentem elevado custo computacional, essas simulações
+podem ser utilizadas para investigar fenômenos que dificilmente seriam observados
+experimentalmente com o mesmo nível de detalhamento.
+
+</p>
+
+
+<p>
+
+Outra frente de pesquisa envolve a utilização de métodos de inteligência artificial,
+especialmente as <strong>Physics-Informed Neural Networks (PINNs)</strong>. Essas
+redes neurais incorporam as próprias equações físicas do problema durante o processo
+de treinamento, permitindo combinar dados experimentais ou numéricos com as leis
+fundamentais que governam o escoamento.
+
+</p>
+
+
+<p>
+
+A utilização conjunta de simulações numéricas, modelos físicos e técnicas de
+inteligência artificial abre novas possibilidades para a previsão de fenômenos
+complexos em fluidos supercríticos. O objetivo não é apenas reproduzir os
+resultados conhecidos, mas compreender os mecanismos responsáveis pelas alterações
+de transferência de calor, turbulência e transporte de energia em condições
+próximas ao ponto crítico.
+
+</p>
+
+
+<p>
+
+Nesse contexto, o estudo de fluidos supercríticos representa uma área de pesquisa
+que conecta termodinâmica, mecânica dos fluidos, transferência de calor e métodos
+computacionais avançados. A compreensão desses fenômenos é fundamental para o
+desenvolvimento de sistemas térmicos mais eficientes, seguros e adequados às novas
+demandas de geração de energia, refrigeração e processamento de materiais.
+
+</p>
+
+</section>
+
+
+<!-- ==========================
+VIDEO
+========================== -->
+
+<section class="video-box">
+
+<h2>
+Videoaula - Fluidos Supercríticos
+</h2>
+
+<p>
+
+Aprofunde seus conhecimentos sobre o comportamento termohidráulico de fluidos e
+refrigerantes supercríticos através da nossa aula completa.
+
+</p>
+
+<a href="COLOQUE_O_LINK_DA_VIDEOAULA_AQUI" target="_blank">
+
+Assistir Videoaula
+
+</a>
+
+</section>
+
+
+<a href="pesquisa.html" class="voltar">
+
+← Voltar para Linhas de Pesquisa
+
+</a>
+
+
+</main>
+
+
+<footer>
+
+© 2025 Universidade Federal Fluminense - DFCom.
+
+</footer>
+
+
+</body>
+
+</html>

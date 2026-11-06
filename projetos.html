@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Projetos - DFCom UFF</title>
+
+    <style>
+      /* ======================================= */
+      /*                 GERAL                   */
+      /* ======================================= */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      body {
+        background-color: #f5f5f5;
+        color: #333;
+        padding-top: 80px; /* espaço por causa do header fixo */
+      }
+
+      /* ======================================= */
+      /*                 HEADER                  */
+      /* ======================================= */
+      header {
+        background-color: #003366;
+        height: 80px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+
+      nav ul {
+        list-style: none;
+        display: flex;
+        gap: 40px;
+      }
+
+      nav a {
+        text-decoration: none;
+        color: #ffffff;
+        font-weight: 500;
+        font-size: 1.1rem;
+        transition: 0.3s ease;
+      }
+
+      nav a:hover {
+        color: #cce0ff;
+      }
+
+      /* ======================================= */
+      /*              TÍTULO DA PÁGINA           */
+      /* ======================================= */
+      .page-title {
+        text-align: center;
+        font-size: 2.2rem;
+        margin: 40px 0 20px;
+        color: #003366;
+        font-weight: bold;
+      }
+      .intro-projetos {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto 25px auto;
+  padding: 0 20px;
+  text-align: center;
+  color: #555;
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+      /* ======================================= */
+      /*              CARDS LONGOS               */
+      /* ======================================= */
+      .cards-container {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 35px;
+      }
+
+      .card {
+        background: #ffffff;
+        border-radius: 10px;
+        padding: 30px;
+        box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+        border-left: 6px solid #003366;
+        transition: 0.2s ease;
+      }
+
+      .card:hover {
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+        transform: translateY(-2px);
+      }
+
+      .card h3 {
+        color: #003366;
+        font-size: 1.7rem;
+        margin-bottom: 15px;
+      }
+
+      .card p {
+        line-height: 1.7;
+        color: #444;
+        font-size: 1.05rem;
+        text-align: justify;
+      }
+
+      .card ul {
+        margin-top: 15px;
+        padding-left: 25px;
+      }
+
+      .card ul li {
+        margin-bottom: 10px;
+        line-height: 1.6;
+      }
+
+      /* ======================================= */
+      /*                 RODAPÉ                  */
+      /* ======================================= */
+      footer {
+        margin-top: 50px;
+        background: #003366;
+        color: #fff;
+        padding: 25px;
+        text-align: center;
+        font-size: 0.95rem;
+      }
+      .btn-topo {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background: #1f3c88;
+        color: white;
+        padding: 12px 16px;
+        border-radius: 50%;
+        z-index: 1000;
+        cursor: pointer;
+        text-decoration: none;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        transition: all 0.3s ease;
+      }
+
+      .btn-topo:hover {
+        background: #3a59b3;
+        transform: scale(1.2);
+        box-shadow: 0 6px 8px rgba(0, 0, 0, 0.5);
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+      /* =======================================
+   MENU E CONTEÚDO NO CELULAR
+======================================= */
+@media (max-width: 768px) {
+  header {
+    height: 70px;
+    padding: 10px 0;
+  }
+
+  header nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+  }
+
+  nav ul {
+    gap: 12px;
+    padding: 0;
+    margin: 0;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  nav ul li {
+    margin: 0;
+  }
+
+  nav a {
+    font-size: 15px;
+    padding: 4px 0;
+    text-align: center;
+  }
+
+  body {
+    padding-top: 70px;
+  }
+
+  .page-title {
+    font-size: 1.8rem;
+    margin: 30px 0 15px;
+  }
+
+  .cards-container {
+    width: 100%;
+    padding: 15px;
+    gap: 25px;
+  }
+
+  .card {
+    padding: 20px;
+  }
+
+  .card h3 {
+    font-size: 1.4rem;
+  }
+
+  .card p {
+    font-size: 0.95rem;
+    text-align: left;
+  }
+}
+    </style>
+  </head>
+
+  <body>
+    <!-- HEADER -->
+    <header>
+      <nav>
+        <ul>
+          <li><a href="index.html">Início</a></li>
+          <li><a href="sobre.html">O DFCom</a></li>
+          <li><a href="cursos.html">Cursos</a></li>
+          <li><a href="noticias.html">Notícias</a></li>
+          <li><a href="contato.html">Contato</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- TÍTULO -->
+   <h1 class="page-title">Projetos em andamento</h1>
+   <p class="intro-projetos">
+  Projetos de pesquisa atualmente desenvolvidos pelo DFCom, envolvendo
+  modelagem computacional, dinâmica dos fluidos, inteligência artificial
+  e estudo de fluidos supercríticos.
+</p>
+    <!-- CARDS -->
+    <section class="cards-container">
+
+  <!-- PROJETO 1 -->
+  <div class="card">
+    <h3>
+      Modelagem Numérica para Previsão de Propriedades Termodinâmicas e de
+      Transporte de Fluidos Supercríticos para Simulação de Processos de
+      Separação Submarina
+    </h3>
+
+    <p><strong>Registro:</strong> 2025/00274-0</p>
+
+    <p>
+      O petróleo do pré-sal brasileiro vem acompanhado de uma grande
+      quantidade de dióxido de carbono (CO₂) em condições de altíssima
+      pressão — o chamado estado supercrítico, no qual o CO₂ se comporta
+      como um meio-termo entre gás e líquido. Separar esse CO₂ de forma
+      eficiente é um desafio científico importante, tanto para viabilizar
+      a exploração de petróleo quanto para reduzir as emissões de gases
+      causadores do efeito estufa.
+    </p>
+
+    <p>
+      Este projeto investiga três tecnologias promissoras para essa
+      separação: 1) membranas, feitas de materiais poliméricos e cerâmicos;
+      2) bocais de Laval supersônicos, dispositivos que resfriam o gás por
+      meio de sua expansão rápida; e 3) mistura e absorção, técnica que
+      aproveita o fato de o CO₂ ser facilmente absorvido pela água para
+      retirá-lo da mistura logo na saída do poço. A equipe combina
+      simulações computacionais avançadas — dinâmica molecular, química
+      quântica, dinâmica dos fluidos computacional e aprendizado de máquina
+      — com experimentos de bancada, construindo e testando membranas e
+      sistemas de separação em condições de pressão e temperatura
+      semelhantes às encontradas nos poços do pré-sal.
+    </p>
+
+    <p>
+      O projeto é financiado pela Petrobras (2025/002740 e 2025/00578-0)
+      e reúne docentes e bolsistas discentes de graduação, mestrado,
+      doutorado e pós-doutorado das instituições UFF, IME, CEFET-RJ, UFRGS
+      e UEM, contribuindo para a formação de novos cientistas na área.
+    </p>
+
+    <p>
+      <strong>
+        Orçamento total do projeto (pesquisa + infraestrutura):
+        R$ 6.803.946,77.
+      </strong>
+    </p>
+  </div>
+
+
+  <!-- PROJETO 2 -->
+  <div class="card">
+    <h3>
+      Modelagem dos efeitos de rarefação para as equações de Navier-Stokes
+      usando inteligência artificial no banco de dados gerados via
+      Simulação Direta de Monte Carlo
+    </h3>
+
+    <p>
+      <strong>Registro:</strong> CNPq 444910/2024-7
+    </p>
+
+    <p>
+      As equações de Navier-Stokes (ENS) descrevem como líquidos e gases se
+      movem e são a base da mecânica dos fluidos usada na engenharia. Elas
+      funcionam bem para fluidos densos, mas falham quando o fluido está
+      muito rarefeito, pois nessas condições as moléculas percorrem
+      distâncias relativamente grandes entre colisões. Nesses casos, é
+      preciso recorrer a simulações mais caras computacionalmente, como a
+      Simulação Direta de Monte Carlo (DSMC), que reproduz o comportamento
+      de cada molécula do gás individualmente.
+    </p>
+
+    <p>
+      Este projeto usa inteligência artificial para aprender, a partir de
+      dados gerados pela DSMC, como corrigir as ENS para que voltem a
+      descrever corretamente escoamentos rarefeitos, unindo a precisão da
+      simulação molecular à eficiência dos métodos tradicionais. Esses
+      problemas de rarefação aparecem em altitudes elevadas, em processos
+      de fabricação a vácuo e em dispositivos de escala micro e
+      nanométrica — daí as aplicações em áreas como veículos de reentrada
+      atmosférica, nanotecnologia e processos industriais a vácuo.
+    </p>
+
+    <p>
+      Financiado pelo CNPq (Chamada 22/2024 – Programa Conhecimento Brasil),
+      e coordenado pelo professor Leonardo Alves (UFF), ele reúne
+      pesquisadores no Brasil (UFF e CEFET-RJ) e brasileiros atuando nos
+      Estados Unidos, Chile, França e Itália, destacando o caráter
+      internacional da rede de colaboração científica.
+    </p>
+
+    <p>
+      <strong>
+        Orçamento total do projeto (custeio + equipamentos):
+        R$ 476.153,16.
+      </strong>
+    </p>
+  </div>
+
+
+  <!-- PROJETO 3-->
+  <div class="card">
+    <h3>Distinguishing Between Transverse Jet Instabilities with Data-Based Reduced Order Models
+
+</h3>
+    <p>
+      <strong>Registro: </strong>SOARD/AFOSR TBA
+
+    </p>
+    <p>Imagine a chaminé de uma fábrica soltando fumaça num dia de vento, ou o combustível injetado dentro do motor de um avião. Nos dois casos, um jato de gás sai perpendicular a uma corrente de ar. Os engenheiros chamam isso de "jato em escoamento cruzado". Na fronteira entre o jato e o ar à sua volta surgem ondas e redemoinhos. Dependendo das condições, eles podem passar de um movimento desorganizado para uma oscilação forte e ritmada, quase como um apito. Saber prever essa transição permite controlar o jato: misturar melhor o combustível, resfriar peças de turbinas ou direcionar o empuxo de um foguete.
+</p>
+
+<p>Este projeto une experimentos e matemática numa colaboração internacional. Na Universidade da Califórnia em Los Angeles (UCLA), os jatos são filmados em laboratório com técnicas ópticas. Na UFF, esses dados alimentam algoritmos que descobrem, automaticamente, equações simples capazes de reproduzir o comportamento do jato. Essas equações são chamadas de modelos de ordem reduzida. É ciência de dados aplicada à física: em vez de simulações enormes, poucas equações capturam o essencial do fenômeno.
+</p>
+
+<p>Equipe formada pelo Prof. Leonardo Alves (UFF, coordenador), Profa. Ann Karagozian (UCLA, coordenada) e Fernanda Cordeiro (pós-graduação, UFF). Financiamento internacional vem do Escritório de Pesquisa Científica da Força Aérea dos Estados Unidos (AFOSR), parte do Laboratório de Pesquisa da Força Aérea (AFRL), por meio do seu escritório para a América do Sul (SOARD). Os experimentos na UCLA têm financiamento próprio do AFOSR.
+</p>
+
+<p><strong>Orçamento total do projeto:</strong> US$ 69.693 para a UFF
+</p>
+  </div>
+
+
+ <!-- PROJETO 4-->
+  <div class="card">
+    <h3>Modernização dos Equipamentos Multiusuário para Computação de Alto Desempenho da UFF
+</h3>
+    <p>
+      <strong>Registro: </strong>FINEP PROINFRA
+
+    </p>
+    <p>Muitas perguntas da ciência e da engenharia são difíceis, caras ou perigosas demais para serem respondidas só com experimentos. Como o ar escoa em volta de um avião em altíssima velocidade? Como as chuvas podem causar deslizamentos em Niterói? Como um computador aprende a reconhecer doenças em imagens médicas? Para responder a perguntas assim, os pesquisadores usam a computação de alto desempenho: "supercomputadores" formados por centenas de processadores trabalhando juntos. Eles simulam fenômenos físicos e treinam modelos de Inteligência Artificial em horas, em vez de anos.
+</p>
+
+<p>Este projeto, financiado pela FINEP, renova os supercomputadores compartilhados da UFF em duas frentes, numa parceria entre a Escola de Engenharia e o Instituto de Computação. O Data Center do Instituto de Computação vai receber um cluster de GPUs NVIDIA DGX H100, o mesmo tipo de equipamento usado nos grandes sistemas de IA atuais. Ele substitui uma máquina de 2017. No LICAD, laboratório da Escola de Engenharia, será criado um novo Data Center com um cluster de CPUs de mais de 1.100 núcleos de processamento, dedicado a simulações de engenharia.
+</p>
+
+<p>Os equipamentos são de uso compartilhado. Eles atendem cerca de 150 pesquisadores de dez unidades da UFF, além de colaboradores de outras instituições. Também estarão disponíveis para TCCs, iniciação científica, mestrado e doutorado. Financiado pela FINEP, edital PROINFRA 2023 – Expansão, este projeto envolve pesquisadores da Escola de Engenharia (TCE) e do Instituto de Computação (IC), sob coordenação do Prof. Fábio Protti. Participam Aline Paes, Artur Pessoa, Daniel de Oliveira, Diogo Mattos, Eduardo Uchoa, Leonardo Alves, Marcio Cataldi, Marcos Lage e Ricardo Leiderman.
+</p>
+<p><strong>Orçamento total do projeto: </strong> R$ 5.968.720,49</p>
+
+<p>Escola de Engenharia (TCE): R$ 3.990.000,00, para o cluster de CPUs
+
+</p>
+
+<p>Instituto de Computação (IC): R$ 1.978.720,49, para a cluster de GPUs</p>
+
+  </div>
+
+
+
+  <!-- PROJETO 4-->
+  <div class="card">
+    <h3>Escoamentos Termoconvectivos de Fluidos em Suspensão
+</h3>
+    <p>
+      <strong>Registro: </strong>COFECUB-PE253829151P
+
+    </p>
+    <p>Quando aquecemos uma panela de água, o líquido quente sobe e o frio desce, formando correntes circulares. Esse movimento se chama convecção natural e está em todo lugar: no clima, no resfriamento de computadores, em trocadores de calor de usinas e até em submarinos. Agora imagine que esse líquido carrega pequenas partículas ou bolhas. Elas podem tornar a troca de calor muito mais eficiente, ou então bloquear completamente as correntes. O que decide isso? O tamanho, a densidade e a velocidade com que as partículas são injetadas.
+</p>
+
+<p>Este projeto investiga essas "suspensões" para descobrir como usar partículas a nosso favor, numa colaboração internacional entre a UFF e a Universidade de Lille, na França. Em Lille, as partículas são estudadas com experimentos com lasers e câmeras de alta velocidade e com simulações que acompanham cada partícula individualmente. Na UFF, simulações em supercomputadores e aprendizado de máquina produzem modelos simples e rápidos do fenômeno. Os resultados interessam à Marinha do Brasil, que busca trocadores de calor mais eficientes para o submarino nuclear brasileiro.
+</p>
+
+<p>Equipe coordenada pelo Prof. Leonardo Alves (UFF) e pela Profa. Silvia Hirata (Universidade de Lille). Fazem parte da equipe pesquisadores, docentes e discentes das seguintes instituições: Universidade Federal Fluminense (UFF), Centro Federal de Educação Tecnológica Celso Suckow da Fonseca (CEFET/RJ), Universidade Federal de Santa Maria (UFSM), Marinha do Brasil, Universidade de Lille e IMT Nord Europe. O financiamento internacional é conjunto, pelo programa franco-brasileiro CAPES/COFECUB: a CAPES apoia a equipe brasileira e o COFECUB apoia a equipe francesa.
+</p>
+<p><strong>Orçamento total do projeto: </strong> cerca de R$ 1 milhão para a UFF
+</p>
+
+
+  </div>
+
+
+  <!-- PROJETO 5-->
+  <div class="card">
+    <h3>Desenvolvimento de um código computacional para o estudo da transição laminar-turbulenta de escoamentos de alta velocidade incluindo ionização e conjugação térmica
+</h3>
+    <p>
+      <strong>Registro: </strong>CNPq 406045/2023-2
+
+    </p>
+    <p>Quando um avião ou foguete voa mais rápido que o som, o ar que escoa junto à sua superfície pode se comportar de duas formas: suave e organizado (escoamento laminar) ou caótico, cheio de redemoinhos (escoamento turbulento). A passagem de um regime para o outro, chamada de transição laminar-turbulenta, faz muita diferença: o escoamento turbulento aumenta o arrasto e pode aquecer muito mais a fuselagem. Prever onde e quando essa transição acontece é essencial para projetar veículos supersônicos e hipersônicos seguros e eficientes.
+
+</p>
+
+<p>Este projeto aprimora o 3D4S, um código computacional criado na UFF que simula com grande precisão escoamentos de altíssima velocidade. Essas simulações são o ponto de partida para análises de estabilidade, que revelam quais pequenas perturbações crescem até disparar a turbulência. O projeto amplia o código para geometrias mais complexas, como cones, e para dois fenômenos importantes em velocidades extremas. O primeiro é a troca de calor entre o ar e a parede do veículo, chamada de conjugação térmica. O segundo são as reações químicas no ar superaquecido, que chega a se dissociar e ionizar.
+</p>
+
+<p>Financiado pelo CNPq (Chamada Universal 10/2023) e coordenado pelo professor Leonardo Alves (UFF), o projeto reúne pesquisadores da UFF, do CEFET-RJ, da UFSM, da UFRRJ, da Marinha do Brasil e da AspenTech, além de colaboradores da University of Liverpool (Reino Unido) e do National Institute of Aerospace (Estados Unidos). Isso destaca o caráter nacional e internacional da rede de colaboração.
+</p>
+<p><strong>Orçamento total do projeto (custeio + capital + bolsas): </strong> R$ 227.000,00.
+</p>
+
+
+  </div>
+
+ <!-- PROJETO 6-->
+  <div class="card">
+    <h3>Simulação de Alta Fidelidade Temporal e Espacial para Aerodinâmica de Alta Velocidade
+</h3>
+    <p>
+      <strong>Registro: </strong>CNPq 442153/2023-6
+
+    </p>
+    <p>Quando um avião, um míssil ou uma cápsula espacial viaja mais rápido que o som, o ar à sua volta forma ondas de choque: regiões finíssimas onde pressão e temperatura mudam bruscamente. Junto à superfície do veículo, o ar pode escoar de forma suave e organizada ou se tornar turbulento, o que aumenta o arrasto e o aquecimento. Entender quando essa mudança acontece exige simulações de computador extremamente precisas, tanto no espaço quanto no tempo, porque pequenos erros numéricos podem esconder justamente as perturbações que disparam a turbulência.
+
+</p>
+
+<p>Este projeto usa métodos numéricos de alta ordem para simular escoamentos de alta velocidade, como camadas de mistura, jatos e o ar passando sobre cones e outros corpos. Para isso, aprimora o 3D4S, código computacional desenvolvido na UFF. Ele passa a representar superfícies com pequenas rugosidades, a calcular a troca de calor entre o ar e a parede do veículo e a lidar com as altíssimas temperaturas do voo hipersônico. Redes neurais e aprendizado de máquina também ajudam a construir modelos mais rápidos.
+</p>
+
+<p>Financiado pelo CNPq (Chamada 14/2023 – Projetos em Cooperação Internacional) e coordenado pelo professor Leonardo Alves (UFF), o projeto reúne pesquisadores da UFF, do IME, do CEFET-RJ, da UFRRJ, da UFSM e da Marinha do Brasil. Também participam colaboradores da University of Arizona, UCLA, Stanford, Brown University e do National Institute of Aerospace (Estados Unidos), além da University of Liverpool (Reino Unido). O projeto conta ainda com três bolsas de doutorado sanduíche de 12 meses no exterior para os alunos da equipe.
+</p>
+<p><strong>Orçamento total do projeto (custeio + bolsas): </strong>cerca de R$ 623 mil.
+</p>
+
+
+  </div>
+
+
+  <!-- PROJETO 7-->
+  <div class="card">
+    <h3>Data-Based Modal Decomposition and Reduced Order Model Development for Acoustically Forced Jet Diffusion Flames
+</h3>
+    <p>
+      <strong>Registro: </strong> W911NF2210274
+
+    </p>
+    <p>Quando uma chama fica exposta a ondas sonoras intensas, como as que surgem dentro de motores de foguetes e turbinas, ela pode começar a oscilar, se descolar do queimador e até se apagar. Essas "instabilidades de combustão" são um dos maiores problemas no projeto de motores, porque podem reduzir o desempenho ou danificar o equipamento. Para estudá-las, pesquisadores da Universidade da Califórnia em Los Angeles (UCLA) colocam pequenas chamas de metano entre alto-falantes e as filmam com câmeras de alta velocidade.
+</p>
+
+<p>Este projeto transforma esses vídeos em equações. Na UFF, técnicas de processamento de imagens limpam o ruído das filmagens. Em seguida, métodos de decomposição modal separam os padrões que se repetem no movimento da chama. Por fim, algoritmos de aprendizado de máquina descobrem automaticamente equações simples, chamadas de modelos de ordem reduzida, capazes de reproduzir esse comportamento. O objetivo é prever, a partir dos dados, em que condições a chama passa a oscilar, se descola ou se apaga.
+</p>
+
+
+<p>Financiado pelo Escritório de Pesquisa do Exército dos Estados Unidos (ARO) e coordenado pelo professor Leonardo Alves (UFF), o projeto reúne docentes e alunos de graduação e pós-graduação da UFF. A colaboração internacional é com o Laboratório de Pesquisa em Energia e Propulsão da UCLA, liderado pela professora Ann Karagozian, que fornece os dados experimentais e ajuda a interpretar os modelos.
+</p>
+
+<p><strong>Orçamento total do projeto: </strong>US$ 186.628 para a UFF
+
+</p>
+
+
+  </div>
+
+   <!-- PROJETO 8-->
+  <div class="card">
+    <h3>Desenvolvimento de metodologias para verificação de desempenho de medidores de vazão em escoamento multifásico operando em condições submarinas no Pré-sal</h3>
+    <p>
+      <strong>Registro: </strong>Petrobras 2021/00093-5
+    </p>
+
+  <p>O petróleo do pré-sal sai de poços a mais de cinco mil metros de profundidade misturado com gás natural, água e CO2. Para saber quanto cada poço produz, a Petrobras instala no fundo do mar medidores de vazão multifásicos, que precisam medir, ao mesmo tempo, quanto de cada fluido passa pela tubulação. A tarefa é difícil porque a mistura escoa sob pressões e temperaturas altíssimas. Um erro pequeno na medição pode significar milhões de reais em produção mal contabilizada.
+</p>
+
+<p>Este projeto desenvolve metodologias para verificar se esses medidores funcionam corretamente. No Centro Tecnológico do Pré-Sal Brasileiro (CTPB), na UNIFEI, medidores de fabricantes como TechnipFMC, Roxar, Pietro Fiorentini e Metis Africa são montados e testados em uma bancada experimental. Na UFF, simulações de dinâmica molecular, que acompanham o movimento de cada molécula, calculam propriedades como densidade, viscosidade e velocidade do som de óleos leves e misturas gasosas nas condições extremas do pré-sal. Modelos de aprendizado de máquina treinados com essas simulações preveem essas propriedades de forma rápida e precisa.
+</p>
+
+
+<p>O projeto é financiado pela Petrobras e coordenado pelos professores Rogério Ramos (UFES) e Luiz Fernando Barca (UNIFEI). A equipe da UFF é coordenada pelo professor Leonardo Alves. Ele reúne docentes, pesquisadores e bolsistas da UFES, da UNIFEI, da UFF e do IME.
+</p>
+
+<p><strong>Orçamento total do projeto: </strong> R$ 11.477.534,68.
+
+</p>
+
+
+  </div>
+
+
+  <!-- PROJETO 9-->
+  <div class="card">
+    <h3>Instability Free Three-Dimensional Hypersonic Laminar Boundary-Layer Steady-States for Linear and Nonlinear Stability Analyses</h3>
+    <p>
+      <strong>Registro: </strong> FA9550-18-1-0419
+    </p>
+
+    <p>Quando um veículo voa a mais de cinco vezes a velocidade do som, o voo hipersônico, uma camada muito fina de ar se forma junto à sua superfície. Essa "camada-limite" pode escoar de forma suave e organizada ou se tornar turbulenta. A turbulência aumenta muito o atrito e o aquecimento da fuselagem. Para entender como essa transição começa, os cientistas usam análises de estabilidade, que mostram quais pequenas perturbações no escoamento crescem até disparar a turbulência.
+</p>
+
+
+<p>Essas análises, porém, dependem de um ponto de partida perfeito: uma solução de computador do escoamento "calmo", sem nenhuma perturbação. Gerar essa solução é difícil, porque pequenos erros numéricos podem criar justamente as instabilidades que se quer estudar. Este projeto usou métodos numéricos desenvolvidos na UFF, chamados de esquemas de ganho mínimo, para produzir essas soluções sem instabilidades. O foco foi o escoamento hipersônico em torno de cones circulares e elípticos, como os usados nos voos experimentais HiFIRE.
+</p>
+
+
+<p>Financiado pelo Escritório de Pesquisa Científica da Força Aérea dos Estados Unidos (AFOSR), por meio do seu escritório para a América do Sul (SOARD), e coordenado pelo professor Leonardo Alves (UFF), o projeto envolveu pesquisadores e alunos de pós-doutorado, mestrado e graduação da UFF. A colaboração internacional foi com o pesquisador Pedro Paredes, do NASA Langley Research Center (Estados Unidos), responsável pelas análises de estabilidade.
+</p>
+
+<p><strong>Orçamento total do projeto: </strong> US$ 125.689 para a UFF
+
+
+</p>
+
+
+  </div>
+
+
+  <!-- PROJETO 10-->
+  <div class="card">
+    <h3>Stability Analysis of Coaxial Free Jets in Liquid Rocket Engines</h3>
+
+    <p>
+      <strong>Registro: </strong>  FA9550-13-1-0178
+
+    </p>
+
+   <p>Dentro do motor de um foguete a combustível líquido, o combustível e o oxidante (por exemplo, hidrogênio e oxigênio) são injetados por bicos chamados injetores coaxiais: um jato central envolvido por um jato em forma de anel. Esse tipo de injetor foi usado em motores famosos, como os do foguete Saturno V e do ônibus espacial. Os dois jatos são muito instáveis, e é justamente essa instabilidade que mistura os fluidos antes da queima. O problema é que o som gerado dentro da câmara de combustão pode entrar em ressonância com essas instabilidades e atrapalhar a mistura. Isso pode reduzir o desempenho do motor ou até destruí-lo.
+</p>
+
+
+<p>Este projeto usou análise de estabilidade, uma ferramenta matemática que identifica quais pequenas perturbações crescem no escoamento, para mapear o comportamento dos jatos coaxiais em diferentes condições de velocidade, temperatura e pressão. O objetivo foi entender quando os jatos amplificam ruídos externos e quando oscilam sozinhos, informação essencial para projetar injetores mais seguros.
+</p>
+
+
+<p>Financiado pelo Escritório de Pesquisa Científica da Força Aérea dos Estados Unidos (AFOSR), por meio do seu escritório para a América do Sul (SOARD), e coordenado pelo professor Leonardo Alves (UFF), o projeto envolveu alunos de pós-graduação da UFF. Contou também com a colaboração de pesquisadores do Instituto de Aeronáutica e Espaço (IAE/DCTA), no Brasil, e do Laboratório de Pesquisa da Força Aérea (AFRL), em Edwards, nos Estados Unidos, cujos experimentos serviram de referência.
+</p>
+
+<p><strong>Orçamento total do projeto: </strong> US$ 105.000 para a UFF
+</p>
+
+
+  </div>
+
+
+   <!-- PROJETO 11-->
+  <div class="card">
+    <h3>Absolute Instability of Interacting Planar Mixing Layers and Wakes</h3>
+
+    <p>
+      <strong>Registro: </strong>  Projeto que estudou instabilidades em camadas de mistura e esteiras, combinando análises teóricas realizadas na UFF com experimentos realizados no Caltech. Projeto financiado pela AFOSR.
+
+    </p>
+
+  <p>Quando o ar passa pela borda traseira de uma placa fina, como a asa de um avião ou a parede de um injetor, os escoamentos de cima e de baixo se encontram e formam uma "esteira": uma região cheia de redemoinhos atrás do objeto. Se os dois lados têm velocidades diferentes, surge também uma camada de mistura, onde um escoamento rápido desliza sobre um lento. Em certas condições, essas regiões começam a oscilar sozinhas, como uma bandeira tremulando no vento, sem precisar de nenhum estímulo externo. Esse fenômeno é chamado de instabilidade absoluta e afeta a mistura de combustível em motores de foguete.
+</p>
+
+
+<p>Este projeto usou análise de estabilidade, uma ferramenta matemática que identifica quais perturbações crescem no escoamento, para estudar a interação entre esteiras e camadas de mistura. A pesquisa descobriu que, sob certas combinações de velocidades e espessuras, o escoamento pode oscilar em duas frequências independentes ao mesmo tempo, e não em apenas uma, como se acreditava. A descoberta é importante para projetar injetores com paredes espessas, muito usados pela Força Aérea dos Estados Unidos.
+</p>
+
+
+<p>Financiado pelo Escritório de Pesquisa Científica da Força Aérea dos Estados Unidos (AFOSR) e coordenado pelo professor Leonardo Alves (UFF), o projeto contou com pesquisadores de pós-doutorado da UFF. A colaboração internacional foi com o grupo da professora Beverley McKeon, então no Instituto de Tecnologia da Califórnia (Caltech), que realizou os experimentos com financiamento próprio do AFOSR.
+</p>
+
+<p><strong>Orçamento total do projeto: </strong> US$ 25.000 para a UFF
+
+</p>
+
+
+  </div>
+
+
+
+
+
+</section>
+    <a href="#" class="btn-topo">Voltar ao Topo</a>
+
+    <!-- RODAPÉ -->
+    <footer>© 2025 Universidade Federal Fluminense - DFCom.</footer>
+  </body>
+</html>

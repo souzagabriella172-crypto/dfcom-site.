@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Ensino - DFCom UFF</title>
+
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #ffffff;
+        color: #333;
+      }
+
+      /* ================================
+         MENU FIXO
+      ================================= */
+
+      header {
+        background-color: #003366;
+        height: 80px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+
+      .menu {
+        list-style: none;
+        display: flex;
+        gap: 40px;
+        padding: 0;
+        margin: 0;
+      }
+
+      .menu a {
+        text-decoration: none;
+        color: #ffffff;
+        font-size: 1.1rem;
+        transition: 0.3s ease;
+      }
+
+      .menu a:hover {
+        color: #ffcc00;
+      }
+
+      /* ================================
+         TÍTULO + DESCRIÇÃO
+      ================================= */
+
+      main.ensino {
+        max-width: 1100px;
+        margin: 120px auto 60px;
+        padding: 20px;
+        text-align: center;
+      }
+
+      main h1 {
+        color: #00529b;
+        margin-bottom: 10px;
+      }
+
+      main p.descricao {
+        color: #444;
+        margin-bottom: 40px;
+        font-size: 1.1rem;
+      }
+
+      /* ================================
+         LOGO
+      ================================= */
+
+      .logo-ensino {
+        width: 900px;
+        display: block;
+        margin: 0 auto;
+        margin-top: -40px;
+      }
+
+      /* ================================
+         CARDS
+      ================================= */
+
+      .grade-ensino {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 35px;
+        margin-top: 40px;
+      }
+
+      .card-ensino {
+        width: 260px;
+        aspect-ratio: 1 / 1;
+        background: #ffffff;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        transition: 0.3s ease;
+      }
+
+      .card-ensino:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+      }
+
+      .card-ensino img {
+        width: 100%;
+        height: 60%;
+        object-fit: cover;
+      }
+
+      .card-ensino h3 {
+        margin: 10px 0 5px;
+        color: #003366;
+      }
+
+      .card-ensino p {
+        color: #555;
+        padding: 0 10px;
+      }
+
+      /* ================================
+         ÁREAS DETALHADAS
+      ================================= */
+
+      section.conteudo {
+        max-width: 900px;
+        margin: 80px auto;
+        padding: 30px;
+        background: #f7f9fc;
+        border-radius: 12px;
+        box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+      }
+
+      section.conteudo h2 {
+        color: #003366;
+        margin-bottom: 15px;
+      }
+
+      .lista li {
+        margin-bottom: 20px;
+        line-height: 1.7;
+      }
+
+      /* ================================
+         INTRODUÇÃO
+      ================================= */
+
+      .introducao-texto {
+        font-size: 1.05rem;
+        line-height: 1.8;
+        color: #555;
+        margin-bottom: 35px;
+        text-align: justify;
+      }
+
+      .subtitulo-conteudo {
+        color: #00529b;
+        margin-bottom: 25px;
+      }/* ================================
+   BLOCOS DAS AULAS
+================================ */
+
+.aula {
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 20px 25px;
+  margin-bottom: 20px;
+  border-left: 5px solid #003366;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.aula h3 {
+  margin-top: 0;
+  margin-bottom: 15px;
+  color: #003366;
+}
+
+.materiais {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.material {
+  display: inline-block;
+  text-decoration: none;
+  background-color: #003366;
+  color: #ffffff;
+  padding: 9px 15px;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  transition: 0.3s ease;
+}
+
+.material:hover {
+  background-color: #00529b;
+  transform: translateY(-2px);
+}
+      /* ================================
+         RODAPÉ
+      ================================= */
+
+      footer {
+        background-color: #003366;
+        color: white;
+        text-align: center;
+        padding: 15px 0;
+        margin-top: 40px;
+      }
+
+      /* ================================
+         BOTÃO VOLTAR AO TOPO
+      ================================= */
+
+      .btn-topo {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background: #1f3c88;
+        color: white;
+        padding: 12px 16px;
+        border-radius: 50%;
+        z-index: 1000;
+        cursor: pointer;
+        text-decoration: none;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        transition: all 0.3s ease;
+      }
+
+      .btn-topo:hover {
+        background: #3a59b3;
+        transform: scale(1.2);
+        box-shadow: 0 6px 8px rgba(0, 0, 0, 0.5);
+      }
+
+      /* ================================
+         RESPONSIVO
+      ================================= */
+
+      @media (max-width: 768px) {
+
+        .menu {
+          gap: 15px;
+        }
+
+        .menu a {
+          font-size: 0.9rem;
+        }
+
+        /* Logo no celular: proporcional, sem o espaço branco da imagem */
+        .logo-ensino {
+          width: 100% !important;
+          max-width: 420px !important;
+          height: auto !important;
+          aspect-ratio: 1920 / 450;
+          object-fit: cover;
+          object-position: 50% 57%;
+          margin: 0 auto 10px !important;
+          display: block;
+        }
+
+        .grade-ensino {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        section.conteudo {
+          margin: 50px 15px;
+          padding: 20px;
+        }
+
+        .materiais {
+          flex-direction: column;
+        }
+
+        .material {
+          text-align: center;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+
+    <!-- ================================
+         MENU
+    ================================= -->
+
+    <header>
+      <nav>
+        <ul class="menu">
+          <li><a href="index.html">Início</a></li>
+          <li><a href="sobre.html">O DFCom</a></li>
+          <li><a href="cursos.html">Cursos</a></li>
+          <li><a href="noticias.html">Notícias</a></li>
+          <li><a href="contato.html">Contato</a></li>
+        </ul>
+      </nav>
+    </header>
+
+
+    <!-- ================================
+         TÍTULO + CARDS
+    ================================= -->
+
+    <main class="ensino">
+
+      <!-- LOGO -->
+      <img
+        src="3.png"
+        alt="Logo Ensino"
+        class="logo-ensino"
+        style="
+          height: 600px;
+          width: auto;
+          display: block;
+          margin: -200px auto 0 auto;
+        "
+      />
+
+      <p class="descricao">
+        Explore nossas disciplinas, mini-cursos e palestras oferecidos pelo
+        DFCom.
+      </p>
+
+
+      <!-- CARDS -->
+
+      <section class="grade-ensino">
+
+        <div class="card-ensino">
+          <a href="#disciplinas">
+            <img
+              src="https://network.grupoabril.com.br/wp-content/uploads/sites/4/2016/12/gestc3a3o.jpg?quality=70&strip=all"
+              alt="Disciplinas"
+            />
+          </a>
+
+          <h3>Disciplinas</h3>
+
+          <p>
+            Informações sobre as disciplinas oferecidas.
+          </p>
+        </div>
+
+
+        <div class="card-ensino">
+          <a href="#minicursos">
+            <img
+              src="https://doity.com.br/blog/app/uploads/2022/05/Saiba-como-elaborar-um-minicurso-academico-em-7-passos-930x534.png"
+              alt="Mini-cursos"
+            />
+          </a>
+
+          <h3>Mini-cursos</h3>
+
+          <p>
+            Mini-cursos para complementar sua formação.
+          </p>
+        </div>
+
+
+        <div class="card-ensino">
+          <a href="#palestras">
+            <img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqPzjyjHTS6cnkDfU-83B2VmFKyqEETOl3jw&s"
+              alt="Palestras"
+            />
+          </a>
+
+          <h3>Palestras</h3>
+
+          <p>
+            Palestras ministradas por professores e convidados.
+          </p>
+        </div>
+        
+                <div class="card-ensino">
+          <a href="prova/index.html">
+            <img src="provas.png" alt="Provas rápidas" />
+          </a>
+          <h3>Provas rápidas</h3>
+          <p>Responda às provas aplicadas em sala.</p>
+        </div>
+
+      </section>
+    </main>
+
+
+   <section id="disciplinas" class="conteudo">
+
+  <h2>Disciplinas</h2>
+
+  <div class="disciplina-box">
+
+    <h3>Métodos Numéricos Aplicados à Dinâmica dos Fluidos</h3>
+
+    <p class="descricao-disciplina">
+      Esta disciplina apresenta conceitos e ferramentas fundamentais para
+      o estudo de métodos numéricos aplicados à dinâmica dos fluidos,
+      abordando diferentes métodos e equações diferenciais.
+    </p>
+
+
+    <!-- AULA 00 -->
+
+    <div class="aula">
+
+      <h3>Aula 00 — Mathematica</h3>
+
+      <p class="resumo-aula">
+        Introdução à utilização do Mathematica como ferramenta para o
+        desenvolvimento e aplicação dos métodos numéricos.
+      </p>
+
+      <div class="parte">
+        <h4>Material</h4>
+
+        <div class="materiais">
+          <a class="material" href="https://drive.google.com/open?id=1Tptqln7Gd8Y97O5X6fIDvE_yNA20Ykin" target="_blank">
+            Material
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+
+    <!-- AULA 01 -->
+
+    <div class="aula">
+
+      <h3>Aula 01 — Fundamentos</h3>
+
+      <p class="resumo-aula">
+        Introdução aos fundamentos dos métodos numéricos e aos conceitos
+        necessários para a resolução computacional de problemas.
+      </p>
+
+      <div class="parte">
+
+        <h4>Parte 1</h4>
+        <p>Introdução à análise numérica e à classificação de problemas matemáticos.
+
+        <div class="materiais">
+          <a class="material" href="https://drive.google.com/open?id=1aA95d6fWqBR1jdjKd2M4rEB7Md2p2M3K" target="_blank">
+            PDF
+          </a>
+
+          <a class="material" href="https://drive.google.com/open?id=1jhupIJjxFRE9_C3CSMOkqoeOdqkhrrFU" target="_blank">
+            Vídeo
+          </a>
+        </div>
+
+      </div>
+
+      <div class="parte">
+
+        <h4>Parte 2</h4>
+        <p>Classificação matemática das equações diferenciais e identificação dos tipos hiperbólico, parabólico e elíptico.
+
+        <div class="materiais">
+          <a class="material" href="https://drive.google.com/open?id=1_MTzB-UKRttq479aCEkRShQEMr4kgaWh" target="_blank">
+            PDF
+          </a>
+
+          <a class="material" href="https://drive.google.com/open?id=1A7QkqUZ4U9AB7Q50Rk1dqbLIAA9p7Ti2" target="_blank">
+            Vídeo
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- AULA 02 -->
+
+    <div class="aula">
+
+      <h3>Aula 02 — Equação da Onda</h3>
+
+      <p class="resumo-aula">
+        Estudo da equação da onda e de sua resolução por métodos numéricos,
+        com materiais teóricos, vídeos, códigos e notebooks.
+      </p>
+
+      <div class="parte">
+        <h4>Parte 1</h4>
+        <p>Introdução ao Mathematica e aos métodos numéricos aplicados às equações diferenciais.
+        <div class="materiais">
+          <a class="material" href="https://drive.google.com/open?id=1bnn_s_xYIIiY-gGfcsiLOgpKuVKxTJ75" target="_blank">PDF</a>
+          <a class="material" href="https://drive.google.com/open?id=1DY9YiAJtYbaFVNY2kMShzf3mhre8iJHn" target="_blank">Vídeo</a>
+        </div>
+      </div>
+
+      <div class="parte">
+        <h4>Parte 2</h4>
+        <p>Métodos de múltiplos passos, com técnicas preditoras, corretoras e o método de MacCormack.
+        <div class="materiais">
+          <a class="material" href="https://drive.google.com/open?id=1HGvASLS1MDGMTwrxcyugx1MQDAU8t8Lc" target="_blank">PDF</a>
+          <a class="material" href="https://drive.google.com/open?id=1UYEqo9beQvQykmxPPOHTn4Zw-Iu8p-pW" target="_blank">Vídeo</a>
+        </div>
+      </div>
+
+      <div class="parte">
+        <h4>Parte 3</h4>
+        <p>Código e implementação computacional dos métodos numéricos apresentados na aula.
+        <div class="materiais">
+          <a class="material" href="https://drive.google.com/open?id=12gfPUGhQ_yl1Vq8_m5Z_umnspweQ5GUW" target="_blank">Código</a>
+          <a class="material" href="https://drive.google.com/open?id=1Abmv3zLqXfzu_actaI4ZIdJSc3nATj5I" target="_blank">Vídeo</a>
+          <a class="material" href="https://drive.google.com/open?id=1oXjCgIsOGSUKNv0QCbXqWrJDk6LBY6ZL" target="_blank">Notebook</a>
+        </div>
+      </div>
+
+      <div class="parte">
+        <h4>Parte 4</h4>
+        <p>Código e implementação computacional dos métodos numéricos apresentados na aula.
+        <div class="materiais">
+          <a class="material" href="https://drive.google.com/open?id=12yqZPqY1MDurhX5S0n2W3Iat68pGHWR1" target="_blank">Código</a>
+          <a class="material" href="https://drive.google.com/open?id=1VI4nnuZgcqYsdflcKFX3o4IF9T1xHPrf" target="_blank">Vídeo</a>
+          <a class="material" href="https://drive.google.com/open?id=18ZqjwtoGMYMttDHUgcIBAAB7TWtwbOz5" target="_blank">Notebook</a>
+        </div>
+      </div>
+
+    </div>
+
+
+    <!-- AULA 03 -->
+
+    <div class="aula">
+
+      <h3>Aula 03 — Equação do Calor</h3>
+
+      <p class="resumo-aula">
+        Estudo da equação do calor e de sua aplicação em métodos numéricos,
+        acompanhando diferentes etapas de desenvolvimento e implementação.
+      </p>
+
+      <!-- Parte 1 -->
+      <div class="parte">
+        <h4>Parte 1</h4>
+        <p>Equação do calor e sua solução analítica pelo método da separação de variáveis.
+        <div class="materiais">
+          <a class="material" href="https://drive.google.com/open?id=1WY7_EDfFLvhMd9-Lua1o2CWvUdboNo2l" target="_blank">PDF</a>
+          <a class="material" href="https://drive.google.com/open?id=1FfkKlhjT2EqnUTDT_bOzXU4vTB9vqsqF" target="_blank">Vídeo</a>
+        </div>
+      </div>
+
+      <!-- Parte 2 -->
+      <div class="parte">
+        <h4>Parte 2</h4>
+        <p>Método de Euler implícito, erro de truncamento e análise da equação do calor.
+        <div class="materiais">
+          <a class="material" href="https://drive.google.com/open?id=1FrgzRFu_AdAqg8IdVUD_y9gGzfNXi01L" target="_blank">PDF</a>
+          <a class="material" href="https://drive.google.com/open?id=13b4KH091DgBsnDmHoGvtpFvyca80R3b1" target="_blank">Vídeo</a>
+        </div>
+      </div>
+
+      <!-- Parte 3 -->
+      <div class="parte">
+        <h4>Parte 3</h4>
+        <p>Código e vídeo de aplicação do método de Euler implícito.
+        <div class="materiais">
+          <a class="material" href="https://drive.google.com/open?id=1EzSo_GS6Rm3s6tbOfRASeg0FzvglRahK" target="_blank">Código</a>
+          <a class="material" href="https://drive.google.com/open?id=1TsYJWde6Qq-VFQTlBDOxlnasf3ZqF2PX" target="_blank">Vídeo</a>
+          <a class="material" href="https://drive.google.com/open?id=1CJgEik1Scc0DW-gV2OE3UnG35jRFzZXB" target="_blank">Notebook</a>
+        </div>
+      </div>
+
+      <!-- Parte 4 -->
+      <div class="parte">
+        <h4>Parte 4</h4>
+        <p>Código e vídeo de aplicação do método de Euler implícito.
+        <div class="materiais">
+          <a class="material" href="https://drive.google.com/open?id=1ip8NB-_J8ocudVWOQQNZYw4G_3HMi-JH" target="_blank">Código</a>
+          <a class="material" href="https://drive.google.com/open?id=151_7P2aMa7cmEsUUDSoQZuutNh5JdVOA" target="_blank">Vídeo</a>
+          <a class="material" href="https://drive.google.com/open?id=1FYA39hk5YBwLcvieBl1fD6cCP_o_7AXb" target="_blank">Notebook</a>
+        </div>
+      </div>
+
+      <!-- Parte 5 -->
+      <div class="parte">
+        <h4>Parte 5</h4>
+        <p>Código e vídeo de aplicação do método de Euler implícito.
+        <div class="materiais">
+          <a class="material" href="https://drive.google.com/open?id=1Cu_rkCVHEZj6w9erexMI6H3us6px4ykk" target="_blank">Código</a>
+          <a class="material" href="https://drive.google.com/open?id=1ox0TZpKegMouyoCPaRh4WfuopYcGFtgw" target="_blank">Vídeo</a>
+          <a class="material" href="https://drive.google.com/open?id=12DISiOHTwF8RsBc6Co1GBX4vwwymPQ_f" target="_blank">Notebook</a>
+        </div>
+      </div>
+
+      <!-- Parte 6 -->
+      <div class="parte">
+        <h4>Parte 6</h4>
+        <p>Código e vídeo de aplicação do método de Euler implícito.
+        <div class="materiais">
+          <a class="material" href="https://drive.google.com/open?id=16At0W2fpftQR3TIKdPaUSt8dIilCnnQt" target="_blank">Código</a>
+          <a class="material" href="https://drive.google.com/open?id=1FJ5QE2_2MF7hjJRhtHtGuwzgRXZtfgZ1" target="_blank">Vídeo</a>
+          <a class="material" href="https://drive.google.com/open?id=1J7Ok1TvVnZc8TbdYDIg8S6BhLw-vgReR" target="_blank">Notebook</a>
+        </div>
+      </div>
+
+      <!-- Parte 7 -->
+      <div class="parte">
+        <h4>Parte 7</h4>
+        <p>Código e vídeo de aplicação do método de Euler implícito.
+        <div class="materiais">
+          <a class="material" href="https://drive.google.com/open?id=1hweJW943KutwOdL5zsRyVaVVgzH3a8Yv" target="_blank">Código</a>
+          <a class="material" href="https://drive.google.com/open?id=1qoChwdkQvk25IpOMmmwXfH5pzXmPbHF2" target="_blank">Vídeo</a>
+          <a class="material" href="https://drive.google.com/open?id=1aCHRV7bSDx4wzDs7iPuSwmp0k74zmyBQ" target="_blank">Notebook</a>
+        </div>
+      </div>
+
+    </div>
+
+
+    <!-- AULA 04 -->
+
+    <div class="aula">
+
+      <h3>Aula 04 — Equação de Laplace</h3>
+
+      <p class="resumo-aula">
+        Estudo da equação de Laplace e de sua resolução utilizando métodos
+        numéricos, com materiais de apoio e implementações computacionais.
+      </p>
+
+      <div class="parte">
+        <h4>Parte 1</h4>
+        <p>Solução analítica das equações de Poisson e Laplace, abordando problemas elípticos, condições de contorno e o método da separação de variáveis.
+        <div class="materiais">
+          <a class="material" href="https://drive.google.com/open?id=1B0fwQGh7NfmF3763-15BHOVgcbmtUY29" target="_blank">PDF</a>
+          <a class="material" href="https://drive.google.com/open?id=1cxHCo6HIkXLbWKo0Ccf5nmxiBCStm99o" target="_blank">Vídeo</a>
+        </div>
+      </div>
+
+      <div class="parte">
+        <h4>Parte 2</h4>
+        <p>Código e vídeo de aplicação dos métodos numéricos estudados.
+        <div class="materiais">
+          <a class="material" href="https://drive.google.com/open?id=1bWpR5uPNDW0A0btz0MXQBPSnc30kuTEn" target="_blank">Código</a>
+          <a class="material" href="https://drive.google.com/open?id=1bXdekN44HZaDA8Ho_mRNUsvsKxFf1uoH" target="_blank">Vídeo</a>
+        </div>
+      </div>
+
+      <div class="parte">
+        <h4>Parte 3</h4>
+        <div class="materiais">
+          <a class="material" href="https://drive.google.com/open?id=1yq0Dxwkm1Gbj5AkCoLTJKEv4FiA7IN69" target="_blank">Código</a>
+          <a class="material" href="https://drive.google.com/open?id=1C22KHFgDBUNyY9Bz_9HWlGEmCAyzJagO" target="_blank">Vídeo</a>
+          <a class="material" href="https://drive.google.com/open?id=1CdMtEXyHYLzsp7IbNAwOUuIdDZFCJXsu" target="_blank">Notebook</a>
+        </div>
+      </div>
+
+      <div class="parte">
+        <h4>Parte 4</h4>
+        <p>Código e vídeo de aplicação dos métodos numéricos estudados.
+        <div class="materiais">
+          <a class="material" href="https://drive.google.com/open?id=1i3xs_qoiS7_7rAq_Fw2pYZgedPeocree" target="_blank">Código</a>
+          <a class="material" href="https://drive.google.com/open?id=1CZLxGQ4VhhxZpbG5QCTuTrZEjjexA-Ky" target="_blank">Vídeo</a>
+          <a class="material" href="https://drive.google.com/open?id=1cPtOfzuvLIksXZC7yL0Aav1eO2ZaShUV" target="_blank">Notebook</a>
+        </div>
+      </div>
+
+      <div class="parte">
+        <h4>Parte 5</h4>
+        <p>Código e vídeo de aplicação dos métodos numéricos estudados.
+        <div class="materiais">
+          <a class="material" href="https://drive.google.com/open?id=1Ml3vDLmNxrkGzKi425E7tnZ_RDhpTw7E" target="_blank">Código</a>
+          <a class="material" href="https://drive.google.com/open?id=1RNECV7m2PxYJv64VK6Dpp4lswqMeJp8C" target="_blank">Vídeo</a>
+          <a class="material" href="https://drive.google.com/open?id=1Kx9YF_uNFykRC3E5rghBKHKn5t7VuNLI" target="_blank">Notebook</a>
+        </div>
+      </div>
+
+      <div class="parte">
+        <h4>Parte 6</h4>
+        <p>Demonstrações e cálculos matemáticos relacionados aos métodos numéricos.
+        <div class="materiais">
+          <a class="material" href="https://drive.google.com/open?id=1CwHf2JwTPjdbstWq66UrWLb_ArbNvfc7" target="_blank">PDF</a>
+          <a class="material" href="https://drive.google.com/open?id=1H4spsni88JsGIB3dxmwKJjUijd1flEj4" target="_blank">Vídeo</a>
+        </div>
+      </div>
+
+      <div class="parte">
+        <h4>Parte 7</h4>
+        <p>Código e vídeo de aplicação dos métodos numéricos estudados.
+        <div class="materiais">
+          <a class="material" href="https://drive.google.com/open?id=1IqGdOD4NwiwSPP3E6aWKsALoFhhCUp6D" target="_blank">Código</a>
+          <a class="material" href="https://drive.google.com/open?id=1662af7F2JJNXb1rwboInXFfwPHJgE9N6" target="_blank">Vídeo</a>
+          <a class="material" href="https://drive.google.com/open?id=1CdMtEXyHYLzsp7IbNAwOUuIdDZFCJXsu" target="_blank">Notebook</a>
+        </div>
+      </div>
+
+      <div class="parte">
+        <h4>Parte 8</h4>
+        <p>Código e vídeo de aplicação dos métodos numéricos estudados.
+        <div class="materiais">
+          <a class="material" href="https://drive.google.com/open?id=1YpfsvELFd0xXTQk1O7tf5MJNz_3LMQj7" target="_blank">Código</a>
+          <a class="material" href="https://drive.google.com/open?id=1055WAfA-SjjHWAdP07V1A4Bu0vjHY06x" target="_blank">Vídeo</a>
+          <a class="material" href="https://drive.google.com/open?id=1mpZ7nRfXohlM9vzhCMvmyYeiH6zTElhr" target="_blank">Notebook</a>
+        </div>
+      </div>
+
+    </div>
+
+
+    <!-- AULA 05 -->
+
+    <div class="aula">
+
+      <h3>Aula 05 — Equação de Burgers</h3>
+
+      <p class="resumo-aula">
+        Introdução à equação de Burgers e aos materiais utilizados para
+        seu estudo e implementação computacional.
+      </p>
+
+      <div class="parte">
+        <h4>Material</h4>
+        <div class="materiais">
+          <a class="material" href="https://drive.google.com/open?id=1xnzpVHD8WGGiKnOWPdHbHivm2XoPIKhj" target="_blank">
+            PDF
+          </a>
+
+          <a class="material" href="https://drive.google.com/open?id=1yNfsoxOY5NkPIe6LbmguD5Md7TnVCz9S" target="_blank">
+            Arquivo ZIP
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+    <!-- ================================
+         MINI-CURSOS
+    ================================= -->
+
+   <section id="minicursos" class="conteudo">
+
+  <h2>Mini-cursos</h2>
+
+  <p class="introducao-texto">
+    Materiais de formação complementar produzidos no âmbito do DFCom
+    e de atividades acadêmicas relacionadas à pesquisa e ao ensino.
+  </p>
+
+
+  <!-- MINI-CURSO 1 -->
+
+  <div class="aula">
+
+    <h3>Metodologia Científica</h3>
+
+    <p>
+      Material voltado aos fundamentos do método científico, abordando
+      revisão bibliográfica, formulação de hipóteses, hipóteses nulas
+      e análise de evidências, com exemplos aplicados à pesquisa científica.
+    </p>
+
+    <p>
+      <strong>Professor:</strong> Leo Alves (UFF)<br>
+      <strong>Evento:</strong> COBEM 2019
+    </p>
+
+    <div class="materiais">
+
+      <a
+        class="material"
+        href="https://drive.google.com/file/d/1kA38qGkOUPQueTIuYJQTRnmOoeI9NVV6/view?usp=sharing"
+        target="_blank"
+      >
+        PDF
+      </a>
+
+    </div>
+
+  </div>
+
+
+  <!-- MINI-CURSO 2 -->
+
+  <div class="aula">
+
+    <h3>Pensamento Crítico: suas bases na filosofia, psicologia e ciência</h3>
+
+    <p>
+      Mini-curso sobre as bases do pensamento crítico na filosofia,
+      psicologia, ciência e matemática, abordando argumentos, falácias,
+      vieses, método científico, teoria e computação.
+    </p>
+
+    <p>
+      <strong>Professor:</strong> Leonardo Santos de Brito Alves (UFF)<br>
+      <strong>Evento:</strong> POSMEC 2023
+    </p>
+
+    <div class="materiais">
+
+      <a
+        class="material"
+        href="pdfs/COBEM2019_Mini-Curso-1-1.pdf"
+        target="_blank"
+      >
+        PDF
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+    <!-- ================================
+         PALESTRAS
+    ================================= -->
+
+    <section id="palestras" class="conteudo">
+
+      <h2>Palestras</h2>
+
+      <ul class="lista">
+
+        <li>
+          <strong>Palestra 1:</strong> Resumo...
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            In eget sapien rhoncus, scelerisque ante in, auctor tortor.
+          </p>
+        </li>
+
+      </ul>
+
+    </section>
+
+
+    <!-- BOTÃO TOPO -->
+
+    <a href="#" class="btn-topo">
+      ↑
+    </a>
+
+
+    <!-- RODAPÉ -->
+
+    <footer>
+      © 2025 Universidade Federal Fluminense - DFCom.
+    </footer>
+
+  </body>
+</html>

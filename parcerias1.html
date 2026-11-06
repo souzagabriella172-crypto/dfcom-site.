@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Parcerias - DFCom</title>
+
+
+<style>
+
+/* ==========================
+RESET
+========================== */
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:"Arial",sans-serif;
+}
+
+
+html{
+scroll-behavior:smooth;
+}
+
+
+body{
+
+background:#ffffff;
+color:#333;
+
+}
+
+
+
+/* ==========================
+MENU
+========================== */
+
+
+header{
+
+height:80px;
+
+background:#003366;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+position:fixed;
+
+top:0;
+
+width:100%;
+
+z-index:1000;
+
+box-shadow:0 3px 10px rgba(0,0,0,0.15);
+
+}
+
+
+
+.menu{
+
+display:flex;
+
+gap:40px;
+
+list-style:none;
+
+}
+
+
+
+.menu a{
+
+color:white;
+
+text-decoration:none;
+
+font-size:1.1rem;
+
+}
+
+
+
+.menu a:hover{
+
+color:#ffcc00;
+
+}
+
+
+
+/* ==========================
+HERO
+========================== */
+
+
+.hero{
+
+
+margin-top:80px;
+
+height:430px;
+
+background:
+
+linear-gradient(
+rgba(0,51,102,0.85),
+rgba(0,51,102,0.85)
+),
+
+url("cfd-fundo.jpg");
+
+
+background-size:cover;
+
+background-position:center;
+
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+text-align:center;
+
+color:white;
+
+
+}
+
+
+
+.hero h1{
+
+font-size:3rem;
+
+margin-bottom:20px;
+
+}
+
+
+
+.hero p{
+
+max-width:800px;
+
+font-size:1.2rem;
+
+line-height:1.7;
+
+}
+
+
+
+/* ==========================
+INTRO
+========================== */
+
+
+.intro{
+
+max-width:1000px;
+
+margin:70px auto;
+
+text-align:center;
+
+padding:20px;
+
+}
+
+
+
+.intro h2{
+
+color:#003366;
+
+font-size:2rem;
+
+margin-bottom:20px;
+
+}
+
+
+
+.intro p{
+
+font-size:1.1rem;
+
+line-height:1.8;
+
+}
+
+
+
+
+/* ==========================
+INDICADORES
+========================== */
+
+
+.indicadores{
+
+display:flex;
+
+justify-content:center;
+
+gap:40px;
+
+flex-wrap:wrap;
+
+margin:50px auto;
+
+}
+
+
+
+.indicador{
+
+
+background:#f5f8fc;
+
+width:220px;
+
+padding:30px;
+
+border-radius:15px;
+
+text-align:center;
+
+box-shadow:0 5px 15px rgba(0,0,0,0.08);
+
+
+}
+
+
+
+.indicador h3{
+
+font-size:2rem;
+
+color:#00529b;
+
+}
+
+
+
+.indicador p{
+
+color:#555;
+
+}
+
+
+
+
+/* ==========================
+CARDS
+========================== */
+
+
+.parcerias{
+
+max-width:1100px;
+
+margin:80px auto;
+
+display:flex;
+
+justify-content:center;
+
+gap:35px;
+
+flex-wrap:wrap;
+
+}
+
+
+
+.card{
+
+
+width:300px;
+
+background:white;
+
+border-radius:15px;
+
+overflow:hidden;
+
+box-shadow:
+0 5px 20px rgba(0,0,0,0.12);
+
+
+transition:.3s;
+
+
+}
+
+
+
+.card:hover{
+
+transform:translateY(-10px);
+
+}
+
+
+
+.card img{
+
+
+width:100%;
+
+height:190px;
+
+object-fit:cover;
+
+
+}
+
+
+
+.card h3{
+
+
+color:#003366;
+
+padding:20px 20px 10px;
+
+}
+
+
+
+.card p{
+
+padding:0 20px 25px;
+
+line-height:1.6;
+
+color:#555;
+
+}
+
+
+
+
+/* ==========================
+SEÇÕES
+========================== */
+
+
+.conteudo{
+
+
+max-width:900px;
+
+margin:60px auto;
+
+background:#f7f9fc;
+
+padding:35px;
+
+border-radius:15px;
+
+
+}
+
+
+
+.conteudo h2{
+
+color:#003366;
+
+margin-bottom:20px;
+
+font-size:1.8rem;
+
+}
+
+
+
+.conteudo p{
+
+line-height:1.8;
+
+text-align:justify;
+
+}
+
+
+
+/* ==========================
+BOTÃO TOPO
+========================== */
+
+
+.btn-topo{
+
+position:fixed;
+
+bottom:25px;
+
+right:25px;
+
+background:#1f3c88;
+
+color:white;
+
+padding:15px;
+
+border-radius:50%;
+
+text-decoration:none;
+
+}
+
+
+
+/* ==========================
+FOOTER
+========================== */
+
+
+footer{
+
+background:#003366;
+
+color:white;
+
+text-align:center;
+
+padding:25px;
+
+margin-top:80px;
+
+}
+
+
+
+
+/* ==========================
+   AJUSTES PARA CELULAR
+========================== */
+
+@media (max-width: 768px) {
+
+    header {
+        height: 70px;
+        padding: 10px 0;
+        box-sizing: border-box;
+    }
+
+    header nav {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+    }
+
+    .menu {
+        display: flex;
+        gap: 10px;
+        padding: 0;
+        margin: 0;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .menu a {
+        font-size: 13px;
+        padding: 4px 0;
+        text-align: center;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+}
+
+</style>
+
+
+</head>
+
+
+<body>
+
+
+<header>
+
+<nav>
+
+<ul class="menu">
+
+<li><a href="index.html">Início</a></li>
+          <li><a href="sobre.html">O DFCom</a></li>
+          <li><a href="cursos.html">Cursos</a></li>
+          <li><a href="noticias.html">Notícias</a></li>
+          <li><a href="contato.html">Contato</a></li>
+</ul>
+
+</nav>
+
+</header>
+
+
+
+
+<section class="hero">
+
+
+<div>
+
+<h1>
+Parcerias e Colaborações
+</h1>
+
+
+<p>
+
+O DFCom desenvolve pesquisas em colaboração com empresas,
+instituições acadêmicas e organizações estratégicas,
+promovendo inovação através da Dinâmica dos Fluidos Computacional.
+
+
+</p>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+<section class="intro">
+
+
+<h2>
+Nossa rede de colaboração
+</h2>
+
+
+<p>
+
+As parcerias do DFCom fortalecem a integração entre universidade,
+pesquisa científica e aplicações tecnológicas, permitindo o
+desenvolvimento de soluções avançadas em engenharia.
+
+</p>
+
+
+</section>
+
+
+
+
+<section class="indicadores">
+
+
+<div class="indicador">
+
+<h3>+10</h3>
+
+<p>Projetos científicos</p>
+
+</div>
+
+
+
+<div class="indicador">
+
+<h3>+5</h3>
+
+<p>Áreas de aplicação</p>
+
+</div>
+
+
+
+<div class="indicador">
+
+<h3>+20</h3>
+
+<p>Pesquisadores envolvidos</p>
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+<section class="parcerias">
+
+
+
+<a href="#industria" style="text-decoration:none;color:inherit">
+
+<div class="card">
+
+
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSPtLyY7Cl4kM8IRBv-BA8CZRqSWOkyW6wJ920xytwnUw&s=10">
+
+
+<h3>
+Interação com a Indústria
+</h3>
+
+
+<p>
+Pesquisas aplicadas e desenvolvimento tecnológico em engenharia.
+</p>
+
+
+</div>
+
+</a>
+
+
+
+
+
+<a href="#marinha" style="text-decoration:none;color:inherit">
+
+
+<div class="card">
+
+
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNUMLhwhXnTA9kYtCLlk9fV4M9VZagQDzCEK9jl_yobg&s=10">
+
+
+<h3>
+Marinha do Brasil
+</h3>
+
+
+<p>
+Colaborações em pesquisa e inovação tecnológica.
+</p>
+
+
+</div>
+
+
+</a>
+
+
+
+
+
+
+<a href="#internacional" style="text-decoration:none;color:inherit">
+
+
+<div class="card">
+
+
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2arN954x3cCvBjbnRHkp68WiWCrYAQpABkMonEGvYLw&s=10">
+
+
+<h3>
+Colaborações Internacionais
+</h3>
+
+
+<p>
+Cooperação científica em projetos avançados.
+</p>
+
+
+</div>
+
+
+</a>
+
+
+</section>
+
+
+
+
+
+
+<section id="industria" class="conteudo">
+
+
+<h2>
+Interação com a Indústria
+</h2>
+
+
+<p>
+
+Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since 1966, when designers at Letraset and James Mosley, the librarian at St Bride Printing Library in London, took a 1914 Cicero translation and scrambled it to make dummy text for Letraset's Body Type sheets. It has survived not only many decades, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised thanks to these sheets and more recently with desktop publishing software like Aldus PageMaker and Microsoft Word including versions of Lorem Ipsum.
+Why do we use it?
+
+It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
+
+</p>
+
+
+</section>
+
+
+
+
+
+
+<section id="marinha" class="conteudo">
+
+
+<h2>
+Marinha do Brasil
+</h2>
+
+
+<p>
+
+Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since 1966, when designers at Letraset and James Mosley, the librarian at St Bride Printing Library in London, took a 1914 Cicero translation and scrambled it to make dummy text for Letraset's Body Type sheets. It has survived not only many decades, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised thanks to these sheets and more recently with desktop publishing software like Aldus PageMaker and Microsoft Word including versions of Lorem Ipsum.
+Why do we use it?
+
+It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
+
+</p>
+
+
+</section>
+
+
+
+
+
+
+<section id="internacional" class="conteudo">
+
+
+<h2>
+Colaborações Internacionais
+</h2>
+
+
+<p>
+
+Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since 1966, when designers at Letraset and James Mosley, the librarian at St Bride Printing Library in London, took a 1914 Cicero translation and scrambled it to make dummy text for Letraset's Body Type sheets. It has survived not only many decades, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised thanks to these sheets and more recently with desktop publishing software like Aldus PageMaker and Microsoft Word including versions of Lorem Ipsum.
+Why do we use it?
+
+It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
+
+</p>
+
+
+</section>
+
+
+
+
+
+
+<a href="#" class="btn-topo">Voltar ao Topo</a>
+
+
+
+<footer>
+
+© 2025 Universidade Federal Fluminense - DFCom.
+
+</footer>
+
+
+</body>
+
+</html>
+    
+    

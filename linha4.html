@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Métodos Numéricos - DFCom</title>
+
+
+<style>
+
+/* ==========================
+   ESTILO GERAL
+=========================== */
+
+body {
+
+font-family: Arial, Helvetica, sans-serif;
+
+margin:0;
+
+padding:0;
+
+background:#fff;
+
+color:#333;
+
+}
+
+
+html{
+
+scroll-behavior:smooth;
+
+}
+
+
+/* ==========================
+   MENU FIXO
+=========================== */
+
+
+header{
+
+background-color:#003366;
+
+height:80px;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+position:fixed;
+
+top:0;
+
+left:0;
+
+width:100%;
+
+z-index:1000;
+
+box-shadow:0 2px 5px rgba(0,0,0,0.1);
+
+}
+
+
+
+.menu{
+
+list-style:none;
+
+display:flex;
+
+gap:40px;
+
+margin:0;
+
+padding:0;
+
+}
+
+
+
+.menu a{
+
+text-decoration:none;
+
+color:white;
+
+font-size:1.1rem;
+
+font-weight:500;
+
+transition:.3s;
+
+}
+
+
+
+.menu a:hover{
+
+color:#ffcc00;
+
+}
+
+
+
+/* ==========================
+   CONTEÚDO
+=========================== */
+
+
+main{
+
+max-width:900px;
+
+margin:120px auto 60px;
+
+padding:20px;
+
+}
+
+
+
+h1{
+
+text-align:center;
+
+color:#003366;
+
+margin-bottom:30px;
+
+font-size:2.3rem;
+
+}
+
+
+
+.introducao{
+
+font-size:1.1rem;
+
+line-height:1.8;
+
+text-align:justify;
+
+margin-bottom:50px;
+
+}
+
+
+
+/* ==========================
+   NÍVEIS
+=========================== */
+
+
+.nivel{
+
+background:#f7f9fc;
+
+border-left:7px solid #003366;
+
+padding:30px;
+
+border-radius:12px;
+
+margin-bottom:50px;
+
+box-shadow:0 3px 10px rgba(0,0,0,.08);
+
+}
+
+
+
+.nivel h2{
+
+color:#003366;
+
+margin-bottom:25px;
+
+font-size:1.8rem;
+
+}
+
+
+
+.nivel p{
+
+line-height:1.8;
+
+text-align:justify;
+
+margin-bottom:15px;
+
+}
+
+
+
+
+/* ==========================
+   VIDEOAULA
+=========================== */
+
+
+.video-box{
+
+background:#003366;
+
+color:white;
+
+padding:35px;
+
+border-radius:12px;
+
+text-align:center;
+
+margin-top:60px;
+
+}
+
+
+
+.video-box h2{
+
+color:white;
+
+}
+
+
+
+.video-box a{
+
+display:inline-block;
+
+margin-top:20px;
+
+background:#ffcc00;
+
+color:#003366;
+
+padding:12px 25px;
+
+border-radius:8px;
+
+text-decoration:none;
+
+font-weight:bold;
+
+}
+
+
+
+
+/* ==========================
+   BOTÃO VOLTAR
+=========================== */
+
+
+.voltar{
+
+display:inline-block;
+
+margin-top:40px;
+
+padding:12px 25px;
+
+background:#003366;
+
+color:white;
+
+text-decoration:none;
+
+border-radius:8px;
+
+font-weight:bold;
+
+}
+
+
+
+.voltar:hover{
+
+background:#001f4d;
+
+}
+
+
+
+
+/* ==========================
+   RODAPÉ
+=========================== */
+
+
+footer{
+
+background:#003366;
+
+color:white;
+
+text-align:center;
+
+padding:20px;
+
+margin-top:50px;
+
+}
+
+
+/* Menu no celular - mesmo padrão do index.html (styles.css) */
+@media(max-width:768px){
+
+header{
+height:70px;
+padding:10px 0;
+box-sizing:border-box;
+}
+
+header nav{
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+height:100%;
+}
+
+.menu{
+gap:10px;
+padding:0;
+margin:0;
+flex-wrap:wrap;
+justify-content:center;
+}
+
+.menu a{
+font-size:13px;
+padding:4px 0;
+text-align:center;
+}
+
+}
+
+</style>
+
+
+</head>
+
+
+
+<body>
+
+
+
+<header>
+
+<nav>
+
+<ul class="menu">
+
+<li><a href="index.html">Início</a></li>
+
+<li><a href="sobre.html">O DFCom</a></li>
+
+<li><a href="cursos.html">Cursos</a></li>
+
+<li><a href="noticias.html">Notícias</a></li>
+
+<li><a href="contato.html">Contato</a></li>
+
+</ul>
+
+</nav>
+
+</header>
+
+
+
+
+
+<main>
+
+
+
+<h1>
+Métodos Numéricos
+</h1>
+
+
+
+
+<p class="introducao">
+
+
+Os <strong>Métodos Numéricos</strong> são ferramentas matemáticas e
+computacionais utilizadas para solucionar problemas complexos de engenharia,
+permitindo obter resultados aproximados quando soluções analíticas não são
+possíveis.
+
+Essa área possui grande importância na Dinâmica dos Fluidos Computacional
+(CFD), possibilitando simulações, análises e previsões do comportamento de
+sistemas físicos.
+
+
+</p>
+
+
+
+
+
+
+
+<section class="nivel">
+
+
+<h2>
+Nível 1: Iniciante
+</h2>
+
+
+<p>
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+Os métodos numéricos são técnicas utilizadas para encontrar soluções
+aproximadas de problemas matemáticos através de procedimentos computacionais.
+
+</p>
+
+
+<p>
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+Essas ferramentas são fundamentais para estudar fenômenos físicos e auxiliar
+engenheiros na análise de diferentes sistemas.
+
+</p>
+
+
+</section>
+
+
+
+
+
+
+
+<section class="nivel">
+
+
+<h2>
+Nível 2: Intermediário
+</h2>
+
+
+
+<p>
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+O nível intermediário aborda a aplicação de algoritmos matemáticos para
+resolver equações relacionadas a problemas de engenharia.
+
+</p>
+
+
+
+<p>
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+Métodos como diferenças finitas, volumes finitos e elementos finitos permitem
+representar fenômenos físicos através de modelos computacionais.
+
+</p>
+
+
+
+<p>
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+Essas técnicas são utilizadas em estudos envolvendo transferência de calor,
+escoamentos e análise estrutural.
+
+</p>
+
+
+</section>
+
+
+
+
+
+
+
+<section class="nivel">
+
+
+<h2>
+Nível 3: Avançado
+</h2>
+
+
+
+<p>
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+No nível avançado são estudados métodos numéricos de alta precisão aplicados a
+simulações computacionais complexas.
+
+</p>
+
+
+
+<p>
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+A Dinâmica dos Fluidos Computacional (CFD) utiliza métodos numéricos para
+resolver equações que descrevem o comportamento dos fluidos.
+
+</p>
+
+
+
+<p>
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+Pesquisas avançadas envolvem otimização computacional, inteligência artificial,
+modelagem matemática e processamento de alto desempenho.
+
+</p>
+
+
+</section>
+
+
+
+
+
+
+
+<section class="video-box">
+
+
+<h2>
+Videoaula - Métodos Numéricos
+</h2>
+
+
+<p>
+
+Aprofunde seus conhecimentos sobre métodos numéricos e suas aplicações na
+engenharia através da videoaula preparada pelo DFCom.
+
+</p>
+
+
+
+<a href="#">
+
+Assistir Videoaula
+
+</a>
+
+
+</section>
+
+
+
+
+
+
+<a href="pesquisa.html" class="voltar">
+
+← Voltar para Linhas de Pesquisa
+
+</a>
+
+
+
+
+</main>
+
+
+
+
+
+<footer>
+
+© 2025 Universidade Federal Fluminense - DFCom.
+
+</footer>
+
+
+
+</body>
+
+</html>

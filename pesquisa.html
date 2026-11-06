@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Linhas de Pesquisa - DFCom UFF</title>
+
+    <style>
+      /* ==========================
+         ESTILO GERAL
+      =========================== */
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #ffffff;
+        color: #333;
+      }
+
+      /* ==========================
+         MENU FIXO
+      =========================== */
+      header {
+        background-color: #003366;
+        height: 80px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+
+      .menu {
+        list-style: none;
+        display: flex;
+        gap: 40px;
+      }
+
+      .menu a {
+        text-decoration: none;
+        color: #ffffff;
+        font-weight: 500;
+        font-size: 1.1rem;
+        transition: 0.3s ease;
+      }
+
+      .menu a:hover {
+        color: #ffcc00;
+      }
+
+      /* ==========================
+         CONTEÚDO PRINCIPAL
+      =========================== */
+      main.pesquisa {
+        max-width: 900px;
+        margin: 120px auto 50px;
+        padding: 20px;
+      }
+
+      main h1 {
+        text-align: center;
+        color: #00529b;
+        margin-bottom: 40px;
+      }
+
+      /* ==========================
+         LINHAS DE PESQUISA
+      =========================== */
+      .linha {
+        background-color: #f9f9f9;
+        border-radius: 10px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        margin-bottom: 25px;
+      }
+
+      .linha h2 {
+        color: #003366;
+        margin-top: 0;
+      }
+
+      .linha p {
+        line-height: 1.6;
+        margin-bottom: 15px;
+      }
+
+      .botao-linha {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #00529b;
+        color: white;
+        text-decoration: none;
+        border-radius: 8px;
+        font-weight: bold;
+        transition: background-color 0.3s;
+      }
+
+      .botao-linha:hover {
+        background-color: #003366;
+      }
+      .btn-voltar {
+        display: inline-block;
+        margin: 20px 0;
+        padding: 10px 18px;
+        text-decoration: none;
+        font-size: 0.95rem;
+        color: #003366; /* azul UFF */
+        border: 1px solid #003366;
+        border-radius: 6px;
+        transition: 0.3s;
+      }
+
+      .btn-voltar:hover {
+        background-color: #003366;
+        color: #ffffff;
+      }
+      .btn-voltar {
+        margin-left: 40px;
+      }
+      /* ==========================
+   MENU NO CELULAR
+========================== */
+@media (max-width: 768px) {
+  header {
+    height: 70px;
+    padding: 10px 0;
+  }
+
+  header nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+  }
+
+  .menu {
+    gap: 12px;
+    padding: 0;
+    margin: 0;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .menu li {
+    margin: 0;
+  }
+
+  .menu a {
+    font-size: 15px;
+    padding: 4px 0;
+    text-align: center;
+  }
+
+  body {
+    padding-top: 70px;
+  }
+
+  main.pesquisa {
+    margin-top: 30px;
+    padding: 15px;
+  }
+
+  main h1 {
+    font-size: 1.8rem;
+  }
+
+  .linha {
+    padding: 18px;
+  }
+}
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <nav>
+        <ul class="menu">
+          <li><a href="index.html">Início</a></li>
+          <li><a href="sobre.html">O DFCom</a></li>
+          <li><a href="cursos.html">Cursos</a></li>
+          <li><a href="noticias.html">Notícias</a></li>
+          <li><a href="contato.html">Contato</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="pesquisa">
+      <h1>Linhas de Pesquisa</h1>
+
+      <div class="linha">
+        <h2>fluidos Supercríticos</h2>
+        <p>
+          Fluidos supercríticos são substâncias submetidas a temperaturas e pressões superiores aos seus pontos críticos, 
+          apresentando propriedades características das fases líquida e gasosa.
+          Suas propriedades físico-químicas possibilitam aplicações em extração, cromatografia, 
+          processos industriais e tecnologias de engenharia.
+        </p>
+        <a href="linha1.html" class="botao-linha">Ver mais</a>
+      </div>
+
+      <div class="linha">
+        <h2>Aerodinâmica de alta velocidade</h2>
+        <p>
+          A Aerodinâmica de Alta Velocidade aborda a Teoria de Voo para os
+          aviões a jato, é uma continuação natural principalmente para os alunos
+          que aspiram uma carreira comercial, bem ilustrado facilita a
+          compreensão destes temas.
+        </p>
+        <a href="linha2.html" class="botao-linha">Ver mais</a>
+      </div>
+
+      <div class="linha">
+        <h2>Sistema de injeção</h2>
+        <p>
+          O sistema de injeção é o método responsável por fornecer a quantidade
+          exata de combustível ao motor, no momento correto e em sincronia com o
+          movimento dos pistões, para que ocorra a combustão. A injeção
+          eletrônica moderna substituiu os carburadores para otimizar o
+          desempenho, reduzir o consumo de combustível e diminuir a emissão de
+          gases poluentes.
+        </p>
+        <a href="linha3.html" class="botao-linha">Ver mais</a>
+      </div>
+      <div class="linha">
+        <h2>Métodos Numéricos</h2>
+        <p>
+          Métodos numéricos são algoritmos de computador que calculam soluções
+          aproximadas para problemas matemáticos complexos, muitas vezes usados
+          quando soluções analíticas não são possíveis ou práticas. Eles
+          fornecem uma solução numérica, que é um conjunto de números, e são
+          amplamente aplicados em áreas como engenharia e ciência para fazer
+          simulações precisas, como no projeto de aeronaves ou na previsão do
+          tempo. Os métodos numéricos são divididos em categorias como diretos,
+          recursivos e iterativos, e a escolha entre eles depende de fatores
+          como a precisão desejada, a velocidade de convergência e o esforço
+          computacional.
+        </p>
+        <a href="linha4.html" class="botao-linha">Ver mais</a>
+      </div>
+    </main>
+    <a href="index.html" class="btn-voltar">← Voltar para a página principal</a>
+  </body>
+</html>

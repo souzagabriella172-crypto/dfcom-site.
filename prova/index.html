@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex" />
+    <title>Prova rápida – DFCom/UFF</title>
+    <link rel="stylesheet" href="prova.css" />
+  </head>
+  <body>
+    <header>
+      <a class="marca" href="../index.html">DFCom <span>·</span> UFF</a>
+      <nav>
+        <a href="../ensino.html">Ensino</a>
+        <a href="painel.html">Painel do professor</a>
+      </nav>
+    </header>
+
+    <main>
+      <!-- ============ ETAPA 1: IDENTIFICAÇÃO ============ -->
+      <section id="tela-entrada">
+        <h1>Prova rápida</h1>
+        <p class="sub">Informe o código passado pelo professor e a sua matrícula.</p>
+
+        <form id="form-entrada" class="cartao" autocomplete="off">
+          <div class="linha">
+            <div>
+              <label for="codigo">Código da prova</label>
+              <input type="text" id="codigo" name="codigo" placeholder="ex.: ABC123" maxlength="20" required
+                     autocapitalize="characters" spellcheck="false" />
+            </div>
+            <div>
+              <label for="matricula">Matrícula</label>
+              <input type="text" id="matricula" name="matricula" inputmode="numeric" placeholder="somente números" maxlength="20" required />
+            </div>
+          </div>
+          <div id="aviso-entrada" class="aviso erro" role="alert"></div>
+          <div class="acoes">
+            <button type="submit" class="botao" id="botao-entrar">Entrar na prova</button>
+          </div>
+        </form>
+
+        <p class="discreto">
+          Durante a prova, sair desta página (trocar de aba, abrir outro aplicativo ou minimizar o navegador)
+          é registrado e informado ao professor. Suas respostas são salvas neste navegador até o envio.
+        </p>
+      </section>
+
+      <!-- ============ ETAPA 2: PROVA ============ -->
+      <section id="tela-prova" class="escondido">
+        <div class="barra-prova">
+          <div class="quem">
+            <strong id="prova-nome-aluno"></strong><br />
+            <span class="discreto">Prova <span id="prova-id"></span> · matrícula <span id="prova-matricula"></span></span>
+          </div>
+          <div class="progresso"><span id="respondidas">0</span> de <span id="total-questoes">0</span> respondidas</div>
+          <div class="relogio" id="relogio" aria-live="polite">--:--</div>
+        </div>
+
+        <div id="aviso-prova" class="aviso alerta" role="alert"></div>
+
+        <form id="form-prova" autocomplete="off">
+          <div class="questoes" id="questoes"></div>
+          <div class="cartao acoes">
+            <button type="submit" class="botao ok" id="botao-enviar">Enviar respostas</button>
+            <span class="discreto">Depois de enviadas, as respostas não podem ser alteradas.</span>
+          </div>
+        </form>
+      </section>
+
+      <!-- ============ ETAPA 3: RESULTADO ============ -->
+      <section id="tela-fim" class="escondido">
+        <div class="cartao">
+          <h1>Respostas enviadas</h1>
+          <p class="sub" id="fim-mensagem"></p>
+          <div id="fim-nota" class="aviso info"></div>
+          <p class="discreto" id="fim-detalhe"></p>
+          <div class="acoes">
+            <a class="botao secundario" href="../index.html">Voltar ao site</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>© Universidade Federal Fluminense – DFCom</footer>
+
+    <script src="config.js"></script>
+    <script src="api.js"></script>
+    <script src="aluno.js"></script>
+  </body>
+</html>

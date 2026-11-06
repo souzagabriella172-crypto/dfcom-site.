@@ -1,0 +1,1530 @@
+/* =========================================================
+   RESET GERAL
+========================================================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Open Sans", Arial, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #f5f7fa;
+  color: #333;
+  margin: 0;
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+header {
+  background-color: #003366;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 40px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: 500;
+  font-size: 1.1rem;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #ffcc00;
+}
+
+
+/* =========================================================
+   CONTEÚDO PRINCIPAL
+========================================================= */
+
+main {
+  width: 100%;
+  margin-top: 100px;
+}
+
+
+/* =========================================================
+   BANNER PRINCIPAL
+========================================================= */
+
+.banner {
+  width: 100%;
+  height: 65vh;
+  min-height: 220px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff;
+  margin-top: 80px;
+  padding: 25px 20px;
+}
+
+.banner-logo {
+  width: 1300px;
+  max-width: 90%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
+
+
+/* =========================================================
+   APRESENTAÇÃO / HOME
+========================================================= */
+
+.apresentacao {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 10%;
+  background-color: #ffffff;
+}
+
+.apresentacao .texto {
+  flex: 1;
+  min-width: 320px;
+  padding-right: 40px;
+  position: relative;
+  z-index: 2;
+}
+
+.apresentacao .texto h2 {
+  color: #002f6c;
+  margin-bottom: 15px;
+}
+
+.apresentacao .texto p {
+  color: #333;
+  line-height: 1.6;
+  margin-bottom: 25px;
+}
+
+.apresentacao .imagem {
+  position: relative;
+  z-index: 1;
+}
+
+.apresentacao .imagem img {
+  max-width: 320px;
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-top: -18px;
+}
+
+
+/* =========================================================
+   BOTÕES
+========================================================= */
+
+.botao {
+  display: inline-block;
+  background-color: #003366;
+  color: white;
+  padding: 10px 25px;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.botao:hover {
+  background-color: #0055aa;
+}
+
+
+/* =========================================================
+   =========================================================
+   CARDS ANTIGOS / OUTRAS PÁGINAS
+   NÃO ALTERAR
+   =========================================================
+========================================================= */
+
+.cards {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  padding: 70px 10%;
+  background-color: #f2f4f7;
+  flex-wrap: wrap;
+}
+
+.cards .card {
+  background-color: white;
+  text-align: center;
+  width: 300px;
+  border-radius: 20px;
+  padding-bottom: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cards .card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.cards .card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 20px 20px 0 0;
+}
+
+.cards .card h3 {
+  margin-top: 10px;
+  color: #002f6c;
+}
+
+.cards .card p {
+  color: #555;
+  font-size: 0.95rem;
+  margin: 10px 20px;
+}
+
+.cards a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.cards a:hover {
+  text-decoration: none;
+}
+
+
+/* =========================================================
+   HOME — GRUPOS DE CARDS
+========================================================= */
+
+.linha-cards .card {
+  flex: 0 0 300px;
+  width: 300px;
+  max-width: 300px;
+
+  background: #dceeff;
+
+  text-align: center;
+  border-radius: 12px;
+  padding-bottom: 22px;
+  overflow: hidden;
+
+  border: 1px solid rgba(0, 51, 102, 0.08);
+
+  box-shadow: 0 6px 18px rgba(0, 51, 102, 0.10);
+
+  transition: transform 0.3s ease,
+              box-shadow 0.3s ease;
+}
+
+.linha-cards .card:hover {
+  transform: translateY(-6px);
+
+  box-shadow: 0 12px 25px rgba(0, 51, 102, 0.16);
+}
+
+.linha-cards .card h3 {
+  margin: 18px 15px 8px;
+  color: #003366;
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+
+.linha-cards .card p {
+  color: #40566d;
+  font-size: 0.94rem;
+  line-height: 1.5;
+  margin: 0 20px;
+}
+
+
+/* =========================================================
+   TÍTULO DOS GRUPOS DA HOME
+========================================================= */
+
+.titulo-grupo-home {
+  width: 100%;
+  text-align: center;
+  margin: 0 auto 30px;
+}
+
+.titulo-grupo-home h2 {
+  color: #003366;
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.titulo-grupo-home p {
+  color: #555;
+  font-size: 1rem;
+  line-height: 1.5;
+  max-width: 650px;
+  margin: 0 auto;
+}
+
+
+/* =========================================================
+   LINHA COM DOIS CARDS
+========================================================= */
+
+.linha-cards {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: stretch;
+  gap: 40px;
+}
+
+
+/* =========================================================
+   CARDS DA HOME
+========================================================= */
+.linha-cards .card {
+
+  flex: 0 0 300px;
+
+  width: 300px;
+
+  max-width: 300px;
+
+  background-color: #dceeff;
+
+  text-align: center;
+
+  border-radius: 20px;
+
+  padding-bottom: 20px;
+
+  overflow: hidden;
+
+  box-shadow: 0 5px 15px rgba(0, 51, 102, 0.12);
+
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+}
+
+.linha-cards .card:hover {
+
+  transform: translateY(-5px);
+
+  box-shadow: 0 9px 20px rgba(0, 51, 102, 0.18);
+
+}
+
+.linha-cards .card a {
+
+  display: block;
+
+  width: 100%;
+
+  color: inherit;
+
+  text-decoration: none;
+
+}
+
+.linha-cards .card img {
+
+  display: block;
+
+  width: 100%;
+
+  height: 180px;
+
+  object-fit: cover;
+
+  border-radius: 20px 20px 0 0;
+
+}
+
+.linha-cards .card h3 {
+
+  margin-top: 15px;
+
+  color: #003366;
+
+}
+
+.linha-cards .card p {
+
+  color: #40566d;
+
+  font-size: 0.95rem;
+
+  margin: 10px 20px;
+
+}
+
+
+
+/* =========================================================
+   SOBRE
+========================================================= */
+
+.sobre {
+  max-width: 900px;
+  margin: 100px auto;
+  padding: 20px;
+  line-height: 1.8;
+}
+
+.sobre h1,
+.sobre h2 {
+  color: #003366;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+
+/* =========================================================
+   PESSOAS
+========================================================= */
+
+.pessoas {
+  max-width: 1100px;
+  margin: 120px auto 80px;
+  text-align: center;
+  padding: 20px;
+}
+
+.pessoas h1 {
+  color: #003366;
+  margin-bottom: 10px;
+  font-size: 2.2rem;
+  font-weight: bold;
+}
+
+.pessoas p {
+  margin-bottom: 40px;
+  color: #444;
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+
+/* =========================================================
+   TÍTULOS DE GRUPOS — PESSOAS
+========================================================= */
+
+.titulo-grupo {
+  margin: 40px 0 20px;
+  text-align: center;
+  font-size: 1.9rem;
+  font-weight: bold;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.titulo-grupo.nacional {
+  color: #003366;
+  background-color: #d0e4f7;
+}
+
+.titulo-grupo.internacional {
+  color: #00529b;
+  background-color: #f0f4f8;
+}
+
+.titulo-grupo.discente {
+  color: #003366;
+  background-color: #d0e4f7;
+  display: inline-block;
+  padding: 6px 16px;
+  border-radius: 8px;
+  font-size: 1.9rem;
+  font-weight: bold;
+  text-align: center;
+  margin: 40px 0 20px;
+}
+
+
+/* =========================================================
+   GRADE DE PESSOAS
+========================================================= */
+
+.grade-pessoas {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+
+
+/* =========================================================
+   CARD DE PESSOA
+========================================================= */
+
+.pessoa {
+  width: 250px;
+  background: #ffffff;
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.pessoa:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.pessoa img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.pessoa h3 {
+  color: #003366;
+  margin-top: 15px;
+  margin-bottom: 5px;
+  font-size: 1.1rem;
+}
+
+.pessoa p {
+  color: #555;
+  font-size: 0.9rem;
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+
+
+/* =========================================================
+   BOTÕES DAS PESSOAS
+========================================================= */
+
+.botao-pessoa {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 8px 16px;
+  background-color: #003366;
+  color: #fff;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.botao-pessoa:hover {
+  background-color: #0055aa;
+  transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   PUBLICAÇÕES
+========================================================= */
+
+.grade-publicacoes {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer {
+  background-color: #003366;
+  color: white;
+  text-align: center;
+  padding: 25px 0;
+  font-size: 0.9rem;
+  margin-top: 60px;
+}
+
+
+/* =========================================================
+   RESPONSIVIDADE — TABLET/CELULAR
+========================================================= */
+
+@media (max-width: 768px) {
+
+  /* HEADER */
+
+  header {
+    height: 70px;
+    padding: 10px 0;
+  }
+
+  header nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+  }
+
+  nav ul {
+    gap: 12px;
+    padding: 0;
+    margin: 0;
+  }
+
+  header ul {
+    list-style: none;
+  }
+
+  header ul li {
+    margin: 0;
+  }
+
+  header a {
+    font-size: 15px;
+    padding: 4px 0;
+    text-align: center;
+  }
+
+  body {
+    padding-top: 70px;
+  }
+
+
+  /* BANNER */
+
+  .banner {
+    min-height: 180px;
+    height: auto;
+    padding: 20px;
+  }
+
+  .banner-logo {
+    width: 280px;
+    max-width: 90%;
+  }
+
+
+  /* CONTEÚDO GERAL */
+
+  main {
+    width: 100%;
+  }
+
+  section {
+    width: 100%;
+  }
+
+
+  /* APRESENTAÇÃO */
+
+  .apresentacao {
+    padding: 30px 20px;
+  }
+
+  .apresentacao .texto {
+    min-width: 0;
+    width: 100%;
+    padding-right: 0;
+  }
+
+  .apresentacao .imagem {
+    width: 100%;
+    text-align: center;
+  }
+
+  .apresentacao .imagem img {
+    max-width: 320px;
+    margin: 20px auto 0;
+  }
+
+
+  /* CARDS ANTIGOS */
+
+  .cards {
+    padding: 50px 16px;
+    gap: 25px;
+  }
+
+  .cards .card {
+    width: 300px;
+    max-width: 100%;
+  }
+
+
+  /* HOME */
+
+  .cards-home {
+    padding: 45px 16px 60px;
+  }
+
+  .grupo-cards {
+    margin-bottom: 55px;
+  }
+
+  .titulo-grupo-home h2 {
+    font-size: 1.5rem;
+  }
+
+  .titulo-grupo-home p {
+    font-size: 0.95rem;
+  }
+
+  .linha-cards {
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: 25px;
+  }
+
+  .linha-cards .card {
+    flex: 0 0 auto;
+    width: 300px;
+    max-width: 100%;
+  }
+
+
+  /* PESSOAS */
+
+  .pessoas {
+    margin: 100px auto 60px;
+    padding: 20px 16px;
+  }
+
+  .pessoas h1 {
+    font-size: 1.8rem;
+  }
+
+  .grade-pessoas {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .pessoa {
+    width: 250px;
+    max-width: 100%;
+  }
+
+
+  /* PUBLICAÇÕES */
+
+  .grade-publicacoes {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+
+  /* SOBRE */
+
+  .sobre {
+    margin: 80px auto;
+    padding: 20px 16px;
+  }
+}
+section.cards-home {
+  background-color: #eaf4fb !important;
+}
+/* =========================================================
+   NOVA IDENTIDADE VISUAL — HOME
+========================================================= */
+
+/* Fundo geral da Home */
+body {
+  background-color: #f5f9fc;
+}
+
+/* =========================================================
+   BANNER
+========================================================= */
+
+.banner {
+  background: #ffffff;
+  min-height: 420px;
+  padding: 60px 30px;
+  margin-top: 80px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-bottom: 1px solid #e4edf5;
+}
+
+.banner-logo {
+  width: 900px;
+  max-width: 85%;
+  height: auto;
+
+  display: block;
+}
+
+/* =========================================================
+   INTRODUÇÃO DA HOME
+========================================================= */
+
+.apresentacao {
+  background: #ffffff;
+  padding: 80px 10%;
+  text-align: center;
+}
+
+.apresentacao .texto {
+  max-width: 850px;
+  margin: 0 auto;
+}
+
+.apresentacao .texto h1,
+.apresentacao .texto h2 {
+  color: #003366;
+  font-size: 2rem;
+  margin-bottom: 18px;
+}
+
+.apresentacao .texto p {
+  color: #526577;
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
+/* =========================================================
+   TÍTULOS DOS GRUPOS
+========================================================= */
+
+.titulo-grupo-home {
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+.titulo-grupo-home h2 {
+  color: #003366;
+  font-size: 1.9rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.titulo-grupo-home p {
+  color: #607487;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* pequena linha decorativa */
+.titulo-grupo-home h2::after {
+  content: "";
+  display: block;
+
+  width: 55px;
+  height: 3px;
+
+  background: #4c9bd6;
+
+  margin: 14px auto 0;
+
+  border-radius: 3px;
+}
+
+/* =========================================================
+   ÁREA DOS CARDS
+========================================================= */
+
+section.cards-home {
+  background-color: #eaf4fb !important;
+
+  padding: 85px 30px 100px;
+
+  /* SOMENTE ORGANIZA OS 4 GRUPOS */
+  display: grid;
+
+  grid-template-columns: repeat(2, 1fr);
+
+  column-gap: 45px;
+
+  row-gap: 85px;
+}
+
+
+/* =========================================================
+   GRUPOS
+========================================================= */
+
+.cards-home .grupo-cards {
+  max-width: 900px;
+
+  width: 100%;
+
+  margin: 0 auto;
+}
+
+.cards-home .grupo-cards:last-child {
+  margin-bottom: 0;
+}
+
+
+/* =========================================================
+   TÍTULO DOS GRUPOS
+========================================================= */
+
+.cards-home .titulo-grupo-home {
+  text-align: center;
+
+  margin-bottom: 30px;
+}
+
+.cards-home .titulo-grupo-home h2 {
+  color: #003366;
+
+  font-size: 1.5rem;
+
+  margin: 0 0 8px;
+
+  font-weight: 700;
+}
+
+.cards-home .titulo-grupo-home p {
+  color: #40566d;
+
+  font-size: 0.94rem;
+
+  line-height: 1.5;
+
+  margin: 0;
+}
+
+
+/* =========================================================
+   LINHA DOS CARDS
+   — ORIGINAL
+========================================================= */
+
+.cards-home .linha-cards {
+  display: flex;
+
+  flex-direction: row;
+  flex-wrap: nowrap;
+
+  justify-content: center;
+  align-items: stretch;
+
+  gap: 45px;
+}
+
+
+/* =========================================================
+   CARDS
+   — ORIGINAL
+========================================================= */
+
+.cards-home .linha-cards .card {
+  flex: 0 0 300px;
+
+  width: 300px;
+  max-width: 300px;
+
+  background: #dceeff;
+
+  border-radius: 12px;
+
+  overflow: hidden;
+
+  border: 1px solid rgba(0, 51, 102, 0.08);
+
+  box-shadow:
+    0 6px 18px rgba(0, 51, 102, 0.10);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.cards-home .linha-cards .card:hover {
+  transform: translateY(-6px);
+
+  box-shadow:
+    0 12px 25px rgba(0, 51, 102, 0.16);
+}
+
+
+/* =========================================================
+   IMAGENS DOS CARDS
+   — ORIGINAL
+========================================================= */
+
+.cards-home .linha-cards .card img {
+  width: 100%;
+  height: 180px;
+
+  display: block;
+
+  object-fit: cover;
+}
+
+
+/* =========================================================
+   TEXTOS DOS CARDS
+   — ORIGINAL
+========================================================= */
+
+.cards-home .linha-cards .card h3 {
+  color: #003366;
+
+  font-size: 1.15rem;
+
+  margin: 18px 15px 8px;
+
+  font-weight: 700;
+}
+
+.cards-home .linha-cards .card p {
+  color: #40566d;
+
+  font-size: 0.94rem;
+
+  line-height: 1.5;
+
+  margin: 0 20px 22px;
+}
+
+
+/* =========================================================
+   RESPONSIVIDADE
+========================================================= */
+
+@media (max-width: 1100px) {
+
+  section.cards-home {
+    grid-template-columns: 1fr;
+  }
+
+}
+/* =========================================================
+   CELULAR
+========================================================= */
+
+@media (max-width: 768px) {
+
+  .banner {
+    min-height: 260px;
+    padding: 35px 20px;
+  }
+
+  .banner-logo {
+    max-width: 90%;
+  }
+
+  .apresentacao {
+    padding: 60px 25px;
+  }
+
+  .apresentacao .texto h1,
+  .apresentacao .texto h2 {
+    font-size: 1.6rem;
+  }
+
+  section.cards-home {
+    padding: 60px 20px 70px;
+  }
+
+  .cards-home .linha-cards {
+    flex-direction: column;
+    align-items: center;
+    gap: 28px;
+  }
+
+  .cards-home .linha-cards .card {
+    width: 100%;
+    max-width: 340px;
+    flex: none;
+  }
+
+  .titulo-grupo-home h2 {
+    font-size: 1.55rem;
+  }
+}
+/* =========================================================
+   FUNDO UNIFICADO DA HOME
+========================================================= */
+
+body {
+  background-color: #eaf4fb;
+}
+
+
+section.cards-home {
+  background-color: #eaf4fb !important;
+}
+/* =========================================================
+   BANNER — DESTAQUE DA HOME
+========================================================= */
+
+.banner {
+  background-color: #ffffff !important;
+
+  min-height: 400px;
+
+  margin-top: 80px;
+  padding: 45px 30px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border-bottom: 1px solid #dbe8f2;
+}
+
+.banner-logo {
+  width: 900px;
+  max-width: 88%;
+  height: auto;
+
+  display: block;
+
+  border-radius: 8px;
+}
+/* =========================================================
+   PRIMEIRA TELA DA HOME — LOGO + APRESENTAÇÃO
+========================================================= */
+
+/* BANNER */
+.banner {
+  height: 52vh !important;
+  min-height: 420px !important;
+
+  margin-top: 80px !important;
+
+  padding: 20px 20px 10px !important;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  background-color: #ffffff !important;
+
+  border: none !important;
+}
+
+/* LOGO GRANDE */
+.banner-logo {
+  width: 1100px !important;
+  max-width: 95% !important;
+
+  height: auto !important;
+  max-height: 48vh !important;
+
+  object-fit: contain !important;
+
+  display: block !important;
+}
+
+
+/* =========================================================
+   APRESENTAÇÃO
+========================================================= */
+
+.apresentacao {
+  height: 48vh !important;
+  min-height: 360px !important;
+
+  padding: 30px 10% 50px !important;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  background-color: #ffffff !important;
+}
+
+.apresentacao .texto {
+  width: 100% !important;
+  max-width: 900px !important;
+
+  margin: 0 auto !important;
+  padding: 0 !important;
+
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+
+  text-align: center !important;
+}
+
+.apresentacao .texto h1,
+.apresentacao .texto h2 {
+  color: #003366 !important;
+
+  font-size: 2.2rem !important;
+
+  margin: 0 0 18px !important;
+}
+
+.apresentacao .texto p {
+  color: #526577 !important;
+
+  font-size: 1.05rem !important;
+
+  line-height: 1.8 !important;
+
+  max-width: 800px !important;
+
+  margin: 0 auto !important;
+}
+
+
+/* =========================================================
+   CARDS COMEÇAM SOMENTE DEPOIS DA PRIMEIRA TELA
+========================================================= */
+
+section.cards-home {
+  position: relative !important;
+
+  margin-top: 0 !important;
+
+  padding-top: 90px !important;
+}
+
+
+/* =========================================================
+   CELULAR
+========================================================= */
+
+@media (max-width: 768px) {
+
+  .banner {
+    height: 40vh !important;
+    min-height: 260px !important;
+
+    margin-top: 80px !important;
+
+    padding: 15px !important;
+  }
+
+  .banner-logo {
+    width: 100% !important;
+    max-width: 100% !important;
+
+    max-height: 35vh !important;
+  }
+
+  .apresentacao {
+    height: 50vh !important;
+    min-height: 320px !important;
+
+    padding: 30px 25px 45px !important;
+  }
+
+  .apresentacao .texto h1,
+  .apresentacao .texto h2 {
+    font-size: 1.7rem !important;
+  }
+
+  .apresentacao .texto p {
+    font-size: 0.95rem !important;
+  }
+}
+/* AUMENTAR A LOGO/BANNER DA HOME */
+
+.banner-logo {
+  width: 1300px !important;
+  max-width: 95% !important;
+  height: auto !important;
+  max-height: none !important;
+  object-fit: contain !important;
+}
+/* =========================================================
+   NAVEGAÇÃO DA HOME
+========================================================= */
+
+.navegacao-home {
+  width: 100%;
+  max-width: none;
+
+  margin: 0;
+
+  padding: 42px 8%;
+
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+
+  align-items: center;
+
+  background-color: #ffffff;
+
+  border-top: 1px solid #d5e3ed;
+  border-bottom: 1px solid #d5e3ed;
+
+  box-shadow: 0 3px 12px rgba(0, 51, 102, 0.04);
+}
+
+/* =========================================================
+   LINKS
+========================================================= */
+
+.navegacao-home a {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 45px;
+
+  padding: 10px 25px;
+
+  color: #003366;
+
+  text-decoration: none;
+
+  text-align: center;
+
+  font-size: 0.95rem;
+
+  font-weight: 600;
+
+  letter-spacing: 0.2px;
+
+  transition:
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+/* =========================================================
+   SEPARADORES
+========================================================= */
+
+.navegacao-home a:not(:last-child) {
+  border-right: 1px solid #d5e3ed;
+}
+
+/* =========================================================
+   LINHA AZUL AO PASSAR O MOUSE
+========================================================= */
+
+.navegacao-home a::after {
+  content: "";
+
+  position: absolute;
+
+  bottom: 0;
+  left: 50%;
+
+  width: 0;
+  height: 2px;
+
+  background-color: #4d9bd6;
+
+  transform: translateX(-50%);
+
+  transition: width 0.3s ease;
+}
+
+.navegacao-home a:hover {
+  color: #4d9bd6;
+
+  transform: translateY(-2px);
+}
+
+.navegacao-home a:hover::after {
+  width: 50px;
+}
+
+
+/* =========================================================
+   CELULAR
+========================================================= */
+
+@media (max-width: 768px) {
+
+  .navegacao-home {
+    grid-template-columns: 1fr 1fr;
+
+    padding: 30px 20px;
+
+    row-gap: 18px;
+  }
+
+  .navegacao-home a {
+    min-height: 40px;
+
+    padding: 10px 8px;
+
+    font-size: 0.85rem;
+  }
+
+  .navegacao-home a:nth-child(odd) {
+    border-right: 1px solid #d5e3ed;
+  }
+
+  .navegacao-home a:nth-child(even) {
+    border-right: none;
+  }
+
+}
+
+/* =========================================================
+   CELULAR PEQUENO
+========================================================= */
+
+@media (max-width: 480px) {
+
+  .navegacao-home {
+    grid-template-columns: 1fr;
+
+    padding: 25px 20px;
+
+    row-gap: 5px;
+  }
+
+  .navegacao-home a {
+    min-height: 45px;
+
+    border-right: none !important;
+    border-bottom: 1px solid #e1eaf0;
+  }
+
+  .navegacao-home a:last-child {
+    border-bottom: none;
+  }
+
+}
+/* =========================================================
+   AJUSTES FINAIS — INDEX NO CELULAR
+========================================================= */
+
+@media (max-width: 768px) {
+
+  /* HEADER */
+  header {
+    height: 70px;
+  }
+
+  nav ul {
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  nav a {
+    font-size: 13px;
+  }
+
+  /* BANNER */
+  .banner {
+    height: auto !important;
+    min-height: 260px !important;
+    margin-top: 70px !important;
+    padding: 30px 15px !important;
+  }
+
+  .banner-logo {
+    width: 100% !important;
+    max-width: 100% !important;
+    max-height: none !important;
+    height: auto !important;
+  }
+
+  /* APRESENTAÇÃO */
+  .apresentacao {
+    height: auto !important;
+    min-height: 0 !important;
+    padding: 50px 22px !important;
+    display: block !important;
+  }
+
+  .apresentacao .texto {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0 !important;
+    text-align: center !important;
+  }
+
+  .apresentacao .texto h2 {
+    font-size: 1.55rem !important;
+    line-height: 1.3;
+    margin-bottom: 18px !important;
+  }
+
+  .apresentacao .texto p {
+    font-size: 0.95rem !important;
+    line-height: 1.7 !important;
+    margin-bottom: 25px !important;
+  }
+
+  .apresentacao .imagem {
+    width: 100%;
+    margin-top: 25px;
+    text-align: center;
+  }
+
+  .apresentacao .imagem img {
+    width: 100%;
+    max-width: 320px;
+    margin: 0 auto !important;
+  }
+
+  /* CARDS */
+  section.cards-home {
+    display: block !important;
+    padding: 60px 18px 70px !important;
+  }
+
+  .cards-home .grupo-cards {
+    width: 100%;
+    margin-bottom: 65px;
+  }
+
+  .cards-home .titulo-grupo-home {
+    margin-bottom: 25px;
+  }
+
+  .cards-home .titulo-grupo-home h2 {
+    font-size: 1.45rem !important;
+  }
+
+  .cards-home .titulo-grupo-home p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+
+  .cards-home .linha-cards {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 25px !important;
+  }
+
+  .cards-home .linha-cards .card {
+    width: 100% !important;
+    max-width: 340px !important;
+    flex: none !important;
+  }
+
+}

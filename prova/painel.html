@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex" />
+    <title>Painel de provas – DFCom/UFF</title>
+    <link rel="stylesheet" href="prova.css" />
+  </head>
+  <body>
+    <header>
+      <a class="marca" href="../index.html">DFCom <span>·</span> UFF</a>
+      <nav>
+        <a href="index.html">Página dos alunos</a>
+        <a href="#" id="link-sair" class="escondido">Sair do painel</a>
+      </nav>
+    </header>
+
+    <main class="larga">
+      <!-- ============ ACESSO ============ -->
+      <section id="tela-chave">
+        <h1>Painel do professor</h1>
+        <p class="sub">Informe a chave definida no Apps Script para acompanhar as provas.</p>
+        <form id="form-chave" class="cartao" autocomplete="off">
+          <label for="chave">Chave do painel</label>
+          <input type="password" id="chave" name="chave" required />
+          <div id="aviso-chave" class="aviso erro" role="alert"></div>
+          <div class="acoes">
+            <button type="submit" class="botao" id="botao-chave">Entrar</button>
+            <span class="discreto">A chave fica guardada só nesta aba do navegador.</span>
+          </div>
+        </form>
+      </section>
+
+      <!-- ============ PAINEL ============ -->
+      <section id="tela-painel" class="escondido">
+        <h1>Painel do professor</h1>
+        <p class="sub">
+          Atualizado às <span id="hora-atualizacao">--:--:--</span>
+          · <a href="#" id="link-atualizar">atualizar agora</a>
+          · <label class="discreto" style="display:inline;font-weight:400"><input type="checkbox" id="auto-atualizar" checked /> atualização automática</label>
+        </p>
+        <div id="aviso-painel" class="aviso erro" role="alert"></div>
+
+        <h2>Provas cadastradas</h2>
+        <p class="discreto">As provas são cadastradas na aba <strong>Provas</strong> da planilha. Clique em uma para acompanhar.</p>
+        <div class="lista-provas" id="lista-provas"></div>
+
+        <div id="area-prova" class="escondido">
+          <div class="cartao" style="margin-top:18px">
+            <div class="linha" style="align-items:center">
+              <div>
+                <h2 style="margin:0">Prova <span id="sel-id"></span> <span id="sel-estado" class="etiqueta"></span></h2>
+                <div class="discreto">
+                  código <strong id="sel-codigo"></strong> · <span id="sel-questoes"></span> questões · <span id="sel-duracao"></span> min
+                  · gabarito <span class="mono" id="sel-gabarito"></span>
+                </div>
+                <div class="discreto" id="sel-link"></div>
+              </div>
+              <div style="flex:0 0 auto;text-align:right">
+                <div class="relogio" id="sel-relogio">--:--</div>
+                <div class="discreto">tempo restante</div>
+              </div>
+            </div>
+            <div class="acoes">
+              <button type="button" class="botao ok" id="botao-abrir">Abrir prova</button>
+              <button type="button" class="botao perigo" id="botao-encerrar">Encerrar prova</button>
+              <button type="button" class="botao secundario" id="botao-csv">Baixar CSV</button>
+            </div>
+            <p class="discreto" style="margin-top:10px">
+              <strong>Abrir</strong> grava o horário de início na planilha e libera o código para os alunos pelo tempo de duração.
+              <strong>Encerrar</strong> termina antes do tempo. Abrir de novo reinicia o cronômetro (quem já enviou continua bloqueado).
+            </p>
+          </div>
+
+          <div class="resumo">
+            <div class="caixa"><div class="valor" id="res-enviaram">0</div><div class="rotulo">enviaram</div></div>
+            <div class="caixa"><div class="valor" id="res-faltam">0</div><div class="rotulo">ainda não enviaram</div></div>
+            <div class="caixa"><div class="valor" id="res-media">–</div><div class="rotulo">média das notas</div></div>
+            <div class="caixa"><div class="valor" id="res-saidas">0</div><div class="rotulo">alunos com saída da página</div></div>
+          </div>
+
+          <div class="tabela-envolto">
+            <table id="tabela-alunos">
+              <thead>
+                <tr>
+                  <th>#</th><th>Matrícula</th><th>Nome</th><th>Situação</th><th>Hora</th>
+                  <th>Respostas</th><th>Acertos</th><th>Nota</th><th>Saídas</th><th>Tempo fora</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>© Universidade Federal Fluminense – DFCom</footer>
+
+    <script src="config.js"></script>
+    <script src="api.js"></script>
+    <script src="painel.js"></script>
+  </body>
+</html>
